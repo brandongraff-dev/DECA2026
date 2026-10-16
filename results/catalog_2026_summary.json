@@ -1,0 +1,280 @@
+{
+ "snapshot": "CelesTrak GP, 16 Oct 2026 (subset: active + debris groups + rocket bodies + operator names + dead SSO payloads)",
+ "note": "Not the full catalogue: CelesTrak publishes no single 'all objects' GP file; counts are of the files fetched.",
+ "objects_loaded": 20888,
+ "leo": {
+  "active_payloads": {
+   "count": 15117,
+   "mass_t": 7638.643521,
+   "mass_known": 14857
+  },
+  "dead_payloads": {
+   "count": 130,
+   "mass_t": 53.261,
+   "mass_known": 130
+  },
+  "rocket_bodies": {
+   "count": 926,
+   "mass_t": 1582.148,
+   "mass_known": 924
+  },
+  "fragments": {
+   "count": 2657,
+   "mass_t": 0.0,
+   "mass_known": 0
+  }
+ },
+ "clusters": [
+  {
+   "name": "SL-16 (Zenit-2 upper stage) cluster",
+   "count": 18,
+   "inc_range": [
+    70,
+    72
+   ],
+   "alt_range": [
+    780,
+    900
+   ],
+   "median_mass_kg": 9000.0,
+   "total_mass_t": 162.0,
+   "drift_rate_deg_day": [
+    -2.1171641841482622,
+    -2.1002734831673786
+   ],
+   "raan_spread_deg": 316.64790000000005,
+   "names": [
+    "SL-16 R/B"
+   ]
+  },
+  {
+   "name": "SL-8 (Kosmos-3M stage) 83 deg cluster",
+   "count": 142,
+   "inc_range": [
+    82,
+    84
+   ],
+   "alt_range": [
+    900,
+    1050
+   ],
+   "median_mass_kg": 1434.0,
+   "total_mass_t": 203.628,
+   "drift_rate_deg_day": [
+    -0.7623076892872773,
+    -0.7375118527685682
+   ],
+   "raan_spread_deg": 356.3274,
+   "names": [
+    "SL-8 R/B"
+   ]
+  },
+  {
+   "name": "SL-8 74 deg / ~750 km cluster",
+   "count": 50,
+   "inc_range": [
+    73,
+    75
+   ],
+   "alt_range": [
+    700,
+    820
+   ],
+   "median_mass_kg": 1434.0,
+   "total_mass_t": 71.7,
+   "drift_rate_deg_day": [
+    -1.8695889432631758,
+    -1.833281415742984
+   ],
+   "raan_spread_deg": 356.1351,
+   "names": [
+    "SL-8 R/B"
+   ]
+  },
+  {
+   "name": "SL-8 74 deg / ~1500 km cluster",
+   "count": 45,
+   "inc_range": [
+    73,
+    75
+   ],
+   "alt_range": [
+    1400,
+    1600
+   ],
+   "median_mass_kg": 1434.0,
+   "total_mass_t": 64.53,
+   "drift_rate_deg_day": [
+    -1.3384832168574303,
+    -1.251466696091766
+   ],
+   "raan_spread_deg": 355.0668,
+   "names": [
+    "SL-8 R/B"
+   ]
+  },
+  {
+   "name": "Dead first-generation Iridium",
+   "count": 24,
+   "inc_range": [
+    85,
+    88
+   ],
+   "alt_range": [
+    500,
+    900
+   ],
+   "median_mass_kg": 662.0,
+   "total_mass_t": 15.898,
+   "drift_rate_deg_day": [
+    -0.46516251005764886,
+    -0.4200076018965293
+   ],
+   "raan_spread_deg": 358.2129,
+   "names": [
+    "IRIDIUM 16",
+    "IRIDIUM 17",
+    "IRIDIUM 22",
+    "IRIDIUM 24",
+    "IRIDIUM 26",
+    "IRIDIUM 28",
+    "IRIDIUM 29",
+    "IRIDIUM 33",
+    "IRIDIUM 36",
+    "IRIDIUM 38",
+    "IRIDIUM 39",
+    "IRIDIUM 4"
+   ]
+  },
+  {
+   "name": "Dead first-generation Globalstar",
+   "count": 10,
+   "inc_range": [
+    50,
+    54
+   ],
+   "alt_range": [
+    600,
+    1500
+   ],
+   "median_mass_kg": 450.0,
+   "total_mass_t": 4.5,
+   "drift_rate_deg_day": [
+    -3.050519259312919,
+    -2.940936729846562
+   ],
+   "raan_spread_deg": 246.92299999999997,
+   "names": [
+    "GLOBALSTAR M004",
+    "GLOBALSTAR M023",
+    "GLOBALSTAR M028",
+    "GLOBALSTAR M037",
+    "GLOBALSTAR M039",
+    "GLOBALSTAR M040",
+    "GLOBALSTAR M062",
+    "GLOBALSTAR M065",
+    "GLOBALSTAR M068",
+    "GLOBALSTAR M070"
+   ]
+  },
+  {
+   "name": "Dead Orbcomm",
+   "count": 45,
+   "inc_range": [
+    0,
+    180
+   ],
+   "alt_range": [
+    500,
+    1000
+   ],
+   "median_mass_kg": 42.0,
+   "total_mass_t": 3.461,
+   "drift_rate_deg_day": [
+    -4.960597850034717,
+    2.059366875569844
+   ],
+   "raan_spread_deg": 327.6633,
+   "names": [
+    "ORBCOMM FM01",
+    "ORBCOMM FM02",
+    "ORBCOMM FM03",
+    "ORBCOMM FM05",
+    "ORBCOMM FM07",
+    "ORBCOMM FM08",
+    "ORBCOMM FM09",
+    "ORBCOMM FM10",
+    "ORBCOMM FM103",
+    "ORBCOMM FM104",
+    "ORBCOMM FM105",
+    "ORBCOMM FM106"
+   ]
+  },
+  {
+   "name": "Dead payloads, sun-synchronous band",
+   "count": 14,
+   "inc_range": [
+    95,
+    101
+   ],
+   "alt_range": [
+    500,
+    1000
+   ],
+   "median_mass_kg": 946.0,
+   "total_mass_t": 11.757,
+   "drift_rate_deg_day": [
+    0.8595884282269798,
+    1.1200518383922475
+   ],
+   "raan_spread_deg": 344.9857,
+   "names": [
+    "BPA-1 & SL-24 R/B",
+    "BPA-2 & SL-24 R/B",
+    "CAMEO & DELTA 1 R/B",
+    "FENGYUN 1C",
+    "FTV 3502",
+    "IDEFIX & ARIANE 42P R/B",
+    "MONITOR-E & SL-19 R/B",
+    "OPS 3367 A",
+    "OPS 3367 B",
+    "OPS 4467 A",
+    "ORBCOMM-X",
+    "RUBIN-3 & SL-8 R/B"
+   ]
+  },
+  {
+   "name": "Rocket bodies, sun-synchronous band",
+   "count": 173,
+   "inc_range": [
+    95,
+    101
+   ],
+   "alt_range": [
+    500,
+    1000
+   ],
+   "median_mass_kg": 1000.0,
+   "total_mass_t": 294.941,
+   "drift_rate_deg_day": [
+    0.7435216710012356,
+    1.191687977620175
+   ],
+   "raan_spread_deg": 358.5259,
+   "names": [
+    "ARIANE 1 R/B",
+    "ARIANE 40 R/B",
+    "ARIANE 40+ R/B",
+    "ARIANE 5 R/B",
+    "ATLAS F BURNER 2 R/B",
+    "BREEZE-KM R/B",
+    "CZ-11 R/B",
+    "CZ-2C R/B",
+    "CZ-2D R/B",
+    "CZ-4 R/B",
+    "CZ-4B R/B",
+    "CZ-4C R/B"
+   ]
+  }
+ ]
+}

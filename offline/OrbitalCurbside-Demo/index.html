@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Orbital Curbside Mission Sim</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="lib/fonts/fonts.css">
+<style>
+/* Layout: full-bleed 3D globe; story rail on the left, mission readout top-right,
+   transport bar along the bottom. Collapses to globe + bottom sheet on phones.
+   Deliberately single-theme (night sky), so every colour is set explicitly. */
+:root {
+  color-scheme: dark;
+  --space: #070b16;        /* page + globe surround */
+  --panel: rgba(11, 16, 32, 0.86);
+  --panel-solid: #0b1020;
+  --line: #222b44;
+  --ink: #eef0f6;
+  --ink-2: #aab1c4;
+  --ink-3: #6d7690;
+  --truck: #e8620c;        /* brand orange: the truck, always */
+  --truck-hi: #ff8a3d;
+  --target: #f2b33d;       /* objects waiting for pickup */
+  --frag: #e34948;         /* collision fragments */
+  --ok: #4fc58e;           /* removed */
+  --font-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { background: var(--space); color: var(--ink); font-family: var(--font-body); font-size: 14px; overflow: hidden; }
+#app { position: relative; height: 100%; width: 100%; }
+#globe { position: absolute; inset: 0; }
+#globe .cesium-widget, #globe .cesium-widget canvas, #globe .cesium-viewer, #globe .cesium-viewer-cesiumWidgetContainer {
+  width: 100%; height: 100%; display: block; touch-action: none; }
+.cesium-widget-credits, .cesium-viewer-bottom { display: none !important; }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; backdrop-filter: blur(6px); }
+
+/* ---------- story rail ---------- */
+#story {
+  position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); left: max(14px, env(safe-area-inset-left, 0px));
+  width: 330px; max-height: calc(100% - 110px); overflow: auto; padding: 16px 16px 14px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand h1 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 30px; letter-spacing: 0.02em;
+  text-transform: uppercase; line-height: 0.95; }
+.brand h1 span { color: var(--truck); }
+.tagline { margin: 0; color: var(--ink-2); font-size: 13px; }
+.scenario { display: flex; flex-direction: column; gap: 6px; }
+.scenario label { font-family: var(--font-data); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+select, button { font: inherit; color: var(--ink); }
+select { background: var(--panel-solid); border: 1px solid var(--line); border-radius: 4px; padding: 7px 8px; }
+.scenes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.scene-btn {
+  width: 100%; text-align: left; background: transparent; border: 1px solid var(--line); border-radius: 4px;
+  padding: 9px 10px; display: grid; grid-template-columns: 28px 1fr; gap: 2px 8px; cursor: pointer;
+}
+.scene-btn .no { grid-row: span 2; font-family: var(--font-display); font-weight: 800; font-size: 24px; color: var(--ink-3); line-height: 1; }
+.scene-btn .t { font-weight: 600; }
+.scene-btn .s { color: var(--ink-2); font-size: 12px; }
+.scene-btn[aria-pressed="true"] { border-color: var(--truck); background: rgba(232, 98, 12, 0.10); }
+.scene-btn[aria-pressed="true"] .no { color: var(--truck); }
+.scene-btn:hover { border-color: var(--ink-3); }
+.narration { margin: 0; color: var(--ink); line-height: 1.5; font-size: 13.5px; text-wrap: pretty; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+
+/* ---------- mission readout ---------- */
+#readout {
+  position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px));
+  width: 300px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.ro-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.ro-head h2 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; }
+.pill { font-family: var(--font-data); font-size: 11px; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--line); color: var(--ink-2); white-space: nowrap; }
+.pill.live { border-color: var(--truck); color: var(--truck-hi); }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; margin: 0; }
+.stats div { min-width: 0; }
+.stats dt { font-family: var(--font-data); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
+.stats dd { margin: 2px 0 0; font-family: var(--font-data); font-size: 19px; font-variant-numeric: tabular-nums; }
+.stats dd small { font-size: 12px; color: var(--ink-2); }
+.stats .hero dd { color: var(--truck-hi); font-size: 24px; }
+.stats .hero { grid-column: span 2; }
+.stops { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
+.stops span { height: 8px; border-radius: 2px; background: var(--line); }
+.stops span.done { background: var(--ok); }
+.stops span.now { background: var(--truck); }
+.phase { font-family: var(--font-data); font-size: 12px; color: var(--ink-2); min-height: 1.4em; }
+
+/* ---------- comparison ---------- */
+#compare { display: flex; flex-direction: column; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: 1fr; gap: 3px; }
+.bar-row .lab { display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px; }
+.bar-row .lab b { font-family: var(--font-data); font-weight: 500; }
+.bar { height: 10px; border-radius: 2px; background: var(--ink-3); }
+.bar.ours { background: var(--truck); }
+.bar.anchor { background: #39405a; }
+.fine { color: var(--ink-3); font-size: 11.5px; line-height: 1.4; margin: 0; }
+
+/* ---------- transport bar ---------- */
+#transport {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px)); padding: 8px 10px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: calc(100% - 28px);
+}
+.tbtn { background: var(--panel-solid); border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
+.tbtn:hover { border-color: var(--ink-3); }
+.tbtn[aria-pressed="true"] { border-color: var(--truck); color: var(--truck-hi); }
+#play { min-width: 74px; font-weight: 600; }
+#clock { font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); padding: 0 6px; font-variant-numeric: tabular-nums; }
+.sep { width: 1px; align-self: stretch; background: var(--line); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--truck-hi); outline-offset: 2px; }
+
+#loading { position: absolute; inset: 0; display: grid; place-items: center; background: var(--space); z-index: 5;
+  font-family: var(--font-data); color: var(--ink-2); text-align: center; padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+#loading b { display: block; font-family: var(--font-display); font-size: 28px; color: var(--ink); letter-spacing: 0.04em; text-transform: uppercase; }
+
+@media (max-width: 760px) {
+  body { overflow: auto; }
+  #app { display: flex; flex-direction: column; height: auto; min-height: 100%; }
+  #globe { position: relative; height: 58vh; inset: auto; }
+  #story, #readout, #transport { position: static; transform: none; width: auto; max-height: none; max-width: none;
+    margin: 10px max(16px, env(safe-area-inset-left, 0px)) 0 max(16px, env(safe-area-inset-right, 0px)); }
+  #transport { order: -1; margin-top: 10px; justify-content: flex-start; }
+  #globe { order: -2; }
+  #readout { order: 0; }
+  #story { order: 1; margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div id="app">
+  <div id="globe" aria-label="3D view of Earth and the objects in orbit around it"></div>
+
+  <section id="story" class="panel" aria-label="Story">
+    <div>
+      <div class="brand"><h1>Orbital <span>Curbside</span></h1></div>
+      <p class="tagline">One truck. Ten pickups. Earth's bulge does the driving.</p>
+    </div>
+    <div class="scenario">
+      <label for="mission">Route</label>
+      <select id="mission">
+        <option value="B1">Product B · 10 SL-8 rocket stages (83°, ~960 km)</option>
+        <option value="A1">Product A · 10 dead Iridium satellites (86°)</option>
+      </select>
+    </div>
+    <ol class="scenes" id="scenes">
+      <li><button class="scene-btn" data-scene="1" aria-pressed="true"><span class="no">1</span><span class="t">The problem</span><span class="s">Everything we track, live</span></button></li>
+      <li><button class="scene-btn" data-scene="2" aria-pressed="false"><span class="no">2</span><span class="t">The conveyor belt</span><span class="s">Orbit planes drift at different speeds</span></button></li>
+      <li><button class="scene-btn" data-scene="3" aria-pressed="false"><span class="no">3</span><span class="t">The garbage truck</span><span class="s">Fly the optimised route</span></button></li>
+      <li><button class="scene-btn" data-scene="4" aria-pressed="false"><span class="no">4</span><span class="t">The comparison</span><span class="s">One truck vs one mission per object</span></button></li>
+    </ol>
+    <p class="narration" id="narration"></p>
+    <div class="legend" id="legend">
+      <span><i style="background:#5d6680"></i>Working satellite</span>
+      <span><i style="background:var(--frag)"></i>Fragment</span>
+      <span><i style="background:var(--target)"></i>Dead satellite / rocket stage</span>
+      <span><i style="background:var(--truck)"></i>Our truck</span>
+    </div>
+  </section>
+
+  <section id="readout" class="panel" aria-label="Mission readout" aria-live="polite">
+    <div class="ro-head"><h2 id="ro-title">Mission readout</h2><span class="pill" id="ro-state">Standby</span></div>
+    <div class="stops" id="stopbar" aria-hidden="true"></div>
+    <dl class="stats">
+      <div class="hero"><dt>Cost per removal so far</dt><dd id="s-cpr">–</dd></div>
+      <div><dt>Objects removed</dt><dd id="s-removed">0<small> / 10</small></dd></div>
+      <div><dt>Mission day</dt><dd id="s-day">–</dd></div>
+      <div><dt>Delta-v used</dt><dd id="s-dv">0<small> m/s</small></dd></div>
+      <div><dt>Xenon used</dt><dd id="s-xe">0<small> kg</small></dd></div>
+    </dl>
+    <div class="phase" id="s-phase">Press play, or pick scene 3.</div>
+    <div id="compare" hidden></div>
+  </section>
+
+  <div id="transport" class="panel" role="toolbar" aria-label="Playback">
+    <button class="tbtn" id="play" aria-pressed="false">Play</button>
+    <button class="tbtn" data-speed="60">1 min/s</button>
+    <button class="tbtn" data-speed="3600">1 h/s</button>
+    <button class="tbtn" data-speed="86400">1 day/s</button>
+    <button class="tbtn" data-speed="518400">6 days/s</button>
+    <span class="sep" aria-hidden="true"></span>
+    <button class="tbtn" id="cam-earth">Whole Earth</button>
+    <button class="tbtn" id="cam-truck">Follow truck</button>
+    <button class="tbtn" id="planes" aria-pressed="true">Orbit planes</button>
+    <span id="clock">–</span>
+  </div>
+
+  <div id="loading"><div><b>Loading orbits</b>Reading the 16 Oct 2026 catalogue snapshot…</div></div>
+</div>
+
+<script>window.CESIUM_BASE_URL = new URL("lib/cesium/", document.baseURI).href;</script>
+<script src="lib/cesium/Cesium.js"></script>
+<script src="lib/satellite.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

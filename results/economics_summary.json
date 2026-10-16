@@ -1,0 +1,188 @@
+{
+ "base_route": {
+  "duration_days": 525.0,
+  "launch_mass_kg": 1957.872518951109,
+  "propellant_kg": 32.41069303568861,
+  "kits_kg": 1325.4618259154204
+ },
+ "base_cost_per_removal_musd": 12.45709902803878,
+ "base_price_per_removal_musd": 15.571373785048474,
+ "monte_carlo_cost_per_removal": {
+  "p10": 11.41118963702917,
+  "p50": 13.473336660041166,
+  "p90": 15.628998785064194,
+  "mean": 13.496788205604457
+ },
+ "single_object_model": [
+  {
+   "engine": "electric",
+   "n": 1,
+   "launch_mass_kg": 734.9839097431425,
+   "cost_per_removal_musd": 95.51972697763875,
+   "price_per_removal_musd": 119.39965872204844,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 1.5,
+    "launch": 5.516964412869336,
+    "propellant": 0.018694939460609277,
+    "operations": 1.6427104722792607,
+    "insurance": 6.841357153029548
+   }
+  },
+  {
+   "engine": "chemical",
+   "n": 1,
+   "launch_mass_kg": 762.2704217982862,
+   "cost_per_removal_musd": 95.76252484140336,
+   "price_per_removal_musd": 119.70315605175419,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 1.5,
+    "launch": 5.742078137324271,
+    "propellant": 0.018369980813891858,
+    "operations": 1.6427104722792607,
+    "insurance": 6.859366250985942
+   }
+  }
+ ],
+ "tornado": [
+  {
+   "param": "truck_hw_musd",
+   "low": 9.21709902803878,
+   "high": 16.237099028038777,
+   "swing": 7.019999999999998
+  },
+  {
+   "param": "kit_musd",
+   "low": 11.45709902803878,
+   "high": 13.95709902803878,
+   "swing": 2.5
+  },
+  {
+   "param": "launch_usd_per_kg",
+   "low": 12.351198894273027,
+   "high": 14.045601034525069,
+   "swing": 1.6944021402520413
+  },
+  {
+   "param": "ops_musd_per_year",
+   "low": 12.16962469538991,
+   "high": 13.175784859660956,
+   "swing": 1.006160164271046
+  },
+  {
+   "param": "insurance_frac",
+   "low": 12.17297397230305,
+   "high": 12.83593243568642,
+   "swing": 0.6629584633833705
+  },
+  {
+   "param": "xenon_usd_per_kg",
+   "low": 12.45709902803878,
+   "high": 12.489969952915574,
+   "swing": 0.03287092487679466
+  },
+  {
+   "param": "dv_margin_frac",
+   "low": 12.45709902803878,
+   "high": 12.462388453142204,
+   "swing": 0.005289425103423895
+  }
+ ],
+ "anchors": [
+  {
+   "name": "ESA ClearSpace-1",
+   "musd": 92.88000000000001,
+   "objects": 1,
+   "note": "EUR 86M ESA contract (2020); converted at ~1.08 USD/EUR [ASSUMPTION fx]"
+  },
+  {
+   "name": "JAXA/Astroscale ADRAS-J2",
+   "musd": 82.0,
+   "objects": 1,
+   "note": "JPY ~13.2B incl. tax (~$82M per Payload Space)"
+  },
+  {
+   "name": "UK ADR / ClearSpace (2026)",
+   "musd": 80.0,
+   "objects": 2,
+   "note": "~GBP 61M (~$80M) for two satellites, 15 Oct 2026"
+  },
+  {
+   "name": "NASA est. ELSA-M class mission",
+   "musd": 60.0,
+   "objects": 1,
+   "note": "NASA OTPS 2023: ~$50M build + ~$10M launch"
+  }
+ ],
+ "reuse": {
+  "chemical": {
+   "route_days": 225.0,
+   "per_removal_by_routes": [
+    12.240211167722542,
+    7.953961167722541,
+    6.525211167722542,
+    5.810836167722541,
+    5.3822111677225415,
+    5.096461167722541,
+    4.892354024865398,
+    4.739273667722541,
+    4.620211167722541,
+    4.524961167722541
+   ],
+   "campaign_10_routes": {
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 150.0,
+     "launch": 134.3225159474633,
+     "pods": 36.0,
+     "propellant": 1.3469781937576168,
+     "operations": 30.800821355236142,
+     "insurance": 20.025801275797065
+    },
+    "total": 452.49611677225414,
+    "per_removal": 4.524961167722541,
+    "removals": 100,
+    "years": 6.160164271047228,
+    "first_launch_kg": 2195.9668792995108,
+    "pod_kg": 1745.9668792995105,
+    "propellant_total_kg": 2693.956387515234
+   },
+   "thruster_route_limit": null
+  },
+  "electric": {
+   "route_days": 285.0,
+   "per_removal_by_routes": [
+    12.142989598342522,
+    7.8567395983425214,
+    6.4279895983425215,
+    5.713614598342522,
+    5.284989598342523,
+    4.999239598342522,
+    4.795132455485379,
+    4.642052098342522,
+    4.522989598342522,
+    4.427739598342522
+   ],
+   "campaign_10_routes": {
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 150.0,
+     "launch": 117.72467826621354,
+     "pods": 36.0,
+     "propellant": 1.3369335901091155,
+     "operations": 39.01437371663244,
+     "insurance": 18.697974261297084
+    },
+    "total": 442.7739598342522,
+    "per_removal": 4.427739598342522,
+    "removals": 100,
+    "years": 7.8028747433264884,
+    "first_launch_kg": 2407.48260389659,
+    "pod_kg": 1476.5712405479871,
+    "propellant_total_kg": 480.9113633486027
+   },
+   "thruster_route_limit": 17.731856682091742
+  }
+ }
+}

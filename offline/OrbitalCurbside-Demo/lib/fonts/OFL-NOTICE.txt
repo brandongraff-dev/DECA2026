@@ -1,0 +1,5 @@
+Fonts bundled for offline use (latin subsets, unmodified, from Google Fonts):
+- Big Shoulders Display (c) The Big Shoulders Project Authors
+- Instrument Sans (c) The Instrument Sans Project Authors
+- IBM Plex Mono (c) IBM Corp.
+All licensed under the SIL Open Font License, Version 1.1: https://openfontlicense.org

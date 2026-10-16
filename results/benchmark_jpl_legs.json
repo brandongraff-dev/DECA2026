@@ -1,0 +1,1233 @@
+{
+ "bounds": {
+  "alt_min_km": 300,
+  "alt_max_km": 1400,
+  "di_max_deg": 2.0,
+  "n_a": 45,
+  "n_i": 17
+ },
+ "legs": [
+  {
+   "mission": 1,
+   "leg": 1,
+   "from": 23,
+   "to": 55,
+   "transfer_days": 24.86,
+   "jpl_dv_ms": 161.8,
+   "our_dv_ms": 157.344212026306,
+   "direct_dv_ms": 212.02416661070544
+  },
+  {
+   "mission": 1,
+   "leg": 2,
+   "from": 55,
+   "to": 79,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 139.2,
+   "our_dv_ms": 157.4117536063391,
+   "direct_dv_ms": 416.9894495347836
+  },
+  {
+   "mission": 1,
+   "leg": 3,
+   "from": 79,
+   "to": 113,
+   "transfer_days": 22.42,
+   "jpl_dv_ms": 65.8,
+   "our_dv_ms": 35.32306107544198,
+   "direct_dv_ms": 48.0854563967974
+  },
+  {
+   "mission": 1,
+   "leg": 4,
+   "from": 113,
+   "to": 25,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 208.2,
+   "our_dv_ms": 220.15554640817442,
+   "direct_dv_ms": 628.1983816198011
+  },
+  {
+   "mission": 1,
+   "leg": 5,
+   "from": 25,
+   "to": 20,
+   "transfer_days": 0.29,
+   "jpl_dv_ms": 115.2,
+   "our_dv_ms": 109.14175252334279,
+   "direct_dv_ms": 156.53356208271555
+  },
+  {
+   "mission": 1,
+   "leg": 6,
+   "from": 20,
+   "to": 27,
+   "transfer_days": 10.63,
+   "jpl_dv_ms": 300.1,
+   "our_dv_ms": 335.46097633771643,
+   "direct_dv_ms": 486.2247675810667
+  },
+  {
+   "mission": 1,
+   "leg": 7,
+   "from": 27,
+   "to": 117,
+   "transfer_days": 25.0,
+   "jpl_dv_ms": 564.9,
+   "our_dv_ms": 534.2297598209619,
+   "direct_dv_ms": 1316.0579558480476
+  },
+  {
+   "mission": 1,
+   "leg": 8,
+   "from": 117,
+   "to": 121,
+   "transfer_days": 2.7,
+   "jpl_dv_ms": 78.3,
+   "our_dv_ms": 61.829408045382785,
+   "direct_dv_ms": 72.56495181555846
+  },
+  {
+   "mission": 1,
+   "leg": 9,
+   "from": 121,
+   "to": 50,
+   "transfer_days": 1.51,
+   "jpl_dv_ms": 105.0,
+   "our_dv_ms": 100.67157031051114,
+   "direct_dv_ms": 124.35246074620653
+  },
+  {
+   "mission": 1,
+   "leg": 10,
+   "from": 50,
+   "to": 95,
+   "transfer_days": 1.41,
+   "jpl_dv_ms": 233.3,
+   "our_dv_ms": 223.79698219540893,
+   "direct_dv_ms": 291.46689615781975
+  },
+  {
+   "mission": 1,
+   "leg": 11,
+   "from": 95,
+   "to": 102,
+   "transfer_days": 24.67,
+   "jpl_dv_ms": 453.5,
+   "our_dv_ms": 450.06718340775484,
+   "direct_dv_ms": 488.43025451522016
+  },
+  {
+   "mission": 1,
+   "leg": 12,
+   "from": 102,
+   "to": 38,
+   "transfer_days": 24.31,
+   "jpl_dv_ms": 340.4,
+   "our_dv_ms": 340.1682293752894,
+   "direct_dv_ms": 1419.2941477514669
+  },
+  {
+   "mission": 1,
+   "leg": 13,
+   "from": 38,
+   "to": 97,
+   "transfer_days": 5.86,
+   "jpl_dv_ms": 300.8,
+   "our_dv_ms": 305.4544359245724,
+   "direct_dv_ms": 455.8138345512015
+  },
+  {
+   "mission": 2,
+   "leg": 1,
+   "from": 19,
+   "to": 115,
+   "transfer_days": 24.93,
+   "jpl_dv_ms": 659.0,
+   "our_dv_ms": 706.5775892992646,
+   "direct_dv_ms": 1368.6834883939352
+  },
+  {
+   "mission": 2,
+   "leg": 2,
+   "from": 115,
+   "to": 41,
+   "transfer_days": 0.28,
+   "jpl_dv_ms": 301.1,
+   "our_dv_ms": 299.70622157858764,
+   "direct_dv_ms": 395.66410636823696
+  },
+  {
+   "mission": 2,
+   "leg": 3,
+   "from": 41,
+   "to": 26,
+   "transfer_days": 0.73,
+   "jpl_dv_ms": 252.1,
+   "our_dv_ms": 245.84392519637555,
+   "direct_dv_ms": 304.2602255714962
+  },
+  {
+   "mission": 2,
+   "leg": 4,
+   "from": 26,
+   "to": 45,
+   "transfer_days": 0.39,
+   "jpl_dv_ms": 143.8,
+   "our_dv_ms": 142.80273001628458,
+   "direct_dv_ms": 150.64206917107393
+  },
+  {
+   "mission": 2,
+   "leg": 5,
+   "from": 45,
+   "to": 82,
+   "transfer_days": 17.07,
+   "jpl_dv_ms": 146.8,
+   "our_dv_ms": 156.7310702075924,
+   "direct_dv_ms": 256.027841151746
+  },
+  {
+   "mission": 2,
+   "leg": 6,
+   "from": 82,
+   "to": 47,
+   "transfer_days": 1.61,
+   "jpl_dv_ms": 68.6,
+   "our_dv_ms": 64.24271505311789,
+   "direct_dv_ms": 80.19189476236586
+  },
+  {
+   "mission": 2,
+   "leg": 7,
+   "from": 47,
+   "to": 85,
+   "transfer_days": 22.42,
+   "jpl_dv_ms": 40.6,
+   "our_dv_ms": 44.98226659858576,
+   "direct_dv_ms": 102.99964267427292
+  },
+  {
+   "mission": 2,
+   "leg": 8,
+   "from": 85,
+   "to": 7,
+   "transfer_days": 2.39,
+   "jpl_dv_ms": 84.2,
+   "our_dv_ms": 91.13463831061118,
+   "direct_dv_ms": 108.89671425091618
+  },
+  {
+   "mission": 2,
+   "leg": 9,
+   "from": 7,
+   "to": 2,
+   "transfer_days": 15.88,
+   "jpl_dv_ms": 105.3,
+   "our_dv_ms": 102.95247254027161,
+   "direct_dv_ms": 147.5494847530558
+  },
+  {
+   "mission": 2,
+   "leg": 10,
+   "from": 2,
+   "to": 11,
+   "transfer_days": 24.97,
+   "jpl_dv_ms": 448.5,
+   "our_dv_ms": 477.84795307471154,
+   "direct_dv_ms": 1047.013572068093
+  },
+  {
+   "mission": 2,
+   "leg": 11,
+   "from": 11,
+   "to": 77,
+   "transfer_days": 2.49,
+   "jpl_dv_ms": 148.0,
+   "our_dv_ms": 150.56283366602122,
+   "direct_dv_ms": 209.0852309290453
+  },
+  {
+   "mission": 3,
+   "leg": 1,
+   "from": 72,
+   "to": 107,
+   "transfer_days": 14.16,
+   "jpl_dv_ms": 219.1,
+   "our_dv_ms": 195.13445988718448,
+   "direct_dv_ms": 312.4362199156384
+  },
+  {
+   "mission": 3,
+   "leg": 2,
+   "from": 107,
+   "to": 61,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 80.8,
+   "our_dv_ms": 68.81244075772736,
+   "direct_dv_ms": 140.0575074027782
+  },
+  {
+   "mission": 3,
+   "leg": 3,
+   "from": 61,
+   "to": 10,
+   "transfer_days": 2.87,
+   "jpl_dv_ms": 105.2,
+   "our_dv_ms": 95.5731059161488,
+   "direct_dv_ms": 101.82854035770927
+  },
+  {
+   "mission": 3,
+   "leg": 4,
+   "from": 10,
+   "to": 28,
+   "transfer_days": 8.1,
+   "jpl_dv_ms": 55.2,
+   "our_dv_ms": 43.8660644956791,
+   "direct_dv_ms": 72.80561075113039
+  },
+  {
+   "mission": 3,
+   "leg": 5,
+   "from": 28,
+   "to": 3,
+   "transfer_days": 9.0,
+   "jpl_dv_ms": 140.2,
+   "our_dv_ms": 135.12273202244052,
+   "direct_dv_ms": 160.99278752759645
+  },
+  {
+   "mission": 3,
+   "leg": 6,
+   "from": 3,
+   "to": 64,
+   "transfer_days": 23.13,
+   "jpl_dv_ms": 85.5,
+   "our_dv_ms": 52.46872061985556,
+   "direct_dv_ms": 166.5117037701529
+  },
+  {
+   "mission": 3,
+   "leg": 7,
+   "from": 64,
+   "to": 66,
+   "transfer_days": 23.09,
+   "jpl_dv_ms": 95.0,
+   "our_dv_ms": 90.62047242935246,
+   "direct_dv_ms": 104.62033382724542
+  },
+  {
+   "mission": 3,
+   "leg": 8,
+   "from": 66,
+   "to": 31,
+   "transfer_days": 23.09,
+   "jpl_dv_ms": 237.6,
+   "our_dv_ms": 233.8325135551017,
+   "direct_dv_ms": 358.165615709152
+  },
+  {
+   "mission": 3,
+   "leg": 9,
+   "from": 31,
+   "to": 90,
+   "transfer_days": 22.83,
+   "jpl_dv_ms": 205.9,
+   "our_dv_ms": 202.56871472346336,
+   "direct_dv_ms": 472.5450019880822
+  },
+  {
+   "mission": 3,
+   "leg": 10,
+   "from": 90,
+   "to": 73,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 149.9,
+   "our_dv_ms": 155.79598657594985,
+   "direct_dv_ms": 316.86244978070454
+  },
+  {
+   "mission": 3,
+   "leg": 11,
+   "from": 73,
+   "to": 87,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 245.2,
+   "our_dv_ms": 177.9523046791089,
+   "direct_dv_ms": 227.66944525973196
+  },
+  {
+   "mission": 3,
+   "leg": 12,
+   "from": 87,
+   "to": 57,
+   "transfer_days": 24.93,
+   "jpl_dv_ms": 71.6,
+   "our_dv_ms": 22.788575152078955,
+   "direct_dv_ms": 35.77420470188806
+  },
+  {
+   "mission": 3,
+   "leg": 13,
+   "from": 57,
+   "to": 35,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 197.3,
+   "our_dv_ms": 203.56599309201334,
+   "direct_dv_ms": 587.7941862144004
+  },
+  {
+   "mission": 3,
+   "leg": 14,
+   "from": 35,
+   "to": 69,
+   "transfer_days": 9.1,
+   "jpl_dv_ms": 160.4,
+   "our_dv_ms": 158.42234184422423,
+   "direct_dv_ms": 193.2023591792725
+  },
+  {
+   "mission": 3,
+   "leg": 15,
+   "from": 69,
+   "to": 65,
+   "transfer_days": 13.44,
+   "jpl_dv_ms": 132.2,
+   "our_dv_ms": 127.82341177092002,
+   "direct_dv_ms": 131.08645046935249
+  },
+  {
+   "mission": 3,
+   "leg": 16,
+   "from": 65,
+   "to": 8,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 240.0,
+   "our_dv_ms": 207.8485248466314,
+   "direct_dv_ms": 280.3607761636916
+  },
+  {
+   "mission": 3,
+   "leg": 17,
+   "from": 8,
+   "to": 43,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 161.2,
+   "our_dv_ms": 153.21194632973746,
+   "direct_dv_ms": 424.7932748662653
+  },
+  {
+   "mission": 3,
+   "leg": 18,
+   "from": 43,
+   "to": 71,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 364.3,
+   "our_dv_ms": 370.6378143468677,
+   "direct_dv_ms": 951.8386619682489
+  },
+  {
+   "mission": 3,
+   "leg": 19,
+   "from": 71,
+   "to": 4,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 230.4,
+   "our_dv_ms": 225.62515600064995,
+   "direct_dv_ms": 252.65743760817915
+  },
+  {
+   "mission": 3,
+   "leg": 20,
+   "from": 4,
+   "to": 29,
+   "transfer_days": 24.96,
+   "jpl_dv_ms": 232.5,
+   "our_dv_ms": 231.0583296244335,
+   "direct_dv_ms": 1043.7567530654853
+  },
+  {
+   "mission": 4,
+   "leg": 1,
+   "from": 108,
+   "to": 24,
+   "transfer_days": 23.96,
+   "jpl_dv_ms": 86.1,
+   "our_dv_ms": 96.4163901949951,
+   "direct_dv_ms": 230.4968516960858
+  },
+  {
+   "mission": 4,
+   "leg": 2,
+   "from": 24,
+   "to": 104,
+   "transfer_days": 6.48,
+   "jpl_dv_ms": 103.1,
+   "our_dv_ms": 57.78964587603304,
+   "direct_dv_ms": 66.3718419136794
+  },
+  {
+   "mission": 4,
+   "leg": 3,
+   "from": 104,
+   "to": 119,
+   "transfer_days": 16.72,
+   "jpl_dv_ms": 62.6,
+   "our_dv_ms": 59.41946428108331,
+   "direct_dv_ms": 166.35186835190564
+  },
+  {
+   "mission": 4,
+   "leg": 4,
+   "from": 119,
+   "to": 22,
+   "transfer_days": 23.97,
+   "jpl_dv_ms": 222.9,
+   "our_dv_ms": 236.55203789737033,
+   "direct_dv_ms": 446.86571720658344
+  },
+  {
+   "mission": 4,
+   "leg": 5,
+   "from": 22,
+   "to": 75,
+   "transfer_days": 23.95,
+   "jpl_dv_ms": 709.1,
+   "our_dv_ms": 606.771954423357,
+   "direct_dv_ms": 1740.025992220743
+  },
+  {
+   "mission": 4,
+   "leg": 6,
+   "from": 75,
+   "to": 63,
+   "transfer_days": 23.95,
+   "jpl_dv_ms": 553.9,
+   "our_dv_ms": 578.7091695300878,
+   "direct_dv_ms": 1106.7771587872883
+  },
+  {
+   "mission": 4,
+   "leg": 7,
+   "from": 63,
+   "to": 112,
+   "transfer_days": 23.96,
+   "jpl_dv_ms": 219.9,
+   "our_dv_ms": 226.64268344756238,
+   "direct_dv_ms": 374.93991861302055
+  },
+  {
+   "mission": 4,
+   "leg": 8,
+   "from": 112,
+   "to": 37,
+   "transfer_days": 23.99,
+   "jpl_dv_ms": 233.9,
+   "our_dv_ms": 245.34319634209672,
+   "direct_dv_ms": 701.2604029204825
+  },
+  {
+   "mission": 4,
+   "leg": 9,
+   "from": 37,
+   "to": 32,
+   "transfer_days": 23.94,
+   "jpl_dv_ms": 739.0,
+   "our_dv_ms": 790.2239904853137,
+   "direct_dv_ms": 1746.2524663654433
+  },
+  {
+   "mission": 4,
+   "leg": 10,
+   "from": 32,
+   "to": 114,
+   "transfer_days": 23.96,
+   "jpl_dv_ms": 232.6,
+   "our_dv_ms": 246.13561764576463,
+   "direct_dv_ms": 581.880093098489
+  },
+  {
+   "mission": 5,
+   "leg": 1,
+   "from": 84,
+   "to": 59,
+   "transfer_days": 0.45,
+   "jpl_dv_ms": 129.6,
+   "our_dv_ms": 130.88912148066174,
+   "direct_dv_ms": 184.7834984047534
+  },
+  {
+   "mission": 5,
+   "leg": 2,
+   "from": 59,
+   "to": 98,
+   "transfer_days": 3.17,
+   "jpl_dv_ms": 45.2,
+   "our_dv_ms": 38.41292938236405,
+   "direct_dv_ms": 47.43104675228175
+  },
+  {
+   "mission": 5,
+   "leg": 3,
+   "from": 98,
+   "to": 1,
+   "transfer_days": 24.93,
+   "jpl_dv_ms": 172.9,
+   "our_dv_ms": 149.1627132145284,
+   "direct_dv_ms": 275.65822027328926
+  },
+  {
+   "mission": 5,
+   "leg": 4,
+   "from": 1,
+   "to": 40,
+   "transfer_days": 10.34,
+   "jpl_dv_ms": 52.6,
+   "our_dv_ms": 9.966793313706338,
+   "direct_dv_ms": 13.65791267121651
+  },
+  {
+   "mission": 5,
+   "leg": 5,
+   "from": 40,
+   "to": 51,
+   "transfer_days": 12.53,
+   "jpl_dv_ms": 160.7,
+   "our_dv_ms": 165.31383923683225,
+   "direct_dv_ms": 467.9203666376096
+  },
+  {
+   "mission": 5,
+   "leg": 6,
+   "from": 51,
+   "to": 36,
+   "transfer_days": 7.11,
+   "jpl_dv_ms": 280.8,
+   "our_dv_ms": 261.6548552390357,
+   "direct_dv_ms": 384.9153856266231
+  },
+  {
+   "mission": 5,
+   "leg": 7,
+   "from": 36,
+   "to": 67,
+   "transfer_days": 13.44,
+   "jpl_dv_ms": 221.1,
+   "our_dv_ms": 195.95582077985924,
+   "direct_dv_ms": 257.5119977791238
+  },
+  {
+   "mission": 5,
+   "leg": 8,
+   "from": 67,
+   "to": 62,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 163.5,
+   "our_dv_ms": 100.29678843658597,
+   "direct_dv_ms": 143.3102165847507
+  },
+  {
+   "mission": 5,
+   "leg": 9,
+   "from": 62,
+   "to": 99,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 98.2,
+   "our_dv_ms": 41.83453925628746,
+   "direct_dv_ms": 65.6473653553797
+  },
+  {
+   "mission": 5,
+   "leg": 10,
+   "from": 99,
+   "to": 54,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 115.7,
+   "our_dv_ms": 87.56191981108918,
+   "direct_dv_ms": 419.1474291798285
+  },
+  {
+   "mission": 5,
+   "leg": 11,
+   "from": 54,
+   "to": 122,
+   "transfer_days": 22.19,
+   "jpl_dv_ms": 164.8,
+   "our_dv_ms": 154.79129721966063,
+   "direct_dv_ms": 228.16069458762422
+  },
+  {
+   "mission": 5,
+   "leg": 12,
+   "from": 122,
+   "to": 76,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 674.8,
+   "our_dv_ms": 711.2469312627239,
+   "direct_dv_ms": 1909.9617371106103
+  },
+  {
+   "mission": 5,
+   "leg": 13,
+   "from": 76,
+   "to": 15,
+   "transfer_days": 22.01,
+   "jpl_dv_ms": 291.1,
+   "our_dv_ms": 314.7528812714152,
+   "direct_dv_ms": 544.3377279729754
+  },
+  {
+   "mission": 6,
+   "leg": 1,
+   "from": 101,
+   "to": 48,
+   "transfer_days": 24.91,
+   "jpl_dv_ms": 156.0,
+   "our_dv_ms": 167.19038374448,
+   "direct_dv_ms": 279.5155227317241
+  },
+  {
+   "mission": 6,
+   "leg": 2,
+   "from": 48,
+   "to": 53,
+   "transfer_days": 0.3,
+   "jpl_dv_ms": 198.0,
+   "our_dv_ms": 160.89088899500402,
+   "direct_dv_ms": 163.2553545489355
+  },
+  {
+   "mission": 6,
+   "leg": 3,
+   "from": 53,
+   "to": 5,
+   "transfer_days": 18.39,
+   "jpl_dv_ms": 305.8,
+   "our_dv_ms": 319.9927237366062,
+   "direct_dv_ms": 629.6537252030962
+  },
+  {
+   "mission": 6,
+   "leg": 4,
+   "from": 5,
+   "to": 12,
+   "transfer_days": 3.08,
+   "jpl_dv_ms": 71.2,
+   "our_dv_ms": 53.96271761923841,
+   "direct_dv_ms": 63.37131733670813
+  },
+  {
+   "mission": 6,
+   "leg": 5,
+   "from": 12,
+   "to": 39,
+   "transfer_days": 20.24,
+   "jpl_dv_ms": 194.4,
+   "our_dv_ms": 212.86615330077066,
+   "direct_dv_ms": 407.91289963177815
+  },
+  {
+   "mission": 6,
+   "leg": 6,
+   "from": 39,
+   "to": 58,
+   "transfer_days": 24.96,
+   "jpl_dv_ms": 920.5,
+   "our_dv_ms": 760.3545858020435,
+   "direct_dv_ms": 2193.713263776387
+  },
+  {
+   "mission": 6,
+   "leg": 7,
+   "from": 58,
+   "to": 13,
+   "transfer_days": 24.85,
+   "jpl_dv_ms": 314.1,
+   "our_dv_ms": 340.57257087593297,
+   "direct_dv_ms": 560.7845222680763
+  },
+  {
+   "mission": 6,
+   "leg": 8,
+   "from": 13,
+   "to": 60,
+   "transfer_days": 24.97,
+   "jpl_dv_ms": 353.0,
+   "our_dv_ms": 368.89067038242376,
+   "direct_dv_ms": 1050.1638194105753
+  },
+  {
+   "mission": 6,
+   "leg": 9,
+   "from": 60,
+   "to": 74,
+   "transfer_days": 0.28,
+   "jpl_dv_ms": 272.8,
+   "our_dv_ms": 261.0905927907175,
+   "direct_dv_ms": 262.93528219822
+  },
+  {
+   "mission": 7,
+   "leg": 1,
+   "from": 49,
+   "to": 9,
+   "transfer_days": 15.69,
+   "jpl_dv_ms": 400.6,
+   "our_dv_ms": 443.6974183343817,
+   "direct_dv_ms": 651.2817640800924
+  },
+  {
+   "mission": 7,
+   "leg": 2,
+   "from": 9,
+   "to": 70,
+   "transfer_days": 0.5,
+   "jpl_dv_ms": 173.6,
+   "our_dv_ms": 167.89284578725523,
+   "direct_dv_ms": 220.15214293688373
+  },
+  {
+   "mission": 7,
+   "leg": 3,
+   "from": 70,
+   "to": 93,
+   "transfer_days": 9.83,
+   "jpl_dv_ms": 211.3,
+   "our_dv_ms": 229.27758560778153,
+   "direct_dv_ms": 373.5154131775031
+  },
+  {
+   "mission": 7,
+   "leg": 4,
+   "from": 93,
+   "to": 105,
+   "transfer_days": 24.94,
+   "jpl_dv_ms": 374.4,
+   "our_dv_ms": 377.4624613340951,
+   "direct_dv_ms": 733.4522906318816
+  },
+  {
+   "mission": 7,
+   "leg": 5,
+   "from": 105,
+   "to": 46,
+   "transfer_days": 24.9,
+   "jpl_dv_ms": 109.6,
+   "our_dv_ms": 119.85559247283476,
+   "direct_dv_ms": 275.3606552453204
+  },
+  {
+   "mission": 7,
+   "leg": 6,
+   "from": 46,
+   "to": 88,
+   "transfer_days": 24.48,
+   "jpl_dv_ms": 171.2,
+   "our_dv_ms": 157.02111675907247,
+   "direct_dv_ms": 504.39478007841586
+  },
+  {
+   "mission": 7,
+   "leg": 7,
+   "from": 88,
+   "to": 118,
+   "transfer_days": 20.87,
+   "jpl_dv_ms": 145.1,
+   "our_dv_ms": 118.6816825578374,
+   "direct_dv_ms": 143.99696031432507
+  },
+  {
+   "mission": 7,
+   "leg": 8,
+   "from": 118,
+   "to": 18,
+   "transfer_days": 24.91,
+   "jpl_dv_ms": 194.3,
+   "our_dv_ms": 200.39998791889272,
+   "direct_dv_ms": 700.604765561092
+  },
+  {
+   "mission": 7,
+   "leg": 9,
+   "from": 18,
+   "to": 91,
+   "transfer_days": 0.66,
+   "jpl_dv_ms": 233.0,
+   "our_dv_ms": 211.59849304240765,
+   "direct_dv_ms": 262.432522617284
+  },
+  {
+   "mission": 8,
+   "leg": 1,
+   "from": 86,
+   "to": 34,
+   "transfer_days": 10.03,
+   "jpl_dv_ms": 287.9,
+   "our_dv_ms": 307.36012679579034,
+   "direct_dv_ms": 426.17087490599005
+  },
+  {
+   "mission": 8,
+   "leg": 2,
+   "from": 34,
+   "to": 100,
+   "transfer_days": 24.0,
+   "jpl_dv_ms": 111.9,
+   "our_dv_ms": 128.22148299258816,
+   "direct_dv_ms": 230.3955441813239
+  },
+  {
+   "mission": 8,
+   "leg": 3,
+   "from": 100,
+   "to": 30,
+   "transfer_days": 2.83,
+   "jpl_dv_ms": 112.2,
+   "our_dv_ms": 96.65282995720244,
+   "direct_dv_ms": 125.5635536050157
+  },
+  {
+   "mission": 8,
+   "leg": 4,
+   "from": 30,
+   "to": 92,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 144.5,
+   "our_dv_ms": 153.8097964262594,
+   "direct_dv_ms": 216.2194886067606
+  },
+  {
+   "mission": 8,
+   "leg": 5,
+   "from": 92,
+   "to": 6,
+   "transfer_days": 24.99,
+   "jpl_dv_ms": 540.0,
+   "our_dv_ms": 562.333378151053,
+   "direct_dv_ms": 1518.246026295216
+  },
+  {
+   "mission": 8,
+   "leg": 6,
+   "from": 6,
+   "to": 110,
+   "transfer_days": 24.96,
+   "jpl_dv_ms": 260.1,
+   "our_dv_ms": 278.62118735818007,
+   "direct_dv_ms": 515.8743127964162
+  },
+  {
+   "mission": 8,
+   "leg": 7,
+   "from": 110,
+   "to": 96,
+   "transfer_days": 21.19,
+   "jpl_dv_ms": 198.8,
+   "our_dv_ms": 186.59730360518347,
+   "direct_dv_ms": 191.09600338056498
+  },
+  {
+   "mission": 8,
+   "leg": 8,
+   "from": 96,
+   "to": 81,
+   "transfer_days": 24.98,
+   "jpl_dv_ms": 82.7,
+   "our_dv_ms": 46.071828615318545,
+   "direct_dv_ms": 134.0978896395158
+  },
+  {
+   "mission": 9,
+   "leg": 1,
+   "from": 33,
+   "to": 68,
+   "transfer_days": 22.69,
+   "jpl_dv_ms": 83.3,
+   "our_dv_ms": 89.36876408184172,
+   "direct_dv_ms": 155.5943773440374
+  },
+  {
+   "mission": 9,
+   "leg": 2,
+   "from": 68,
+   "to": 116,
+   "transfer_days": 4.24,
+   "jpl_dv_ms": 148.1,
+   "our_dv_ms": 129.69521910613238,
+   "direct_dv_ms": 241.3271335604857
+  },
+  {
+   "mission": 9,
+   "leg": 3,
+   "from": 116,
+   "to": 106,
+   "transfer_days": 24.47,
+   "jpl_dv_ms": 495.9,
+   "our_dv_ms": 514.211828511144,
+   "direct_dv_ms": 1372.007369323989
+  },
+  {
+   "mission": 9,
+   "leg": 4,
+   "from": 106,
+   "to": 14,
+   "transfer_days": 24.46,
+   "jpl_dv_ms": 464.9,
+   "our_dv_ms": 499.5766194983667,
+   "direct_dv_ms": 739.559851695765
+  },
+  {
+   "mission": 9,
+   "leg": 5,
+   "from": 14,
+   "to": 52,
+   "transfer_days": 24.47,
+   "jpl_dv_ms": 405.2,
+   "our_dv_ms": 428.533285515288,
+   "direct_dv_ms": 886.4586045130235
+  },
+  {
+   "mission": 9,
+   "leg": 6,
+   "from": 52,
+   "to": 120,
+   "transfer_days": 24.44,
+   "jpl_dv_ms": 285.9,
+   "our_dv_ms": 271.11942953256806,
+   "direct_dv_ms": 1111.968794322089
+  },
+  {
+   "mission": 9,
+   "leg": 7,
+   "from": 120,
+   "to": 80,
+   "transfer_days": 24.46,
+   "jpl_dv_ms": 254.8,
+   "our_dv_ms": 269.4785013269563,
+   "direct_dv_ms": 389.7597483444062
+  },
+  {
+   "mission": 9,
+   "leg": 8,
+   "from": 80,
+   "to": 16,
+   "transfer_days": 24.46,
+   "jpl_dv_ms": 62.3,
+   "our_dv_ms": 24.39311368812495,
+   "direct_dv_ms": 98.1929898713356
+  },
+  {
+   "mission": 9,
+   "leg": 9,
+   "from": 16,
+   "to": 94,
+   "transfer_days": 24.46,
+   "jpl_dv_ms": 156.6,
+   "our_dv_ms": 153.3048074491027,
+   "direct_dv_ms": 564.7253565180699
+  },
+  {
+   "mission": 9,
+   "leg": 10,
+   "from": 94,
+   "to": 83,
+   "transfer_days": 18.54,
+   "jpl_dv_ms": 36.5,
+   "our_dv_ms": 35.64826201332679,
+   "direct_dv_ms": 127.48765604858286
+  },
+  {
+   "mission": 9,
+   "leg": 11,
+   "from": 83,
+   "to": 89,
+   "transfer_days": 9.22,
+   "jpl_dv_ms": 174.9,
+   "our_dv_ms": 169.66781379089883,
+   "direct_dv_ms": 356.7754904819142
+  },
+  {
+   "mission": 10,
+   "leg": 1,
+   "from": 44,
+   "to": 111,
+   "transfer_days": 0.81,
+   "jpl_dv_ms": 189.4,
+   "our_dv_ms": 187.7964899804081,
+   "direct_dv_ms": 231.20377049313723
+  },
+  {
+   "mission": 10,
+   "leg": 2,
+   "from": 111,
+   "to": 56,
+   "transfer_days": 11.59,
+   "jpl_dv_ms": 112.9,
+   "our_dv_ms": 123.08943181665042,
+   "direct_dv_ms": 171.5083994723601
+  },
+  {
+   "mission": 10,
+   "leg": 3,
+   "from": 56,
+   "to": 78,
+   "transfer_days": 7.66,
+   "jpl_dv_ms": 110.0,
+   "our_dv_ms": 102.34947481094372,
+   "direct_dv_ms": 129.16390665611448
+  },
+  {
+   "mission": 10,
+   "leg": 4,
+   "from": 78,
+   "to": 0,
+   "transfer_days": 1.11,
+   "jpl_dv_ms": 121.3,
+   "our_dv_ms": 75.53431715641554,
+   "direct_dv_ms": 78.61674121619474
+  },
+  {
+   "mission": 10,
+   "leg": 5,
+   "from": 0,
+   "to": 17,
+   "transfer_days": 17.46,
+   "jpl_dv_ms": 117.9,
+   "our_dv_ms": 131.6940739513759,
+   "direct_dv_ms": 254.93263918581673
+  },
+  {
+   "mission": 10,
+   "leg": 6,
+   "from": 17,
+   "to": 109,
+   "transfer_days": 6.47,
+   "jpl_dv_ms": 280.1,
+   "our_dv_ms": 264.33335009265903,
+   "direct_dv_ms": 337.18864166883844
+  },
+  {
+   "mission": 10,
+   "leg": 7,
+   "from": 109,
+   "to": 103,
+   "transfer_days": 20.47,
+   "jpl_dv_ms": 300.4,
+   "our_dv_ms": 300.1565909964433,
+   "direct_dv_ms": 761.7186900671517
+  },
+  {
+   "mission": 10,
+   "leg": 8,
+   "from": 103,
+   "to": 42,
+   "transfer_days": 24.47,
+   "jpl_dv_ms": 120.6,
+   "our_dv_ms": 135.6525373354468,
+   "direct_dv_ms": 352.75814421963423
+  },
+  {
+   "mission": 10,
+   "leg": 9,
+   "from": 42,
+   "to": 21,
+   "transfer_days": 3.99,
+   "jpl_dv_ms": 70.2,
+   "our_dv_ms": 64.2654932653237,
+   "direct_dv_ms": 89.24451328144771
+  }
+ ],
+ "missions": [
+  {
+   "mission": 1,
+   "n": 14,
+   "jpl_sum_dv": 3066.5000000000005,
+   "our_sum_dv": 3031.054871057202,
+   "jpl_m0_table": 5665.38,
+   "jpl_m0_rebuilt": 5665.410318482449,
+   "our_m0": 5608.64256813014
+  },
+  {
+   "mission": 2,
+   "n": 12,
+   "jpl_sum_dv": 2398.0,
+   "our_sum_dv": 2483.3844155414236,
+   "jpl_m0_table": 4666.15,
+   "jpl_m0_rebuilt": 4666.034085916187,
+   "our_m0": 4781.474100970282
+  },
+  {
+   "mission": 3,
+   "n": 21,
+   "jpl_sum_dv": 3409.5,
+   "our_sum_dv": 3152.729608669569,
+   "jpl_m0_table": 6589.58,
+   "jpl_m0_rebuilt": 6589.341076942939,
+   "our_m0": 6126.5333927631045
+  },
+  {
+   "mission": 4,
+   "n": 11,
+   "jpl_sum_dv": 3163.1,
+   "our_sum_dv": 3144.004150123664,
+   "jpl_m0_table": 5679.1,
+   "jpl_m0_rebuilt": 5678.8766783286665,
+   "our_m0": 5641.301145337213
+  },
+  {
+   "mission": 5,
+   "n": 14,
+   "jpl_sum_dv": 2571.0,
+   "our_sum_dv": 2361.84042990475,
+   "jpl_m0_table": 4906.59,
+   "jpl_m0_rebuilt": 4906.560664943681,
+   "our_m0": 4619.149358576899
+  },
+  {
+   "mission": 6,
+   "n": 10,
+   "jpl_sum_dv": 2785.8,
+   "our_sum_dv": 2645.811287247217,
+   "jpl_m0_table": 5062.74,
+   "jpl_m0_rebuilt": 5062.731625963323,
+   "our_m0": 4862.098094568198
+  },
+  {
+   "mission": 7,
+   "n": 10,
+   "jpl_sum_dv": 2013.1,
+   "our_sum_dv": 2025.8871838145585,
+   "jpl_m0_table": 4082.33,
+   "jpl_m0_rebuilt": 4082.312641131223,
+   "our_m0": 4101.418994211929
+  },
+  {
+   "mission": 8,
+   "n": 9,
+   "jpl_sum_dv": 1738.1,
+   "our_sum_dv": 1759.6679339015755,
+   "jpl_m0_table": 3725.73,
+   "jpl_m0_rebuilt": 3725.6148345841234,
+   "our_m0": 3751.4285266700017
+  },
+  {
+   "mission": 9,
+   "n": 12,
+   "jpl_sum_dv": 2568.3999999999996,
+   "our_sum_dv": 2584.9976445137504,
+   "jpl_m0_table": 4897.35,
+   "jpl_m0_rebuilt": 4897.338145385835,
+   "our_m0": 4923.852649610146
+  },
+  {
+   "mission": 10,
+   "n": 10,
+   "jpl_sum_dv": 1422.8,
+   "our_sum_dv": 1384.8717594056666,
+   "jpl_m0_table": 3438.62,
+   "jpl_m0_rebuilt": 3438.736828855541,
+   "our_m0": 3401.23518447229
+  }
+ ]
+}

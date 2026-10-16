@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.zip
+# third-party paper (download from Zenodo, see README)
+data/gtoc9/jpl_gtoc9.pdf
+data/gtoc9/jpl_gtoc9.txt
