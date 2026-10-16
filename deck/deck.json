@@ -1,0 +1,24 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-10-16T15:20:00Z"},
+  "lists": "css",
+  "title": "Orbital Curbside — DECA Innovation Plan",
+  "order": ["cover", "title", "contents", "overview", "problem", "cost-today", "why-now", "segments", "operators", "agencies", "uvp-statement", "uvp-compare", "how-it-works", "proof", "demo", "economics", "risks-roadmap", "conclusion", "bibliography", "appendix"],
+  "sections": {
+    "front": {"description": "Cover, title slide and table of contents", "start": "cover"},
+    "s1": {"description": "I. Overview: the idea, business model, customers and value on one page", "start": "overview"},
+    "s2": {"description": "II. Business Opportunity: the debris problem, today's prices, and why now", "start": "problem"},
+    "s3": {"description": "III. Customer Segments: agencies, operators and insurers", "start": "segments"},
+    "s4": {"description": "IV. Unique Value Proposition: removal priced like a route", "start": "uvp-statement"},
+    "s5": {"description": "V. Solution: how it works, proof, demo, economics, risks and roadmap", "start": "how-it-works"},
+    "s6": {"description": "VI. Conclusion: takeaways, impact and the ask", "start": "conclusion"},
+    "s7": {"description": "VII. Bibliography", "start": "bibliography"},
+    "s8": {"description": "VIII. Appendix: assumptions and sensitivity", "start": "appendix"}
+  },
+  "faces": {
+    "big-shoulders-display": {"family": "Big Shoulders Display", "href": "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600..800&display=swap"},
+    "hanken-grotesk": {"family": "Hanken Grotesk", "href": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&display=swap"},
+    "ibm-plex-mono": {"family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"}
+  },
+  "designSystems": []
+}

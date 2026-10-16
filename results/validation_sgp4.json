@@ -2,74 +2,74 @@
  "B1_SL8_83deg/electric": [
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462167.5,
-   "target_plane_err_deg": 0.043346585995434665,
-   "target_alt_sgp4_km": 974.2556166388804,
-   "target_alt_model_km": 980.6210992240258
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462207.5,
-   "target_plane_err_deg": 0.045910699566954066,
-   "target_alt_sgp4_km": 996.6133026969046,
-   "target_alt_model_km": 985.2516206347709
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462227.5,
-   "target_plane_err_deg": 0.06302016810742017,
-   "target_alt_sgp4_km": 951.7632593102562,
+   "arrive_jd": 2462157.5,
+   "target_plane_err_deg": 0.04925092488832529,
+   "target_alt_sgp4_km": 992.144539688923,
    "target_alt_model_km": 973.6996546773171
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462327.5,
-   "target_plane_err_deg": 0.07587350077494279,
-   "target_alt_sgp4_km": 992.2193332215611,
+   "arrive_jd": 2462177.5,
+   "target_plane_err_deg": 0.04259919330487053,
+   "target_alt_sgp4_km": 974.6594687203888,
+   "target_alt_model_km": 985.2516206347709
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462197.5,
+   "target_plane_err_deg": 0.05043336778150613,
+   "target_alt_sgp4_km": 973.1142217952911,
+   "target_alt_model_km": 980.6210992240258
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462217.5,
+   "target_plane_err_deg": 0.057448963508781745,
+   "target_alt_sgp4_km": 978.6573574531121,
+   "target_alt_model_km": 980.0456369017493
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462257.5,
+   "target_plane_err_deg": 0.05852888203957986,
+   "target_alt_sgp4_km": 975.5880967911344,
    "target_alt_model_km": 967.6925664645005
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462347.5,
-   "target_plane_err_deg": 0.05619530318089989,
-   "target_alt_sgp4_km": 989.2992540280193,
+   "arrive_jd": 2462277.5,
+   "target_plane_err_deg": 0.04499682167297731,
+   "target_alt_sgp4_km": 1006.8777994090551,
    "target_alt_model_km": 975.0114441018259
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462447.5,
-   "target_plane_err_deg": 0.10777466271106713,
-   "target_alt_sgp4_km": 954.0731214117905,
+   "arrive_jd": 2462307.5,
+   "target_plane_err_deg": 0.08082628091977725,
+   "target_alt_sgp4_km": 989.3948962494296,
    "target_alt_model_km": 975.0584051276719
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462502.5,
-   "target_plane_err_deg": 0.10352451017900666,
-   "target_alt_sgp4_km": 987.149521406127,
+   "arrive_jd": 2462327.5,
+   "target_plane_err_deg": 0.07680617510389869,
+   "target_alt_sgp4_km": 947.0143597998585,
    "target_alt_model_km": 971.3573141646057
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462522.5,
-   "target_plane_err_deg": 0.08524991966891601,
-   "target_alt_sgp4_km": 975.4451360542535,
+   "arrive_jd": 2462347.5,
+   "target_plane_err_deg": 0.06288953294003803,
+   "target_alt_sgp4_km": 994.9190649410721,
    "target_alt_model_km": 972.6750457500593
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462652.5,
-   "target_plane_err_deg": 0.14787218370370417,
-   "target_alt_sgp4_km": 959.6386225798897,
-   "target_alt_model_km": 973.9790962364141
   }
  ],
  "B1_SL8_83deg/chemical": [
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462162.5,
-   "target_plane_err_deg": 0.054445993284398884,
-   "target_alt_sgp4_km": 1004.2070023578626,
+   "arrive_jd": 2462157.5,
+   "target_plane_err_deg": 0.04925092488832529,
+   "target_alt_sgp4_km": 992.144539688923,
    "target_alt_model_km": 973.6996546773171,
    "drift_days": 0.0,
    "plane_angle_model_deg": 0.061729902313839964,
@@ -78,423 +78,423 @@
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462182.5,
-   "target_plane_err_deg": 0.05019959846707031,
-   "target_alt_sgp4_km": 977.4567624462798,
+   "arrive_jd": 2462177.5,
+   "target_plane_err_deg": 0.04259919330487053,
+   "target_alt_sgp4_km": 974.6594687203888,
    "target_alt_model_km": 985.2516206347709,
    "drift_days": 10.0,
-   "plane_angle_model_deg": 0.18229253829072742,
-   "plane_angle_highfidelity_deg": 0.20349121429156228,
-   "correction_dv_ms": 2.7243095457432016
+   "plane_angle_model_deg": 0.20660296257369853,
+   "plane_angle_highfidelity_deg": 0.22060048427219658,
+   "correction_dv_ms": 1.7988656360148938
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462202.5,
-   "target_plane_err_deg": 0.051573865572150455,
-   "target_alt_sgp4_km": 986.2794489622875,
+   "arrive_jd": 2462197.5,
+   "target_plane_err_deg": 0.05043336778150613,
+   "target_alt_sgp4_km": 973.1142217952911,
    "target_alt_model_km": 980.6210992240258,
    "drift_days": 10.0,
-   "plane_angle_model_deg": 0.044349459357756325,
-   "plane_angle_highfidelity_deg": 0.05957117714133681,
-   "correction_dv_ms": 1.9546590525166283
+   "plane_angle_model_deg": 0.047880880951502454,
+   "plane_angle_highfidelity_deg": 0.06829510608030888,
+   "correction_dv_ms": 2.621441907375473
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462222.5,
-   "target_plane_err_deg": 0.06661820810700916,
-   "target_alt_sgp4_km": 996.3912984021081,
+   "arrive_jd": 2462217.5,
+   "target_plane_err_deg": 0.057448963508781745,
+   "target_alt_sgp4_km": 978.6573574531121,
    "target_alt_model_km": 980.0456369017493,
    "drift_days": 0.0,
-   "plane_angle_model_deg": 0.12684268804188806,
-   "plane_angle_highfidelity_deg": 0.18987026149200725,
-   "correction_dv_ms": 8.096068221183174
+   "plane_angle_model_deg": 0.1038920391606636,
+   "plane_angle_highfidelity_deg": 0.1574586359759799,
+   "correction_dv_ms": 6.88078141185088
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462242.5,
+   "target_plane_err_deg": 0.0645393694589647,
+   "target_alt_sgp4_km": 997.8260804765132,
+   "target_alt_model_km": 967.6925664645005,
+   "drift_days": 15.0,
+   "plane_angle_model_deg": 0.5936586898383248,
+   "plane_angle_highfidelity_deg": 0.6091916157128208,
+   "correction_dv_ms": 2.002120457437445
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462262.5,
+   "target_plane_err_deg": 0.040378046083727595,
+   "target_alt_sgp4_km": 949.480078117962,
+   "target_alt_model_km": 975.0114441018259,
+   "drift_days": 10.0,
+   "plane_angle_model_deg": 0.21092964759818011,
+   "plane_angle_highfidelity_deg": 0.2244965497356842,
+   "correction_dv_ms": 1.7442379836682433
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462282.5,
+   "target_plane_err_deg": 0.0794742950791389,
+   "target_alt_sgp4_km": 959.6452071694812,
+   "target_alt_model_km": 975.0584051276719,
+   "drift_days": 0.0,
+   "plane_angle_model_deg": 0.6379563477390968,
+   "plane_angle_highfidelity_deg": 0.7186868948295008,
+   "correction_dv_ms": 10.373847667217925
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462302.5,
+   "target_plane_err_deg": 0.07111651056174505,
+   "target_alt_sgp4_km": 991.5670135053606,
+   "target_alt_model_km": 971.3573141646057,
+   "drift_days": 0.0,
+   "plane_angle_model_deg": 0.10478100993668754,
+   "plane_angle_highfidelity_deg": 0.17435865762338404,
+   "correction_dv_ms": 8.940825421076935
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
    "arrive_jd": 2462322.5,
-   "target_plane_err_deg": 0.05206943654090242,
-   "target_alt_sgp4_km": 951.1111165487109,
-   "target_alt_model_km": 975.0114441018259,
-   "drift_days": 90.0,
-   "plane_angle_model_deg": 0.04055429138166696,
-   "plane_angle_highfidelity_deg": 0.2189901649997299,
-   "correction_dv_ms": 22.99983733542843
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462342.5,
-   "target_plane_err_deg": 0.07097945807029167,
-   "target_alt_sgp4_km": 989.4619665494884,
-   "target_alt_model_km": 967.6925664645005,
-   "drift_days": 0.0,
-   "plane_angle_model_deg": 0.05274864854798396,
-   "plane_angle_highfidelity_deg": 0.029981931987964134,
-   "correction_dv_ms": 2.9255664060506685
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462412.5,
-   "target_plane_err_deg": 0.09807139320633892,
-   "target_alt_sgp4_km": 972.0382986041795,
-   "target_alt_model_km": 975.0584051276719,
-   "drift_days": 60.0,
-   "plane_angle_model_deg": 0.11817767572029543,
-   "plane_angle_highfidelity_deg": 0.05133101922859923,
-   "correction_dv_ms": 8.616333103063385
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462452.5,
-   "target_plane_err_deg": 0.09808795296272067,
-   "target_alt_sgp4_km": 993.2712208742696,
-   "target_alt_model_km": 971.3573141646057,
-   "drift_days": 30.0,
-   "plane_angle_model_deg": 0.03134249964454087,
-   "plane_angle_highfidelity_deg": 0.010455471496806064,
-   "correction_dv_ms": 2.6867669156366825
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462472.5,
-   "target_plane_err_deg": 0.0761041786278116,
-   "target_alt_sgp4_km": 993.6432993532535,
+   "target_plane_err_deg": 0.054032498715838734,
+   "target_alt_sgp4_km": 963.3130270091287,
    "target_alt_model_km": 972.6750457500593,
    "drift_days": 10.0,
-   "plane_angle_model_deg": 0.0704735382349195,
-   "plane_angle_highfidelity_deg": 0.028021689124877135,
-   "correction_dv_ms": 5.45649919731528
+   "plane_angle_model_deg": 0.10726343531169058,
+   "plane_angle_highfidelity_deg": 0.13087117043203045,
+   "correction_dv_ms": 3.0343915118558242
   }
  ],
  "B2_SL8_74deg_750km/electric": [
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462207.5,
-   "target_plane_err_deg": 0.5479366980697565,
-   "target_alt_sgp4_km": 762.9215529583589,
-   "target_alt_model_km": 765.5232045795683
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462337.5,
-   "target_plane_err_deg": 0.694879284366962,
-   "target_alt_sgp4_km": 760.7599401264442,
-   "target_alt_model_km": 766.9783008384038
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462437.5,
-   "target_plane_err_deg": 0.7229418927663814,
-   "target_alt_sgp4_km": 748.7801815410539,
-   "target_alt_model_km": 762.0545717700106
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462467.5,
-   "target_plane_err_deg": 0.7170125136609341,
-   "target_alt_sgp4_km": 762.7208580112174,
+   "arrive_jd": 2462177.5,
+   "target_plane_err_deg": 0.3902140792399124,
+   "target_alt_sgp4_km": 771.2295344798113,
    "target_alt_model_km": 758.6330736596501
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462657.5,
-   "target_plane_err_deg": 1.214209600439338,
-   "target_alt_sgp4_km": 767.4903324924453,
+   "arrive_jd": 2462247.5,
+   "target_plane_err_deg": 0.5707935701359363,
+   "target_alt_sgp4_km": 757.7745760443249,
+   "target_alt_model_km": 766.9783008384038
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462302.5,
+   "target_plane_err_deg": 0.6618870765844411,
+   "target_alt_sgp4_km": 761.5046145008528,
+   "target_alt_model_km": 765.5232045795683
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462332.5,
+   "target_plane_err_deg": 0.5347393135789567,
+   "target_alt_sgp4_km": 764.8567235422588,
+   "target_alt_model_km": 766.5053118750266
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462492.5,
+   "target_plane_err_deg": 0.9358239449749777,
+   "target_alt_sgp4_km": 754.2992288082369,
    "target_alt_model_km": 761.4765238889486
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462757.5,
-   "target_plane_err_deg": 1.2281057492285232,
-   "target_alt_sgp4_km": 744.1876854628144,
-   "target_alt_model_km": 757.2110228048814
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462887.5,
-   "target_plane_err_deg": 1.438913568764169,
-   "target_alt_sgp4_km": 765.3204859917587,
+   "arrive_jd": 2462562.5,
+   "target_plane_err_deg": 0.8893778284590033,
+   "target_alt_sgp4_km": 756.9451553112094,
    "target_alt_model_km": 766.3172732585299
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462907.5,
-   "target_plane_err_deg": 2.5468810616408524,
-   "target_alt_sgp4_km": 739.5501622535166,
-   "target_alt_model_km": 740.7507418046862
+   "arrive_jd": 2462602.5,
+   "target_plane_err_deg": 0.9677055418034753,
+   "target_alt_sgp4_km": 765.826049228277,
+   "target_alt_model_km": 757.2110228048814
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2463007.5,
-   "target_plane_err_deg": 2.479831082656109,
-   "target_alt_sgp4_km": 754.068524282683,
-   "target_alt_model_km": 750.6576006045652
+   "arrive_jd": 2462657.5,
+   "target_plane_err_deg": 0.9638128171629267,
+   "target_alt_sgp4_km": 741.6257770612019,
+   "target_alt_model_km": 739.6322944969534
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462677.5,
+   "target_plane_err_deg": 0.8987192370073592,
+   "target_alt_sgp4_km": 748.7543613769521,
+   "target_alt_model_km": 756.69316057579
   }
  ],
  "B2_SL8_74deg_750km/chemical": [
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462207.5,
-   "target_plane_err_deg": 0.5479366980697565,
-   "target_alt_sgp4_km": 762.9215529583589,
-   "target_alt_model_km": 765.5232045795683,
-   "drift_days": 56.95896351185447,
-   "plane_angle_model_deg": 0.35631350764652325,
-   "plane_angle_highfidelity_deg": 0.1963216950323202,
-   "correction_dv_ms": 20.837360878051225
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462337.5,
-   "target_plane_err_deg": 0.694879284366962,
-   "target_alt_sgp4_km": 760.7599401264442,
-   "target_alt_model_km": 766.9783008384038,
-   "drift_days": 113.04842925023519,
-   "plane_angle_model_deg": 0.5396439899790973,
-   "plane_angle_highfidelity_deg": 0.5828904637424154,
-   "correction_dv_ms": 5.632377333382177
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462437.5,
-   "target_plane_err_deg": 0.7229418927663814,
-   "target_alt_sgp4_km": 748.7801815410539,
-   "target_alt_model_km": 762.0545717700106,
-   "drift_days": 90.0,
-   "plane_angle_model_deg": 0.7094686286273706,
-   "plane_angle_highfidelity_deg": 0.5731031894078878,
-   "correction_dv_ms": 17.760031907521025
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462467.5,
-   "target_plane_err_deg": 0.7170125136609341,
-   "target_alt_sgp4_km": 762.7208580112174,
-   "target_alt_model_km": 758.6330736596501,
-   "drift_days": 19.921156483848367,
-   "plane_angle_model_deg": 0.7412210545415527,
-   "plane_angle_highfidelity_deg": 0.1765794641632481,
-   "correction_dv_ms": 73.53857242579609
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462657.5,
-   "target_plane_err_deg": 1.214209600439338,
-   "target_alt_sgp4_km": 767.4903324924453,
-   "target_alt_model_km": 761.4765238889486,
-   "drift_days": 176.1554239390782,
-   "plane_angle_model_deg": 0.7269709803960885,
-   "plane_angle_highfidelity_deg": 0.6071554595579158,
-   "correction_dv_ms": 15.539584302367071
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462757.5,
-   "target_plane_err_deg": 1.2281057492285232,
-   "target_alt_sgp4_km": 744.1876854628144,
-   "target_alt_model_km": 757.2110228048814,
-   "drift_days": 86.5950226220023,
-   "plane_angle_model_deg": 1.24244063400622,
-   "plane_angle_highfidelity_deg": 0.563035150113384,
-   "correction_dv_ms": 88.29843738653686
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462887.5,
-   "target_plane_err_deg": 1.438913568764169,
-   "target_alt_sgp4_km": 765.3204859917587,
-   "target_alt_model_km": 766.3172732585299,
-   "drift_days": 102.19516623578683,
-   "plane_angle_model_deg": 1.2503284423740921,
-   "plane_angle_highfidelity_deg": 0.509655719307273,
-   "correction_dv_ms": 96.46261734114668
-  },
-  {
-   "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2462907.5,
-   "target_plane_err_deg": 2.5468810616408524,
-   "target_alt_sgp4_km": 739.5501622535166,
+   "arrive_jd": 2462192.5,
+   "target_plane_err_deg": 0.7624145605328467,
+   "target_alt_sgp4_km": 746.145744944778,
    "target_alt_model_km": 740.7507418046862,
-   "drift_days": 9.630726433062712,
-   "plane_angle_model_deg": 1.4519551527959567,
-   "plane_angle_highfidelity_deg": 1.0492357469831572,
-   "correction_dv_ms": 52.49744837738587
+   "drift_days": 42.32116299586006,
+   "plane_angle_model_deg": 0.5817875789601088,
+   "plane_angle_highfidelity_deg": 0.12143307699020475,
+   "correction_dv_ms": 60.33701685182146
   },
   {
    "leg": "SL-8 R/B->SL-8 R/B",
-   "arrive_jd": 2463007.5,
-   "target_plane_err_deg": 2.479831082656109,
-   "target_alt_sgp4_km": 754.068524282683,
-   "target_alt_model_km": 750.6576006045652,
-   "drift_days": 88.31253050640402,
-   "plane_angle_model_deg": 2.5777285721302556,
-   "plane_angle_highfidelity_deg": 0.6337763762477151,
-   "correction_dv_ms": 252.62470274077526
+   "arrive_jd": 2462262.5,
+   "target_plane_err_deg": 0.5231688712858849,
+   "target_alt_sgp4_km": 766.2374935615462,
+   "target_alt_model_km": 757.2110228048814,
+   "drift_days": 59.584344316643495,
+   "plane_angle_model_deg": 0.915036091040263,
+   "plane_angle_highfidelity_deg": 0.8380750446796709,
+   "correction_dv_ms": 10.12985463830733
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462317.5,
+   "target_plane_err_deg": 0.5755808060145166,
+   "target_alt_sgp4_km": 757.9352134324254,
+   "target_alt_model_km": 766.3172732585299,
+   "drift_days": 45.0,
+   "plane_angle_model_deg": 0.4208540460650675,
+   "plane_angle_highfidelity_deg": 0.15089103034854404,
+   "correction_dv_ms": 35.38315827821073
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462357.5,
+   "target_plane_err_deg": 0.7331956979555464,
+   "target_alt_sgp4_km": 774.162782980532,
+   "target_alt_model_km": 761.4765238889486,
+   "drift_days": 29.542181257274915,
+   "plane_angle_model_deg": 0.5902576382586471,
+   "plane_angle_highfidelity_deg": 0.07399796165071046,
+   "correction_dv_ms": 67.6643305919565
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462427.5,
+   "target_plane_err_deg": 0.6693343845902893,
+   "target_alt_sgp4_km": 755.1736017329431,
+   "target_alt_model_km": 758.6330736596501,
+   "drift_days": 57.21965675464029,
+   "plane_angle_model_deg": 0.8927625902340214,
+   "plane_angle_highfidelity_deg": 0.7148598831657769,
+   "correction_dv_ms": 23.46650097555407
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462447.5,
+   "target_plane_err_deg": 0.741392509619064,
+   "target_alt_sgp4_km": 760.4365744346596,
+   "target_alt_model_km": 762.0545717700106,
+   "drift_days": 10.0,
+   "plane_angle_model_deg": 0.4284788980895591,
+   "plane_angle_highfidelity_deg": 0.23757803194559443,
+   "correction_dv_ms": 24.915192730734375
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462472.5,
+   "target_plane_err_deg": 0.8867612225692294,
+   "target_alt_sgp4_km": 742.4201672258196,
+   "target_alt_model_km": 766.9783008384038,
+   "drift_days": 15.0,
+   "plane_angle_model_deg": 0.6550864049031955,
+   "plane_angle_highfidelity_deg": 0.1255413792605044,
+   "correction_dv_ms": 69.2586550848923
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462502.5,
+   "target_plane_err_deg": 0.970641405275339,
+   "target_alt_sgp4_km": 781.7107651041861,
+   "target_alt_model_km": 765.5232045795683,
+   "drift_days": 20.0,
+   "plane_angle_model_deg": 0.6929366086743056,
+   "plane_angle_highfidelity_deg": 0.13539537218183934,
+   "correction_dv_ms": 73.07477806062397
+  },
+  {
+   "leg": "SL-8 R/B->SL-8 R/B",
+   "arrive_jd": 2462527.5,
+   "target_plane_err_deg": 0.7677397034127001,
+   "target_alt_sgp4_km": 749.583733789962,
+   "target_alt_model_km": 766.5053118750266,
+   "drift_days": 15.0,
+   "plane_angle_model_deg": 0.8033549819911837,
+   "plane_angle_highfidelity_deg": 0.14194960702949144,
+   "correction_dv_ms": 86.50425885150287
   }
  ],
  "A1_Iridium_legacy/electric": [
   {
-   "leg": "IRIDIUM 914->IRIDIUM 7",
-   "arrive_jd": 2462207.5,
-   "target_plane_err_deg": 0.11100222731292135,
-   "target_alt_sgp4_km": 771.1604638267509,
-   "target_alt_model_km": 770.7620164629889
-  },
-  {
-   "leg": "IRIDIUM 7->IRIDIUM 4",
-   "arrive_jd": 2462397.5,
-   "target_plane_err_deg": 0.18146504168319258,
-   "target_alt_sgp4_km": 772.8683105647215,
+   "leg": "IRIDIUM 36->IRIDIUM 4",
+   "arrive_jd": 2462177.5,
+   "target_plane_err_deg": 0.11732371723235763,
+   "target_alt_sgp4_km": 774.201990546584,
    "target_alt_model_km": 767.7239714360585
   },
   {
-   "leg": "IRIDIUM 4->IRIDIUM 36",
-   "arrive_jd": 2462557.5,
-   "target_plane_err_deg": 0.26578268350321727,
-   "target_alt_sgp4_km": 771.3211926034355,
-   "target_alt_model_km": 765.1043695129765
+   "leg": "IRIDIUM 4->IRIDIUM 7",
+   "arrive_jd": 2462247.5,
+   "target_plane_err_deg": 0.12412644178084035,
+   "target_alt_sgp4_km": 765.1195938401224,
+   "target_alt_model_km": 770.7620164629889
   },
   {
-   "leg": "IRIDIUM 36->IRIDIUM 57",
-   "arrive_jd": 2462747.5,
-   "target_plane_err_deg": 0.3143298495037347,
-   "target_alt_sgp4_km": 775.1632172072614,
+   "leg": "IRIDIUM 7->IRIDIUM 914",
+   "arrive_jd": 2462267.5,
+   "target_plane_err_deg": 0.16458754871440492,
+   "target_alt_sgp4_km": 747.4821394813998,
+   "target_alt_model_km": 754.2049036487488
+  },
+  {
+   "leg": "IRIDIUM 914->IRIDIUM 57",
+   "arrive_jd": 2462397.5,
+   "target_plane_err_deg": 0.17945426500489703,
+   "target_alt_sgp4_km": 763.1863049152871,
    "target_alt_model_km": 770.9784018141372
   },
   {
    "leg": "IRIDIUM 57->IRIDIUM 29",
-   "arrive_jd": 2462907.5,
-   "target_plane_err_deg": 0.4505390369792049,
-   "target_alt_sgp4_km": 772.0289545823589,
+   "arrive_jd": 2462437.5,
+   "target_plane_err_deg": 0.22142976870252237,
+   "target_alt_sgp4_km": 770.2919953068349,
    "target_alt_model_km": 768.8920435207137
   },
   {
    "leg": "IRIDIUM 29->IRIDIUM 33",
-   "arrive_jd": 2463007.5,
-   "target_plane_err_deg": 0.32967745155751493,
-   "target_alt_sgp4_km": 767.1920433455516,
+   "arrive_jd": 2462457.5,
+   "target_plane_err_deg": 0.14609733429648142,
+   "target_alt_sgp4_km": 774.4627369095078,
    "target_alt_model_km": 774.4459487937875
   },
   {
    "leg": "IRIDIUM 33->IRIDIUM 28",
-   "arrive_jd": 2463167.5,
-   "target_plane_err_deg": 0.6386050200645959,
-   "target_alt_sgp4_km": 755.0862681473618,
+   "arrive_jd": 2462512.5,
+   "target_plane_err_deg": 0.26679216797185373,
+   "target_alt_sgp4_km": 760.1220394907878,
    "target_alt_model_km": 765.927568619396
   },
   {
    "leg": "IRIDIUM 28->IRIDIUM 22",
-   "arrive_jd": 2463357.5,
-   "target_plane_err_deg": 0.7493893960056722,
-   "target_alt_sgp4_km": 771.0470850095289,
+   "arrive_jd": 2462612.5,
+   "target_plane_err_deg": 0.2978416159193928,
+   "target_alt_sgp4_km": 764.2881566593505,
    "target_alt_model_km": 770.7341834518684
   },
   {
    "leg": "IRIDIUM 22->IRIDIUM 26",
-   "arrive_jd": 2463457.5,
-   "target_plane_err_deg": 0.9838181666947471,
-   "target_alt_sgp4_km": 760.1166783035533,
+   "arrive_jd": 2462682.5,
+   "target_plane_err_deg": 0.3990180967048193,
+   "target_alt_sgp4_km": 769.0386698465863,
    "target_alt_model_km": 766.6503010612469
   }
  ],
  "A1_Iridium_legacy/chemical": [
   {
-   "leg": "IRIDIUM 36->IRIDIUM 4",
-   "arrive_jd": 2462237.5,
-   "target_plane_err_deg": 0.13424118663067497,
-   "target_alt_sgp4_km": 771.6641316057758,
-   "target_alt_model_km": 767.7239714360585,
-   "drift_days": 90.0,
-   "plane_angle_model_deg": 0.1935288172849239,
-   "plane_angle_highfidelity_deg": 0.1942416966274053,
-   "correction_dv_ms": 0.09245898117746926
-  },
-  {
-   "leg": "IRIDIUM 4->IRIDIUM 7",
-   "arrive_jd": 2462307.5,
-   "target_plane_err_deg": 0.14015929736945595,
-   "target_alt_sgp4_km": 778.1551862825572,
+   "leg": "IRIDIUM 914->IRIDIUM 7",
+   "arrive_jd": 2462157.5,
+   "target_plane_err_deg": 0.0971147267947649,
+   "target_alt_sgp4_km": 765.9750304167883,
    "target_alt_model_km": 770.7620164629889,
-   "drift_days": 60.0,
-   "plane_angle_model_deg": 0.6097562231894398,
-   "plane_angle_highfidelity_deg": 0.5751953405854662,
-   "correction_dv_ms": 4.491765766055686
-  },
-  {
-   "leg": "IRIDIUM 7->IRIDIUM 914",
-   "arrive_jd": 2462327.5,
-   "target_plane_err_deg": 0.18791723227022342,
-   "target_alt_sgp4_km": 760.7050276034979,
-   "target_alt_model_km": 754.2049036487488,
    "drift_days": 10.0,
-   "plane_angle_model_deg": 0.22468542254074825,
-   "plane_angle_highfidelity_deg": 0.05164889249233849,
-   "correction_dv_ms": 22.550912237422637
+   "plane_angle_model_deg": 0.5719493779643585,
+   "plane_angle_highfidelity_deg": 0.6540013679292982,
+   "correction_dv_ms": 10.705650816289339
   },
   {
-   "leg": "IRIDIUM 914->IRIDIUM 39",
-   "arrive_jd": 2462487.5,
-   "target_plane_err_deg": 0.4382557152912123,
-   "target_alt_sgp4_km": 720.3466745029755,
-   "target_alt_model_km": 726.0783108769483,
-   "drift_days": 150.0,
-   "plane_angle_model_deg": 1.080647214234769,
-   "plane_angle_highfidelity_deg": 1.0078074576495133,
-   "correction_dv_ms": 9.466480159126656
+   "leg": "IRIDIUM 7->IRIDIUM 4",
+   "arrive_jd": 2462212.5,
+   "target_plane_err_deg": 0.12349476441451743,
+   "target_alt_sgp4_km": 775.3417860134305,
+   "target_alt_model_km": 767.7239714360585,
+   "drift_days": 45.0,
+   "plane_angle_model_deg": 0.525429912611188,
+   "plane_angle_highfidelity_deg": 0.5388034497750163,
+   "correction_dv_ms": 1.7565438811910776
   },
   {
-   "leg": "IRIDIUM 39->IRIDIUM 911",
-   "arrive_jd": 2462587.5,
-   "target_plane_err_deg": 0.40838949161943805,
-   "target_alt_sgp4_km": 743.5432860764877,
-   "target_alt_model_km": 731.5366706346067,
+   "leg": "IRIDIUM 4->IRIDIUM 36",
+   "arrive_jd": 2462237.5,
+   "target_plane_err_deg": 0.145702849009053,
+   "target_alt_sgp4_km": 756.1095431767544,
+   "target_alt_model_km": 765.1043695129765,
+   "drift_days": 15.0,
+   "plane_angle_model_deg": 0.5609182843187878,
+   "plane_angle_highfidelity_deg": 0.6211492380705864,
+   "correction_dv_ms": 7.87749299006392
+  },
+  {
+   "leg": "IRIDIUM 36->IRIDIUM 57",
+   "arrive_jd": 2462337.5,
+   "target_plane_err_deg": 0.16032252342945766,
+   "target_alt_sgp4_km": 776.474260504122,
+   "target_alt_model_km": 770.9784018141372,
    "drift_days": 90.0,
-   "plane_angle_model_deg": 0.6844546866107576,
-   "plane_angle_highfidelity_deg": 0.5155439201485054,
-   "correction_dv_ms": 22.044973265593253
+   "plane_angle_model_deg": 2.055022692680482,
+   "plane_angle_highfidelity_deg": 2.039401007069586,
+   "correction_dv_ms": 2.060321963977929
   },
   {
-   "leg": "IRIDIUM 911->IRIDIUM 16",
-   "arrive_jd": 2462657.5,
-   "target_plane_err_deg": 0.3466884520724258,
-   "target_alt_sgp4_km": 754.9865802468594,
-   "target_alt_model_km": 761.4298727467867,
-   "drift_days": 55.67701527365879,
-   "plane_angle_model_deg": 0.67129025694625,
-   "plane_angle_highfidelity_deg": 0.5440301949319217,
-   "correction_dv_ms": 16.609028809339858
+   "leg": "IRIDIUM 57->IRIDIUM 29",
+   "arrive_jd": 2462377.5,
+   "target_plane_err_deg": 0.19594394199986273,
+   "target_alt_sgp4_km": 772.0222564893675,
+   "target_alt_model_km": 768.8920435207137,
+   "drift_days": 30.0,
+   "plane_angle_model_deg": 0.5030022913761845,
+   "plane_angle_highfidelity_deg": 0.5403652184055511,
+   "correction_dv_ms": 4.876347261683886
   },
   {
-   "leg": "IRIDIUM 16->IRIDIUM 920",
-   "arrive_jd": 2462727.5,
-   "target_plane_err_deg": 0.37818688668617323,
-   "target_alt_sgp4_km": 759.4981454518302,
-   "target_alt_model_km": 752.0503518431033,
+   "leg": "IRIDIUM 29->IRIDIUM 33",
+   "arrive_jd": 2462397.5,
+   "target_plane_err_deg": 0.1347447318409554,
+   "target_alt_sgp4_km": 764.9973219638978,
+   "target_alt_model_km": 774.4459487937875,
+   "drift_days": 10.0,
+   "plane_angle_model_deg": 0.28537977177689283,
+   "plane_angle_highfidelity_deg": 0.40348442882118546,
+   "correction_dv_ms": 15.393895135396047
+  },
+  {
+   "leg": "IRIDIUM 33->IRIDIUM 28",
+   "arrive_jd": 2462437.5,
+   "target_plane_err_deg": 0.2331498596554088,
+   "target_alt_sgp4_km": 756.0051773302894,
+   "target_alt_model_km": 765.927568619396,
+   "drift_days": 30.0,
+   "plane_angle_model_deg": 0.6773233863987721,
+   "plane_angle_highfidelity_deg": 0.8072206844802255,
+   "correction_dv_ms": 17.024907431686692
+  },
+  {
+   "leg": "IRIDIUM 28->IRIDIUM 22",
+   "arrive_jd": 2462537.5,
+   "target_plane_err_deg": 0.2635392487527898,
+   "target_alt_sgp4_km": 764.5431469396581,
+   "target_alt_model_km": 770.7341834518684,
+   "drift_days": 89.01420385500852,
+   "plane_angle_model_deg": 2.013659805752192,
+   "plane_angle_highfidelity_deg": 2.018680158482478,
+   "correction_dv_ms": 0.6621303837430759
+  },
+  {
+   "leg": "IRIDIUM 22->IRIDIUM 26",
+   "arrive_jd": 2462607.5,
+   "target_plane_err_deg": 0.35481091396708236,
+   "target_alt_sgp4_km": 770.7278868622598,
+   "target_alt_model_km": 766.6503010612469,
    "drift_days": 60.0,
-   "plane_angle_model_deg": 0.6850205993832891,
-   "plane_angle_highfidelity_deg": 0.5261939059033226,
-   "correction_dv_ms": 20.685386847872273
-  },
-  {
-   "leg": "IRIDIUM 920->IRIDIUM 44",
-   "arrive_jd": 2462887.5,
-   "target_plane_err_deg": 0.46865440356620935,
-   "target_alt_sgp4_km": 759.9003073908561,
-   "target_alt_model_km": 756.4283168519887,
-   "drift_days": 150.0,
-   "plane_angle_model_deg": 0.6593300037905464,
-   "plane_angle_highfidelity_deg": 0.5231698803417881,
-   "correction_dv_ms": 17.770611255633007
-  },
-  {
-   "leg": "IRIDIUM 44->IRIDIUM 38",
-   "arrive_jd": 2463077.5,
-   "target_plane_err_deg": 0.7118370269324911,
-   "target_alt_sgp4_km": 763.7491140972961,
-   "target_alt_model_km": 763.2950138199958,
-   "drift_days": 178.7840603965376,
-   "plane_angle_model_deg": 0.6892087049371995,
-   "plane_angle_highfidelity_deg": 0.49660319500502165,
-   "correction_dv_ms": 24.877056062223556
+   "plane_angle_model_deg": 0.5223142523711414,
+   "plane_angle_highfidelity_deg": 0.6386228468685573,
+   "correction_dv_ms": 15.244036961377466
   }
  ]
 }

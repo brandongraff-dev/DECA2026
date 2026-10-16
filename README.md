@@ -2,6 +2,14 @@
 
 DECA Innovation Plan 2026-27 project by Brandon Graff. **Live demo:** https://claude.ai/artifact/RxGuDPANAdifw94SYwp76U
 
+**Start here for competition:**
+- Pitch deck (20 slides): `deck/OrbitalCurbside_deck.pdf`. Script: `deck/speaker_notes.md`
+- Hook, timing and Q&A prep: `06_qa_prep_and_hook.md`
+- Rubric audit and the placeholder checklist (fill these in!): `07_audit_and_placeholders.md`
+- Paper (11 pages): `paper/OrbitalCurbside_paper.pdf`. One-page summary: `onepager/OrbitalCurbside_OnePager.pdf`
+- Customer validation kit: `04_validation_kit.md`, contacts in `research/`, tracker `research/outreach_tracker.csv`
+- 60-second recording plan: `05_recording_plan.md`. QR codes: `qr/`
+
 **Offline demo (Windows, nothing to install):** open `offline/OrbitalCurbside-Demo/`, double-click `Start Demo.bat` (see its README.txt).
 Credits and licenses: `ATTRIBUTION.md`.
 
@@ -16,6 +24,9 @@ Credits and licenses: `ATTRIBUTION.md`.
 | `figures/paper`, `figures/deck` | Charts (light / navy), PNG + SVG |
 | `sim/` | CesiumJS + satellite.js simulation source (published as the artifact) |
 | `offline/OrbitalCurbside-Demo/` | No-internet demo package with launchers |
+| `paper/`, `onepager/` | Paper and summary (HTML template + build script + PDF) |
+| `deck/` | Snapshot of the Slides-artifact deck: slide HTML, images, PDF, speaker notes (`build_deck.py` rebuilds). The editable deck is the Slides artifact; re-export if you edit it there |
+| `research/` | Sourced inputs, verified expert and industry contacts, outreach tracker |
 
 ## Re-run everything
 ```bash
@@ -33,5 +44,7 @@ python -m scripts.pareto_economics          # Pareto / stops-per-truck sweep (~2
 python -m scripts.make_figures              # all charts
 python -m scripts.export_sim                # data for the 3D simulation
 cd .. && python sim/build_offline.py        # offline demo package
+python paper/build_paper.py                  # paper PDF (needs playwright)
+python deck/build_deck.py                    # deck PDF + speaker notes (needs playwright)
 ```
 Data note: CelesTrak needs a browser-like User-Agent from some networks; it also rate-limits, so download politely.

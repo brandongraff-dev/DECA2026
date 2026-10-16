@@ -157,3 +157,20 @@ def thruster_routes_limit(route, isp, total_impulse_MNs=13.0):
     from .constants import G0
     impulse_per_route = route["propellant_kg"] * isp * G0 * 1000.0   # N*s
     return total_impulse_MNs * 1e6 / impulse_per_route
+
+
+def price_of_time(prop, truck_mass_kg, v):
+    """Economic exchange rate between mission days and delta-v [m/s per day].
+
+    One extra day costs the operations team v['ops_musd_per_year']/365.
+    One extra m/s costs the propellant for it plus launching that propellant:
+        dm = m * dv / (Isp g0)   ->  $ = dm * (propellant price + launch price per kg)
+    lambda = (cost of a day) / (cost of one m/s).  The route planner uses it so
+    'faster vs cheaper' is decided by money, not by an arbitrary setting.
+    """
+    from .constants import G0
+    day_usd = v["ops_musd_per_year"] * 1e6 / 365.25
+    prop_price = v["xenon_usd_per_kg"] if prop.kind == "electric" else v["chem_prop_usd_per_kg"]
+    kg_per_ms = truck_mass_kg * 0.001 / (prop.isp * G0)          # 1 m/s = 0.001 km/s
+    usd_per_ms = kg_per_ms * (prop_price + v["launch_usd_per_kg"])
+    return day_usd / usd_per_ms

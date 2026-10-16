@@ -12,7 +12,8 @@ import numpy as np
 
 from ocmath.catalog import load_tles, load_satcat, load_gcat_mass, attach_metadata
 from ocmath.constants import DEG
-from ocmath.truck import TruckDesign, ELECTRIC, CHEMICAL, plan_mission
+from ocmath.truck import TruckDesign, ELECTRIC, CHEMICAL, plan_mission, object_kits
+from ocmath.economics import price_of_time, default_params, base_values
 
 ROOT = Path(__file__).resolve().parents[2]
 from ocmath.j2 import set_rate_model
@@ -37,13 +38,22 @@ for key, cname in TARGETS.items():
     for label, prop in (("electric", ELECTRIC), ("chemical", CHEMICAL)):
         truck = TruckDesign(prop=prop)
         t = time.time()
-        r = plan_mission(pop, pool, 10, START_JD, truck, lam_ms_per_day=0.5)
+        # economic price of time (m/s per day), from the cost model, at a typical truck mass
+        kits = sorted(object_kits(_pop := pop, pool))[:10]
+        lam = price_of_time(prop, truck.dry_mass_kg + sum(kits) + 100.0, base_values(default_params()))
+        r = None
+        for _ in range(4):        # if the route can't be flown that fast, relax the price of time
+            r = plan_mission(pop, pool, 10, START_JD, truck, lam_ms_per_day=lam)
+            if r is not None and r["feasible"]:
+                break
+            lam /= 2.0
+        r["lam_ms_per_day"] = lam
         r["secs"] = time.time() - t
         r["targets"] = [{"norad": pop.ids[o], "name": pop.names[o], "alt_km": float(pop.alt_km[o]),
                          "inc_deg": float(pop.i[o] / DEG), "mass_kg": pop.meta["mass_kg"][o]} for o in r["order"]]
         results[f"{key}/{label}"] = r
         print(f"{key:<22} {label:<9} pool {len(pool):>3}  dv {r['total_dv_kms']*1000:6.0f} m/s  "
               f"launch {r['launch_mass_kg']:7.0f} kg  propellant {r['propellant_kg']:6.0f} kg  "
-              f"kits {sum(r['kit_masses_kg']):6.0f} kg  {r['duration_days']:5.0f} d  feasible={r['feasible']}  ({r['secs']:.0f}s)")
+              f"kits {sum(r['kit_masses_kg']):6.0f} kg  {r['duration_days']:5.0f} d  lam {r['lam_ms_per_day']:.1f}  feasible={r['feasible']}  ({r['secs']:.0f}s)")
 
 (ROOT / "results/truck_routes_2026.json").write_text(json.dumps(results, indent=1, default=float))

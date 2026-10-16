@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orbital Curbside: One-Page Summary</title>
+<style>
+@font-face { font-family: "Big Shoulders Display"; src: url("../sim/fonts/BigShouldersDisplay-600.woff2") format("woff2"); font-weight: 600 800; }
+@font-face { font-family: "Instrument Sans"; src: url("../sim/fonts/InstrumentSans-400.woff2") format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "IBM Plex Mono"; src: url("../sim/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; }
+@page { size: Letter; margin: 0.45in 0.5in; }
+:root { --navy: #0b1020; --orange: #e8620c; --ink: #15171c; --ink2: #4c5163; --rule: #d9dbe3; --wash: #f4f5f8; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Instrument Sans", "Segoe UI", sans-serif; font-size: 9.05pt; line-height: 1.33; color: var(--ink); }
+header { background: var(--navy); color: #fff; padding: 12px 16px; border-radius: 4px; display: flex; justify-content: space-between; align-items: end; gap: 12px; }
+h1 { font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 30pt; line-height: .9; margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+h1 span { color: var(--orange); }
+.tag { font-size: 10.5pt; color: #c9cede; margin-top: 4px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 7.6pt; color: #aab1c4; text-align: right; }
+h2 { font-family: "Big Shoulders Display", sans-serif; font-weight: 700; font-size: 13.5pt; text-transform: uppercase; letter-spacing: .04em; margin: 7px 0 2px; color: var(--navy); }
+h2 b { color: var(--orange); }
+p { margin: 0 0 5px; }
+.grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 14px; margin-top: 8px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 7px 0 0; }
+.stat { background: var(--wash); border-top: 3px solid var(--orange); padding: 6px 8px; }
+.stat b { display: block; font-family: "Big Shoulders Display", sans-serif; font-size: 19pt; line-height: 1; color: var(--navy); }
+.stat span { font-size: 7.8pt; color: var(--ink2); }
+img { width: 100%; display: block; border: 1px solid var(--rule); }
+.cap { font-size: 7.6pt; color: var(--ink2); margin: 2px 0 6px; }
+ul { margin: 0 0 5px; padding-left: 15px; } li { margin-bottom: 2px; }
+.ask { background: var(--navy); color: #fff; padding: 7px 12px; border-radius: 4px; margin-top: 6px; }
+.ask h2 { color: #fff; margin-top: 0; }
+.fine { font-size: 7.2pt; color: var(--ink2); margin-top: 6px; }
+.mono { font-family: "IBM Plex Mono", monospace; font-size: 8pt; }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Orbital <span>Curbside</span></h1><div class="tag">One truck. Ten pickups. Earth's bulge does the driving.</div></div>
+  <div class="meta">DECA Innovation Plan 2026–27<br>Brandon Graff · [__School__]<br>[__school email__]</div>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>~47,000</b><span>objects tracked in orbit (ESA, Oct 2026)</span></div>
+  <div class="stat"><b>$40–93M</b><span>paid today per object in real single-removal contracts</span></div>
+  <div class="stat"><b>$12.1M</b><span>our modelled cost per removal, 10 stops per truck</span></div>
+  <div class="stat"><b>~$4.4M</b><span>modelled, reusable truck restocked with kit pods</span></div>
+</div>
+
+<div class="grid">
+<div>
+  <h2>The <b>problem</b></h2>
+  <p>Dead satellites and old rocket stages keep colliding and breaking into fragments. ESA says the debris population would keep growing even with zero new launches. The FCC now requires disposal within five years (Part 100, July 2026), with only a 0.9 success requirement, so some satellites will always fail and stay up. Today, removing one object is a custom mission costing tens of millions of dollars.</p>
+
+  <h2>The <b>idea</b></h2>
+  <p>Earth's equatorial bulge (the "J2" effect) slowly twists every orbit's plane, at a speed set by altitude and tilt. Twisting a plane with a rocket is brutally expensive; waiting for Earth to do it is almost free. Our electric "truck" parks at a different altitude, waits until its plane lines up with the next dead object, hops over, and attaches a small deorbit kit that drops the object into the atmosphere. Then it drives on. <b>We don't chase the junk; we let Earth bring it to us.</b></p>
+
+  <h2>What we <b>built</b></h2>
+  <ul>
+    <li><b>Route optimiser</b> (Python): J2 drift, chemical and low-thrust (Edelbaum) transfers, four search algorithms plus dynamic-programming timing.</li>
+    <li><b>Benchmarked</b> against the winning JPL solution of ESA's GTOC9 "Kessler Run": our model matches its 113 legs within 2.2% (r = 0.99).</li>
+    <li><b>Real data:</b> the 16 Oct 2026 public catalogue (CelesTrak). Routes re-checked with SGP4 (0.07° plane error at 960 km).</li>
+    <li><b>3D simulation</b> (CesiumJS) that flies the optimised route; runs fully offline.</li>
+  </ul>
+
+  <h2><b>Honest</b> caveats</h2>
+  <p>The multi-target drift idea itself is published (GTOC9 2017; Di Carlo et al. 2017; Iskender et al. 2026). Our contribution is the <b>priced, customer-facing</b> version on today's catalogue. Costs are model estimates. Our biggest unknowns are truck hardware cost and deorbit-kit cost, and capturing tumbling, unprepared rocket stages is still undemonstrated (first attempt: Astroscale ADRAS-J2, 2027–28).</p>
+</div>
+<div>
+  <img src="../figures/paper/03_wait_vs_burn.png" alt="Propellant needed versus days allowed for one hop">
+  <p class="cap">Hopping between two real SL-8 stages 19° apart: about 1,094 kg of propellant if done now by brute force, about 19 kg if the electric truck waits a year.</p>
+  <img src="../figures/paper/07_scaling.png" alt="Cost per removal versus objects per truck">
+  <p class="cap">Modelled cost per removal falls as one truck makes more stops (base assumptions), compared with public single-object contract values.</p>
+  <h2>Two <b>products</b></h2>
+  <p><b>A: Constellation sweep</b> for operators with failed satellites (e.g. 24 dead first-generation Iridium). <b>B: Rocket-body cleanup</b> for agencies (e.g. 142 Soviet-era SL-8 stages clustered at 83°, ~960 km).</p>
+</div>
+</div>
+
+<div class="ask">
+  <h2>What I'm asking</h2>
+  15 minutes, or a reply by email, to check two things: <b>(1)</b> are my cost ranges realistic (servicer $50–115M; kit $0.5–3M)? <b>(2)</b> what would a removal need to cost, and how long could it take, to be worth buying? Thank you.
+</div>
+<p class="fine">Sources: ESA DISCOSweb statistics (14 Oct 2026); FCC 22-74 and FCC 26-47; ESA/ClearSpace, JAXA/Astroscale, UK Space Agency contract announcements; NASA OTPS (2023); Petropoulos et al., Acta Futura 11 (2018); CelesTrak GP data. Full bibliography and code: github.com/brandongraff-dev/deca2026.</p>
+</body>
+</html>

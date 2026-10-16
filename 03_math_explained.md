@@ -95,29 +95,30 @@ The methods are beam search, simulated annealing (with "swap in an unused object
 
 | Route | Target plane error at meeting (median / max) | Extra Δv to correct each drift leg (median / max) |
 |---|---|---|
-| SL-8 83°, ~960 km | **0.07° / 0.15°** | **2.9 / 23 m/s** |
-| Dead Iridium, ~780 km | 0.33° / 0.98° | 17.8 / 24.9 m/s |
-| SL-8 74°, ~750 km | 1.2° / 2.5° | 52 / 253 m/s |
+| SL-8 83°, ~960 km | **0.06° / 0.08°** | **2.6 / 10.4 m/s** |
+| Dead Iridium, ~780 km | 0.18° / 0.40° | 7.9 / 17.0 m/s |
+| SL-8 74°, ~750 km | 0.74–0.89° / 0.97° | 60 / 87 m/s |
 
 The 20 m/s per-stop approach allowance plus a 10% fuel margin covers the first two routes. **The 750 km cluster shows the effect of air drag** (our planner has no drag). Missions there must re-plan each leg with fresh tracking data, which is standard operational practice. Code: `scripts/validate_sgp4.py` (SGP4 + an RK8 integrator with J2/J3/J4 gravity).
 
 ## Layer 8: Economics
 **For judges:** *"The truck, the launch and the team are big fixed costs. Ten stops split them ten ways."*
 
-### 2026 mission results (launch 1 Jan 2029, 10 stops each)
+### 2026 mission results (launch 1 Jan 2029, 10 stops each, planned with the economic price of time)
+The planner minimises Δv + λ·days, where λ comes from the cost model (one day of operations vs. the propellant and launch cost of 1 m/s): λ ≈ 11 m/s/day electric, ≈ 2.7 chemical. This made the SL-8 route 2.4× faster (525 → 220 days) **and** cheaper.
 
 | Route | Engine | Δv | Propellant | Kits | Launch mass | Days |
 |---|---|---|---|---|---|---|
-| SL-8 83° (Product B) | electric | 368 m/s | 32 kg | 1,325 kg | 1,958 kg | 525 |
-| | chemical | 380 m/s | 194 kg | 1,327 kg | 2,121 kg | 345 |
-| Dead Iridium (Product A) | electric | 1,719 m/s | 95 kg | 526 kg | 1,221 kg | 1,330 |
-| | chemical | 1,414 m/s | 514 kg | 517 kg | 1,630 kg | 950 |
+| SL-8 83° (Product B) | electric | 678 m/s | 56 kg | 1,327 kg | 1,982 kg | 220 |
+| | chemical | 574 m/s | 277 kg | 1,327 kg | 2,203 kg | 195 |
+| Dead Iridium (Product A) | electric | 3,937 m/s | 225 kg | 526 kg | 1,351 kg | 555 |
+| | chemical | 2,290 m/s | 936 kg | 526 kg | 2,062 kg | 480 |
 
 ### Price per removal (base assumptions)
-- **10-stop electric truck, SL-8 cluster: $12.5M per removal** (uncertainty P10–P90: $11.4M–$15.6M from a 20,000-run Monte Carlo). At a 20% margin, the price is about $15.6M.
-- Same cost model, one mission per object: **$95.5M** (7.7× more).
+- **10-stop electric truck, SL-8 cluster: $12.1M per removal** (uncertainty P10–P90: $11.0M–$15.2M from a 20,000-run Monte Carlo). At a 20% margin, the price is about $15.1M.
+- Same cost model, one mission per object: **$96.2M** (8× more).
 - Public single-object contracts: ClearSpace-1 ≈ $93M, ADRAS-J2 ≈ $82M, NASA's ELSA-M estimate ≈ $60M, UK/ClearSpace 2026 ≈ $40M per object.
-- Stops per truck: 3 → $33M, 5 → $21M, 10 → $12.5M, 15 → $9.8M, 20 → $8.3M per removal (Chart 7).
+- Stops per truck: 3 → $33M, 5 → $21M, 10 → $12.1M, 15 → $9.8M, 20 → $8.3M per removal (Chart 7).
 - **Reusable truck, restocked with kit pods:** about **$4.4M per removal** after 100 removals over about 8 years (Chart 10).
 
 ### What the numbers really say (important for Q&A)

@@ -1,0 +1,21 @@
+<section id="proof" data-transition="fade" style="background:#101216;color:#F2F0EA;font-family:'Hanken Grotesk', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:32px">
+<p style="position:absolute;left:128px;top:128px;width:780px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E8620C">V · Solution · Proof the math works</p>
+<img src="/_blob/22f05438ce0cbbffd3c66adfeab7de52" alt="Scatter chart comparing our model's delta-v for 113 transfer legs against JPL's published GTOC9 solution, with points close to the equal line" style="position:absolute;left:944px;top:220px;width:912px;height:513px;object-fit:contain">
+<p style="position:absolute;left:944px;top:752px;width:880px;font-size:24px;line-height:1.35;color:#B8BCC6">Each dot is one leg of JPL’s winning GTOC9 solution, recomputed by our model.</p>
+<h2 style="width:720px;font-size:56px;font-weight:300;line-height:1.16;color:#F2F0EA">We checked our math against NASA JPL’s winning solution.</h2>
+<div style="width:740px;display:grid;grid-template-columns:1fr 1fr;gap:28px 32px">
+<div style="border-top:4px solid #E8620C;padding:20px 0 0 0"><p style="font-size:64px;font-weight:300;line-height:1;color:#F2F0EA">2.2%</p><p style="font-size:26px;line-height:1.35;color:#B8BCC6">total Δv difference across JPL’s 113 legs (r = 0.99)</p></div>
+<div style="border-top:4px solid #E8620C;padding:20px 0 0 0"><p style="font-size:64px;font-weight:300;line-height:1;color:#F2F0EA">0.06°</p><p style="font-size:26px;line-height:1.35;color:#B8BCC6">median plane error vs SGP4, the model used to track real satellites</p></div>
+<div style="border-top:4px solid #E8620C;padding:20px 0 0 0"><p style="font-size:64px;font-weight:300;line-height:1;color:#F2F0EA">2.6 m/s</p><p style="font-size:26px;line-height:1.35;color:#B8BCC6">median correction per leg in a full-gravity check</p></div>
+<div style="border-top:4px solid #E8620C;padding:20px 0 0 0"><p style="font-size:64px;font-weight:300;line-height:1;color:#F2F0EA">2.4×10²¹</p><p style="font-size:26px;line-height:1.35;color:#B8BCC6">possible routes; four search methods compete to pick one</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#6B707C">Petropoulos et al. (2018), GTOC9 JPL results; Vallado et al. (2006), SGP4</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;text-align:right;font-size:28px;font-weight:700;color:#F2F0EA">14</p>
+<aside>"How do you know a high-schooler's math is right? I checked it against the best.
+
+In 2017, ESA ran a global competition to plan exactly this kind of route. NASA's Jet Propulsion Laboratory won and published every leg. I rebuilt all one hundred thirteen. My total lands within two point two percent of theirs.
+
+Against SGP4, the model used to track real satellites, my orbit planes match within six hundredths of a degree. And four search methods compete to pick the best of two point four times ten to the twenty-first possible routes."
+
+Q&A backup: Our model is about 2% optimistic, which is why the plan carries a 10% Δv margin. The four methods are beam search, simulated annealing, a genetic algorithm and ant colony optimisation.</aside>
+</section>

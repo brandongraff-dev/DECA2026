@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orbital Curbside: Pricing Multi-Target Debris Removal</title>
+<style>
+@font-face { font-family: "Big Shoulders Display"; src: url("../sim/fonts/BigShouldersDisplay-600.woff2") format("woff2"); font-weight: 600 800; }
+@font-face { font-family: "Instrument Sans"; src: url("../sim/fonts/InstrumentSans-400.woff2") format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "IBM Plex Mono"; src: url("../sim/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; }
+@page { size: Letter; margin: 0.7in 0.75in 0.75in; }
+:root { --navy: #0b1020; --orange: #e8620c; --ink: #16181d; --ink2: #50566a; --rule: #d8dae2; --wash: #f4f5f8; }
+body { font-family: "Instrument Sans", "Segoe UI", sans-serif; font-size: 9.6pt; line-height: 1.4; color: var(--ink); margin: 0; }
+h1 { font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 25pt; line-height: 1; margin: 0 0 4px; color: var(--navy); text-wrap: balance; }
+h1 span { color: var(--orange); }
+.byline { color: var(--ink2); font-size: 9.5pt; margin-bottom: 10px; }
+h2 { font-family: "Big Shoulders Display", sans-serif; font-weight: 700; font-size: 14.5pt; text-transform: uppercase; letter-spacing: .03em; color: var(--navy); margin: 16px 0 4px; break-after: avoid; }
+h3 { font-size: 10.5pt; margin: 10px 0 3px; color: var(--navy); break-after: avoid; }
+p { margin: 0 0 7px; text-align: justify; hyphens: auto; }
+.abstract { background: var(--wash); border-left: 3px solid var(--orange); padding: 9px 12px; font-size: 9.6pt; margin-bottom: 8px; }
+.abstract p { margin: 0; }
+.eq { font-family: "IBM Plex Mono", monospace; font-size: 9.2pt; background: var(--wash); padding: 5px 10px; margin: 5px 0 8px; white-space: pre-wrap; }
+figure { margin: 8px 0 10px; break-inside: avoid; }
+figure img { width: 100%; border: 1px solid var(--rule); }
+figure.half img { width: 62%; display: block; margin: 0 auto; }
+figure.wide img { width: 84%; display: block; margin: 0 auto; }
+.pair { display: flex; gap: 12px; align-items: flex-start; break-inside: avoid; }
+.pair figure { flex: 1; margin: 6px 0 8px; }
+.pair figure img { width: 100%; }
+figcaption { font-size: 8.6pt; color: var(--ink2); margin-top: 3px; }
+figcaption b { color: var(--ink); }
+table { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 6px 0 10px; break-inside: avoid; font-variant-numeric: tabular-nums; }
+th, td { border-bottom: 1px solid var(--rule); padding: 3px 5px; text-align: left; vertical-align: top; }
+th { background: var(--navy); color: #fff; font-weight: 600; }
+td.n, th.n { text-align: right; }
+.cap { font-size: 8.6pt; color: var(--ink2); margin: -4px 0 10px; }
+.note { font-size: 8.8pt; color: var(--ink2); }
+ol.refs { font-size: 8.6pt; padding-left: 18px; } ol.refs li { margin-bottom: 3px; }
+.tag { display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 7.6pt; padding: 0 4px; border: 1px solid var(--rule); border-radius: 2px; color: var(--ink2); }
+.pagebreak { break-before: page; }
+.summary h1 { font-size: 30pt; }
+.summary .lede { font-size: 12pt; line-height: 1.5; }
+.summary .big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0 14px; }
+.summary .big div { background: var(--wash); border-top: 3px solid var(--orange); padding: 8px 10px; font-size: 9pt; color: var(--ink2); }
+.summary .big b { display: block; font-family: "Big Shoulders Display", sans-serif; font-size: 24pt; color: var(--navy); line-height: 1.05; }
+.summary p { font-size: 10.8pt; }
+</style>
+</head>
+<body>
+
+<!-- ============================ PLAIN-LANGUAGE SUMMARY ============================ -->
+<section class="summary">
+<h1>Orbital <span>Curbside</span>: the one-page version</h1>
+<div class="byline">Plain-language summary of the research paper that follows · Brandon Graff · [__School__] · October 2026</div>
+<p class="lede">Space is filling up with junk: dead satellites and old rocket stages that can collide and shatter into thousands of fragments. Removing even one piece today is a custom mission costing <b>$40–93 million</b>. We asked: what if one spacecraft could collect many pieces on a single trip, the way a garbage truck runs a route?</p>
+<div class="big">
+  <div><b>10</b>dead rocket stages removed by one electric spacecraft in our simulated route</div>
+  <div><b>$12.1M</b>modelled cost per removal, versus $96M doing one object per mission</div>
+  <div><b>2.2%</b>difference between our physics and the 2017 world-champion (JPL) solution</div>
+</div>
+<p><b>The trick: Earth does the driving.</b> Earth is slightly wider at the equator. That bulge slowly twists every orbit around the planet, and how fast depends on the orbit's height. Turning a spacecraft's orbit with rocket fuel is brutally expensive. So our spacecraft changes its height a little, waits while Earth twists its orbit into line with the next piece of junk, then hops over. At each stop it bolts on a small rocket "deorbit kit" that drops the junk into the atmosphere, where it burns up. Then it drives on.</p>
+<p><b>What we built.</b> A route-planning program that picks which objects to visit, in what order and when, using real orbits of today's catalogue (16 October 2026). We checked our physics against the winning solution of a 2017 European Space Agency competition on this exact problem, re-checked our routes with the official orbit predictor, and built a 3D simulation that flies the route.</p>
+<p><b>What we found.</b> A single electric spacecraft can remove 10 Soviet-era rocket stages in about 7 months, using only 56 kg of propellant for all the driving. Spreading the big fixed costs (the spacecraft, the launch and the team) over ten objects brings the modelled cost to about <b>$12.1 million per object</b>. A spacecraft that stays up for years and receives new kits brings it to about <b>$4.4 million</b>. Surprisingly, the choice of engine barely changes the price. What matters is <b>how many stops one spacecraft makes</b>, and that its electric engine never needs refuelling.</p>
+<p><b>Being honest.</b> The physics idea is not new: scientists published it between 2015 and 2026. What is new here is turning it into a price list on today's real debris. Our costs are estimates, and two numbers matter most and are still uncertain: what the spacecraft and the kits would really cost. Grabbing a tumbling, unprepared rocket stage has never been done. The first attempt is planned for 2027–28. We are now interviewing engineers and satellite operators to test our assumptions.</p>
+</section>
+
+<!-- ============================ PAPER ============================ -->
+<section class="pagebreak">
+<h1>Orbital <span>Curbside</span>: Pricing Multi-Target Active Debris Removal with J2-Drift Routing on the 2026 Catalogue</h1>
+<div class="byline">Brandon Graff · [__School__] · DECA Innovation Plan 2026–27 · October 2026 · Code and data: github.com/brandongraff-dev/deca2026</div>
+
+<div class="abstract"><p><b>Abstract.</b> Active debris removal (ADR) is today bought one object at a time, at public contract values of $40–93M per object. Multi-target removal that exploits Earth's oblateness (J2 nodal precession) to align orbital planes "for free" is well established in the astrodynamics literature, notably in ESA's GTOC9 competition (2017), but it has not been turned into a public, customer-facing price. We build a reproducible route optimiser (closed-form drift-time legs, impulsive and Edelbaum low-thrust transfers, four metaheuristics plus dynamic-programming timing) and validate it against the winning JPL GTOC9 solution: across 113 legs our model's total delta-v is within 2.2% of JPL's (r = 0.99). We then apply it to the real 16 October 2026 catalogue. An electric servicer that attaches solid deorbit kits removes 10 SL-8 rocket stages from the 83° cluster in 220 days with 678 m/s and 56 kg of xenon. SGP4 re-propagation confirms the planned plane alignments to 0.06° (median). Under stated cost assumptions this yields $12.1M per removal (Monte Carlo P10–P90: $11.0–15.2M), versus $96M for one-object missions in the same model, and about $4.4M for a reusable servicer restocked with kit pods. Electric versus chemical propulsion changes the price by only a few percent. The economic levers are stops per servicer and reuse, while electric propulsion's advantage is operational: it never needs in-space refuelling.</p></div>
+
+<h2>1. The problem</h2>
+<p>About 47,080 objects are regularly tracked in Earth orbit, of which about 15,900 are working spacecraft; ESA's model estimates 68,450 objects larger than 10 cm [1]. ESA's 2026 environment report states that "even if no new satellites were launched, the debris population would continue to increase because fragmentation events generate debris faster than they can naturally reenter the atmosphere" [2], the self-sustaining cascade first described by Kessler and Cour-Palais [3]. A small number of massive derelicts dominates the long-term risk: McKnight et al. found that removing the 50 statistically most concerning objects, mostly Soviet-era SL-16 and SL-8 rocket stages, would roughly halve the collision risk they pose [4].</p>
+<p>Regulation is tightening. The US Federal Communications Commission (FCC) requires LEO satellites launched after 29 September 2024 to be disposed of "as soon as practicable, and no later than five years after the end of the mission" [5]. Its July 2026 Part 100 order keeps the five-year rule and requires a disposal success probability of at least 0.9 per spacecraft [6]. In effect, up to one in ten satellites may fail to dispose of itself and still be compliant. Those failed satellites, plus the legacy rocket bodies no one owns any more, are the potential market for removal.</p>
+<p>Removal is now being bought, but one object at a time: ESA's ClearSpace-1 (€86M, one object), JAXA/Astroscale ADRAS-J2 (about ¥13.2B, one rocket stage) and the UK's 2026 award to ClearSpace (about £61M for two satellites) [7–9]. NASA's 2023 cost–benefit study concluded that removal is rarely cost-effective at these prices, and noted that "disposable modules deployed from a mothership may provide the lowest cost option", an architecture it did not analyse [10].</p>
+
+<h2>2. Prior work, and what is new here</h2>
+<p><b>The physics is not new.</b> ESA's 9th Global Trajectory Optimisation Competition (GTOC9, "The Kessler Run", 2017) asked teams to remove 123 sun-synchronous debris objects with multi-rendezvous missions that deliver 30 kg deorbit packages [11]. The winning JPL team removed all 123 with 10 missions (731.28 M€) using branch-and-bound searches that exploit nodal drift, beam search, ant-colony optimisation and a genetic algorithm [12]. Low-thrust multi-target removal using J2 drift was studied by Di Carlo, Romero Martin and Vasile [13], and a 2026 preprint by Iskender et al. formalises "drift-aware" tug logistics on the GTOC9 benchmark, within 1.55% of JPL's cost [14]. Target selection by collision risk is also established [15, 16].</p>
+<p><b>What we add.</b> We found no public work that (i) prices multi-target removal per object for customers, (ii) on the <i>current</i> catalogue, (iii) comparing an electric drift servicer, a chemical drift servicer and today's one-object missions in one consistent cost model, including (iv) a reusable servicer restocked by kit pods. Our contribution is this integration and business analysis, with a validated, open-source tool. It is not a new astrodynamics method.</p>
+
+<h2>3. Method</h2>
+<h3>3.1 Data</h3>
+<p>Orbital elements come from CelesTrak's GP (TLE) data downloaded on 16 October 2026: active satellites, four major debris clouds, all rocket bodies and the legacy constellations of three operators. Metadata comes from CelesTrak's SATCAT, and masses from McDowell's GCAT [17, 18]. Elements are decoded with the official SGP4 implementation [19]. We identified "truck-friendly" clusters: many heavy objects with similar altitude and inclination but planes spread around the globe (Fig. 1, Table 1). Our counts match McKnight et al.'s published cluster sizes (for example, about 150 SL-8 stages near 950 km and 83° [4]), which cross-checks the data.</p>
+<figure class="wide"><img src="../figures/paper/01_population.png" alt="Altitude versus inclination of objects in LEO"><figcaption><b>Fig. 1.</b> Objects in low Earth orbit on 16 Oct 2026 (subset downloaded). Derelicts (orange) sit in tight clusters of inclination and altitude.</figcaption></figure>
+<table><tr><th class="">Cluster (16 Oct 2026)</th><th class="n">Objects</th><th class="n">Median kg</th><th class="n">Total t</th><th class="n">Drift °/day</th><th class="n">Planes span</th></tr><tr><td class="">SL-16 (Zenit-2 upper stage) cluster</td><td class="n">18</td><td class="n">9,000</td><td class="n">162.0</td><td class="n">-2.12 to -2.10</td><td class="n">317°</td></tr><tr><td class="">SL-8 (Kosmos-3M stage) 83 deg cluster</td><td class="n">142</td><td class="n">1,434</td><td class="n">203.6</td><td class="n">-0.76 to -0.74</td><td class="n">356°</td></tr><tr><td class="">SL-8 74 deg / ~750 km cluster</td><td class="n">50</td><td class="n">1,434</td><td class="n">71.7</td><td class="n">-1.87 to -1.83</td><td class="n">356°</td></tr><tr><td class="">SL-8 74 deg / ~1500 km cluster</td><td class="n">45</td><td class="n">1,434</td><td class="n">64.5</td><td class="n">-1.34 to -1.25</td><td class="n">355°</td></tr><tr><td class="">Dead first-generation Iridium</td><td class="n">24</td><td class="n">662</td><td class="n">15.9</td><td class="n">-0.47 to -0.42</td><td class="n">358°</td></tr><tr><td class="">Rocket bodies, sun-synchronous band</td><td class="n">173</td><td class="n">1,000</td><td class="n">294.9</td><td class="n">+0.74 to +1.19</td><td class="n">359°</td></tr></table><p class="cap"><b>Table 1.</b> Candidate clusters. Drift rates from the SGP4-consistent model.</p>
+
+<h3>3.2 The conveyor belt: J2 nodal precession</h3>
+<p>Earth's oblateness makes the right ascension of the ascending node Ω (the direction an orbital plane faces) drift secularly [20]:</p>
+<div class="eq">dΩ/dt = −(3/2) · n · J₂ · (R_E / p)² · cos i,     n = √(μ/a³),  p = a(1 − e²)</div>
+<p>The rate depends on altitude and inclination (Fig. 2): dΩ̇/da = −3.5 Ω̇/a and dΩ̇/di = −Ω̇ tan i. A sun-synchronous orbit at 800 km comes out at +0.985°/day, matching its definition. For the real catalogue we add a small correction table built from SGP4's own secular rates (second-order J₂² and J₄ terms). Without it, plane predictions drift by about 1° over 1,000 days (Section 4.3).</p>
+<div class="pair"><figure><img src="../figures/paper/02_drift_rates.png" alt="Nodal drift rate versus altitude"><figcaption><b>Fig. 2.</b> Plane drift rate versus altitude for the inclinations of our target clusters.</figcaption></figure><figure><img src="../figures/paper/03_wait_vs_burn.png" alt="Propellant versus allowed transfer time"><figcaption><b>Fig. 3.</b> Trading time for propellant on a real 19° hop between two SL-8 stages. The electric truck uses more Δv (slow spirals) but about 5× less propellant mass, and needs at least about 90 days per hop.</figcaption></figure></div>
+
+<h3>3.3 Transfer costs</h3>
+<p>The angle θ between two orbital planes follows from spherical trigonometry, cos θ = cos i₁ cos i₂ + sin i₁ sin i₂ cos ΔΩ. We use a common form for both engine types:</p>
+<div class="eq">chemical (impulsive):   Δv = √(v₁² + v₂² − 2 v₁ v₂ cos θ)
+electric (Edelbaum [21]): Δv = √(v₁² + v₂² − 2 v₁ v₂ cos(πθ/2))</div>
+<p>v₁, v₂ are circular speeds before and after. With θ = 0 both reduce to a small altitude change (52.45 m/s for 700 → 800 km, identical to a Hohmann transfer). A 10° plane change at 800 km costs 1.30 km/s, which is why waiting for drift is so valuable. Propellant follows the rocket equation, m_f = m_0 exp(−Δv / I_sp g₀). Electric spiral times use constant thrust: t = (m_0 I_sp g₀ / F)(1 − e^(−Δv / I_sp g₀)).</p>
+
+<h3>3.4 One leg: wait versus burn</h3>
+<p>Each leg from object A to object B in time T has four phases: spiral out to a drift orbit (a_d, i_d) → drift for time τ → spiral into B's orbit → ride along with B. The drift time is solved in closed form so the plane gap closes exactly:</p>
+<div class="eq">G(τ) = C + τ (Ω̇_B − Ω̇_d) = 0  (mod 360°),   C = ΔΩ₀ + t₁(Ω̇_B − (Ω̇_A + Ω̇_d)/2) + t₂(Ω̇_B − Ω̇_d)/2</div>
+<p>This generalises the classic waiting time Δt = ΔΩ / |Ω̇₁ − Ω̇₂| to include spiral times t₁, t₂. If the gap cannot close within T, the remaining angle is removed by a plane change. Drift orbits are searched on a grid of altitude (600–1,500 km, avoiding the crowded shells below 600 km) and inclination (±3°). A fixed 20 m/s per stop covers final phasing and proximity operations. Fig. 3 shows the resulting trade between time and propellant for one real leg.</p>
+
+
+<h3>3.5 Which objects, in which order</h3>
+<p>Choosing and ordering 10 of the 142 SL-8 stages has about 2.4 × 10²¹ possibilities; ordering 10 fixed objects alone has 3.6 million. Every option changes as planes drift. We implemented beam search, simulated annealing (including moves that swap in unused objects), a genetic algorithm with order crossover, and ant-colony optimisation. All share one cost oracle. A dynamic-programming timer then chooses every leg's duration jointly, so a slightly more expensive hop can be accepted if it sets up cheaper hops later. The planner minimises Δv + λ·(mission days). λ, the "price of time", is derived from the cost model: an extra day costs one day of operations, and an extra m/s costs its propellant plus the launch of that propellant. This gives λ ≈ 11 m/s per day for the electric truck and ≈ 2.7 for the chemical truck.</p>
+
+<h3>3.6 Deorbit kits and the servicer</h3>
+<p>At each stop the truck attaches a kit, a small solid motor that lowers the object's perigee to 250 km (re-entry within months). Objects heavier than 5 t would instead get a controlled re-entry to 50 km. Kit mass follows from the rocket equation (I_sp = 285 s, 12 kg fixed plus 15% tankage, <span class="tag">assumption</span>): about 130 kg for a 1.4 t SL-8 stage, about 53 kg for a dead Iridium satellite, and about 870 kg for a 9 t SL-16. That is why SL-16 stages are not suited to a multi-stop truck. The electric servicer uses two Busek BHT-1500-class Hall thrusters (0.202 N total, I_sp 1,710 s) [22] and a 600 kg dry mass <span class="tag">assumption</span>, and spends 10 days at each stop <span class="tag">assumption</span>. The chemical comparison truck is identical except for a bipropellant engine with I_sp 320 s.</p>
+
+<h3>3.7 Validation</h3>
+<p>We test the model in three ways. (1) <b>Physics:</b> we re-cost all 113 legs of JPL's winning GTOC9 route using JPL's own endpoints, dates and durations. (2) <b>Optimiser:</b> we re-solve GTOC9's Mission 10 from scratch. (3) <b>Real-world fidelity:</b> we re-propagate every planned 2026 rendezvous with SGP4, which includes drag, and fly the drift orbits through a numerical integration with J₂, J₃ and J₄ gravity.</p>
+
+<h3>3.8 Economics</h3>
+<p>Mission cost = truck hardware + kits + launch (launch mass × price per kg) + propellant + operations (per year) + insurance. A 10% Δv margin is applied. Cost per removal is the mission cost divided by the number of objects. Each parameter has low, base and high values (Appendix A). We report a one-at-a-time sensitivity ("tornado") analysis and a 20,000-run Monte Carlo with triangular distributions. The reuse scenario keeps one servicer for ten routes: after the first launch, only kit "pods" are launched (an electric truck carries all its xenon from the start; a chemical truck also needs its propellant delivered).</p>
+</section>
+
+<section>
+<h2>4. Results</h2>
+<h3>4.1 Benchmark against the GTOC9 winner</h3>
+<p>Across JPL's 113 legs our model totals 24.6 km/s against JPL's 25.1 km/s (-2.2%), with per-leg correlation r = 0.99 and 90% of legs within ±25% (Fig. 4). Rebuilding JPL's launch masses from their leg Δv reproduces their published values within 0.3 kg, which checks our mass bookkeeping. Flying the same legs with an immediate plane change instead of waiting for drift costs 2.0× more Δv. Our model is slightly optimistic, mainly because it ignores phasing and eccentricity, so we apply a 10% Δv margin in all costs.</p>
+<figure class="half"><img src="../figures/paper/04_benchmark_jpl.png" alt="Our leg cost versus JPL leg cost"><figcaption><b>Fig. 4.</b> Our model versus JPL's flown cost for each of the 113 legs of the winning GTOC9 solution [12].</figcaption></figure>
+<table><tr><th class="">GTOC9 Mission 10 (10 objects; all scored by our model)</th><th class="n">Total Δv, m/s</th><th class="n">Launch mass, kg</th></tr><tr><td class="">JPL route, our model</td><td class="n">1,464</td><td class="n">3,478.6</td></tr><tr><td class="">Beam search</td><td class="n">2,012</td><td class="n">4,040.8</td></tr><tr><td class="">Simulated annealing</td><td class="n">1,574</td><td class="n">3,602.5</td></tr><tr><td class="">Genetic algorithm</td><td class="n">1,574</td><td class="n">3,602.5</td></tr><tr><td class="">Ant colony</td><td class="n">1,847</td><td class="n">3,908.4</td></tr><tr><td class="">Beam + annealing polish</td><td class="n">1,362</td><td class="n">3,387.7</td></tr><tr><td class="">JPL order + our DP timing</td><td class="n">1,363</td><td class="n">3,380.5</td></tr></table><p class="cap"><b>Table 2.</b> Optimisers on GTOC9 Mission 10. JPL's actual flown launch mass: 3,438.6 kg.</p>
+<p>On Mission 10 (Table 2), beam search followed by simulated annealing, starting from scratch, found a route as light as JPL's own order re-timed by our dynamic-programming timer, and lighter than JPL's route evaluated in our model. Because our model is about 2% optimistic, this shows the optimiser is competitive; it does <i>not</i> show that we beat JPL. No single method dominated: beam search alone and ant colony performed worst, and the hybrid did best.</p>
+
+<h3>4.2 Missions on the 2026 catalogue</h3>
+<table><tr><th class="">10-stop mission, launch 1 Jan 2029</th><th class="">Engine</th><th class="n">Δv m/s</th><th class="n">Propellant kg</th><th class="n">Kits kg</th><th class="n">Launch kg</th><th class="n">Days</th></tr><tr><td class="">SL-8 stages, 83°, ~960 km (Product B)</td><td class="">electric</td><td class="n">678</td><td class="n">56</td><td class="n">1,327</td><td class="n">1,982</td><td class="n">220</td></tr><tr><td class="">SL-8 stages, 83°, ~960 km (Product B)</td><td class="">chemical</td><td class="n">574</td><td class="n">277</td><td class="n">1,327</td><td class="n">2,203</td><td class="n">195</td></tr><tr><td class="">SL-8 stages, 74°, ~750 km</td><td class="">electric</td><td class="n">not feasible at the economic price of time</td><td class="n">–</td><td class="n">979</td><td class="n">–</td><td class="n">–</td></tr><tr><td class="">SL-8 stages, 74°, ~750 km</td><td class="">chemical</td><td class="n">1,028</td><td class="n">470</td><td class="n">978</td><td class="n">2,048</td><td class="n">400</td></tr><tr><td class="">Dead Iridium, 86° (Product A)</td><td class="">electric</td><td class="n">3,937</td><td class="n">225</td><td class="n">526</td><td class="n">1,351</td><td class="n">555</td></tr><tr><td class="">Dead Iridium, 86° (Product A)</td><td class="">chemical</td><td class="n">2,290</td><td class="n">936</td><td class="n">526</td><td class="n">2,062</td><td class="n">480</td></tr></table><p class="cap"><b>Table 3.</b> Optimised missions on the real 2026 catalogue (simulated plans), each planned with the price of time derived from the cost model. At ~750 km and 74° the electric truck cannot keep pace at that price; it was feasible only on much slower plans in earlier runs.</p>
+<p>The optimiser picks neighbouring objects whose planes are close and drift almost in step. Within the 142-object SL-8 cluster it finds ten stages whose planes lie within a few degrees of each other (Fig. 5), so each hop is cheap: the whole 10-stop route needs 678 m/s, of which 200 m/s is the fixed approach allowance. <b>The truck's mass is dominated by the kits, not by propellant.</b> For the 10-stop SL-8 route the kits weigh 1,327 kg against 56 kg of xenon.</p>
+<figure class="wide"><img src="../figures/paper/05_route_map.png" alt="Route map in relative plane angle versus time"><figcaption><b>Fig. 5.</b> The optimised electric route through the SL-8 cluster. Grey: each target's orbital plane relative to stop 1; orange: the truck's plane as it hops between targets.</figcaption></figure>
+
+<h3>4.3 Validation with SGP4 and numerical integration</h3>
+<table><tr><th class="">Route</th><th class="">Engine</th><th class="n">Plane error at meeting, ° (median / max)</th><th class="n">Drift-leg correction, m/s (median / max)</th></tr><tr><td class="">SL-8 stages, 83°, ~960 km (Product B)</td><td class="">electric</td><td class="n">0.06 / 0.08</td><td class="n">–</td></tr><tr><td class="">SL-8 stages, 83°, ~960 km (Product B)</td><td class="">chemical</td><td class="n">0.05 / 0.08</td><td class="n">2.6 / 10.4</td></tr><tr><td class="">SL-8 stages, 74°, ~750 km</td><td class="">electric</td><td class="n">0.89 / 0.97</td><td class="n">–</td></tr><tr><td class="">SL-8 stages, 74°, ~750 km</td><td class="">chemical</td><td class="n">0.74 / 0.97</td><td class="n">60.3 / 86.5</td></tr><tr><td class="">Dead Iridium, 86° (Product A)</td><td class="">electric</td><td class="n">0.18 / 0.40</td><td class="n">–</td></tr><tr><td class="">Dead Iridium, 86° (Product A)</td><td class="">chemical</td><td class="n">0.16 / 0.35</td><td class="n">7.9 / 17.0</td></tr></table><p class="cap"><b>Table 4.</b> Planned rendezvous re-checked with SGP4; drift legs integrated with J₂–J₄ (chemical legs, which use instantaneous burns).</p>
+<p>For the ~960 km SL-8 cluster, the target planes predicted by our model agree with SGP4 to 0.06° (median) at the planned meeting times. Correcting the drift legs in a full-gravity integration needs a median of 2.6 m/s, well within the per-stop allowance plus margin. Before we added the SGP4-consistent rate correction, the same check showed errors of about 1°. The lower 750 km SL-8 cluster shows errors over 1° because of atmospheric drag, which our planner does not model. Missions there would need to re-plan each leg with fresh tracking data, as real operators do.</p>
+
+<h3>4.4 Economics</h3>
+<p>Under base assumptions the 10-stop electric SL-8 route costs $121M, or <b>$12.1M per removal</b> (price $15.1M at a 20% margin). The same cost model gives $96M for a one-object mission, consistent with public contracts of $40–93M per object (Fig. 6, Fig. 7). The Monte Carlo puts the cost per removal between $11.0M and $15.2M (P10–P90). The cost per removal falls steeply with the number of stops: $33.3M at 3 stops, $21.2M at 5, $12.1M at 10, $9.8M at 15 and $8.3M at 20.</p>
+<div class="pair"><figure><img src="../figures/paper/07_scaling.png" alt="Cost per removal versus number of stops"><figcaption><b>Fig. 6.</b> Cost per removal versus objects removed by one truck (SL-8 cluster, base assumptions), with public single-object contract values.</figcaption></figure><figure><img src="../figures/paper/09_breakdown.png" alt="Cost breakdown"><figcaption><b>Fig. 7.</b> Where the money goes: fixed costs (mostly the truck) are split ten ways.</figcaption></figure></div>
+
+<p><b>Electric versus chemical.</b> The Pareto frontiers (Fig. 8) show the two engines within a few percent of each other in cost per removal for the dense SL-8 cluster. The electric truck launches about 10% lighter on the SL-8 route, but propellant is a small share of the cost. For the sparser Iridium target set, the chemical truck's launch mass grows sharply on fast routes (to 2,838 kg), and the electric truck is cheapest at a moderate pace. <b>Time costs more than fuel:</b> because operations cost about $5M per year, faster routes are often also cheaper, which is why the planner prices time explicitly.</p>
+<figure class="wide"><img src="../figures/paper/06_pareto.png" alt="Pareto frontiers of duration versus cost"><figcaption><b>Fig. 8.</b> Mission duration versus cost per removal for many optimised 10-stop missions with different prices of time.</figcaption></figure>
+<p><b>What moves the price</b> (Fig. 9): truck hardware cost ($8.8–15.8M per removal across its range) dominates, followed by kit unit cost, launch price and operations. Xenon price and fuel margin barely matter. <b>Reuse</b> (Fig. 10): a servicer that flies ten routes over about 8 years, restocked by kit pods, reaches about <b>$4.4M per removal</b>. The chemical equivalent is similar in cost ($4.5M) but needs about 2,700 kg of propellant transferred in orbit over its life, against 480 kg of xenon carried from launch by the electric truck. That is the decisive operational difference.</p>
+<div class="pair"><figure><img src="../figures/paper/08_tornado.png" alt="Tornado chart"><figcaption><b>Fig. 9.</b> One-at-a-time sensitivity of cost per removal.</figcaption></figure><figure><img src="../figures/paper/10_reuse.png" alt="Reuse curve"><figcaption><b>Fig. 10.</b> Cost per removal for one long-lived truck restocked with kit pods.</figcaption></figure></div>
+
+</section>
+
+<section>
+<h2>5. Discussion: the business case</h2>
+<p>Two products follow from the analysis. <b>Product A, Constellation Sweep</b>, serves operators whose failed satellites cannot meet the five-year rule. Iridium's CEO publicly floated paying $10,000 per deorbit in 2019, while expecting real costs "in the millions or tens of millions, at which price I know it doesn't make sense" [23]. Our model narrows but does not close that gap, so pricing must be validated with operators. <b>Product B, Rocket-Body Cleanup</b>, serves agencies that pay to reduce collective risk, the role governments already play in the ESA, JAXA and UK contracts [7–9]. In both cases the value proposition is the same: removal priced like a garbage route, not a one-off moon shot. The strongest structural argument for the electric design is reuse without in-space refuelling.</p>
+
+<h2>6. Limitations</h2>
+<p>(1) <b>Dynamics:</b> circular, secular-only motion. Along-track phasing and proximity operations are an allowance, not simulated, and the planner has no drag (Section 4.3). (2) <b>Capture:</b> attaching kits to unprepared, tumbling rocket stages has never been demonstrated; our 10-day stop is an assumption. (3) <b>Re-entry safety:</b> uncontrolled re-entry of 1.4 t stages must be shown, object by object, to meet the 1-in-10,000 casualty-risk limit [24]; otherwise heavier controlled-re-entry kits are needed. (4) <b>Costs:</b> truck and kit costs are not public and dominate the result; all prices are model estimates, not quotes. (5) <b>Optimisation:</b> metaheuristics give good, not guaranteed-optimal, routes, and repeated runs vary by roughly ±10% in duration. (6) <b>Data:</b> we used the CelesTrak groups we downloaded, not the full classified catalogue, and our mass data come from public sources.</p>
+
+<h2>7. Future work</h2>
+<p>Interviews with operators, agencies and engineers to replace the assumptions in Appendix A. Collision-risk-weighted target selection (for example using McKnight's ranking [4]). Fleets of trucks sharing kit pods. Drag-aware re-planning for clusters below 800 km. A higher-fidelity low-thrust trajectory optimiser for the final routes.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>ESA Space Debris Office, "Space Environment Statistics," DISCOSweb, updated 14 Oct 2026. https://sdup.esoc.esa.int/discosweb/statistics/</li>
+<li>ESA, "ESA Space Environment Report 2026," 14 Sep 2026. https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2026</li>
+<li>D. J. Kessler and B. G. Cour-Palais, "Collision frequency of artificial satellites: The creation of a debris belt," J. Geophys. Res., 83(A6), 2637–2646, 1978.</li>
+<li>D. McKnight et al., "Identifying the 50 statistically-most-concerning derelict objects in LEO," Acta Astronautica, 181, 282–291, 2021; and "An update of the Top 50 list," 9th European Conf. on Space Debris, 2025.</li>
+<li>FCC, Second Report and Order, FCC 22-74 (Space Innovation; Mitigation of Orbital Debris), adopted 29 Sep 2022.</li>
+<li>FCC, Report and Order, FCC 26-47 (Space Modernization for the 21st Century), adopted 22 Jul 2026.</li>
+<li>ESA, "ESA purchases world-first debris removal mission from start-up," press release, 1 Dec 2020.</li>
+<li>Astroscale, "Astroscale Japan secures contract for Phase II of JAXA's Commercial Removal of Debris Demonstration," 20 Aug 2024.</li>
+<li>UK Government, ClearSpace selected for UK Active Debris Removal mission, 15 Oct 2026; SatNews, 15 Oct 2026.</li>
+<li>T. J. Colvin, J. Karcz, G. Wusk, "Cost and Benefit Analysis of Orbital Debris Remediation," NASA Office of Technology, Policy, and Strategy, 10 Mar 2023.</li>
+<li>D. Izzo, "Problem description for the 9th Global Trajectory Optimisation Competition," doi:10.5281/zenodo.570193, 2017; ESA Kelvins, "GTOC9: The Kessler Run."</li>
+<li>A. Petropoulos et al., "GTOC9: Results from the Jet Propulsion Laboratory (team JPL)," Acta Futura, 11, 25–35, 2018, doi:10.5281/zenodo.1139152.</li>
+<li>M. Di Carlo, J. M. Romero Martin, M. Vasile, "Automatic trajectory planning for low-thrust active removal mission in low-earth orbit," Adv. Space Res., 59(5), 1234–1258, 2017.</li>
+<li>O. B. Iskender, L. Felicetti, K. Gokturk, D. Tellett, A. Baker, "Drift-Aware Multi-Target Space Tug Logistics Using Natural Orbital Precession," arXiv:2607.22974, 2026 (IAC-26).</li>
+<li>A. Barea, H. Urrutxua, L. Cadarso, "Large-scale object selection and trajectory planning for multi-target space debris removal missions," Acta Astronautica, 2020.</li>
+<li>G. Borelli, C. Colombo, "Space debris index definition for multi-purpose active debris removal mission design," Adv. Space Res., 77, 2026.</li>
+<li>T. S. Kelso, CelesTrak GP data and SATCAT, retrieved 16 Oct 2026. https://celestrak.org</li>
+<li>J. C. McDowell, General Catalog of Artificial Space Objects (GCAT), release of 15 Oct 2026. https://planet4589.org/space/gcat</li>
+<li>D. A. Vallado, P. Crawford, R. Hujsak, T. S. Kelso, "Revisiting Spacetrack Report #3," AIAA 2006-6753, 2006; python-sgp4 2.27.</li>
+<li>D. A. Vallado, Fundamentals of Astrodynamics and Applications, 4th ed., Microcosm Press, 2013.</li>
+<li>T. N. Edelbaum, "Propulsion requirements for controllable satellites," ARS Journal, 31(8), 1079–1089, 1961.</li>
+<li>Busek Co., "BHT-1500 Hall Effect Thruster" datasheet, accessed Oct 2026. https://www.busek.com/bht1500</li>
+<li>C. Henry, "Iridium would pay to deorbit its 30 defunct satellites — for the right price," SpaceNews, 30 Dec 2019 (as quoted in ABA Business Law Today, Jan 2022).</li>
+<li>US Government Orbital Debris Mitigation Standard Practices, November 2019 update.</li>
+</ol>
+
+<h2>Appendix A. Assumptions</h2>
+<table>
+<tr><th>Parameter</th><th class="n">Low / Base / High</th><th>Source or status</th></tr>
+<tr><td>Truck hardware</td><td class="n">$50M / $80M / $115M</td><td>NASA OTPS 2023 estimates [10]; base assumed</td></tr>
+<tr><td>Deorbit kit unit cost</td><td class="n">$0.5M / $1.5M / $3M</td><td>Assumption, to validate in interviews</td></tr>
+<tr><td>Launch price</td><td class="n">$7,000 / $7,500 / $15,000 per kg</td><td>SpaceX rideshare price list (2026–27); NASA OTPS</td></tr>
+<tr><td>Xenon price</td><td class="n">$2,780 / $2,780 / $12,000 per kg</td><td>Analyst and industry sources</td></tr>
+<tr><td>Operations</td><td class="n">$3M / $5M / $10M per year</td><td>Assumption</td></tr>
+<tr><td>Insurance</td><td class="n">5% / 8% / 12% of hardware + launch</td><td>Assumption</td></tr>
+<tr><td>Δv margin</td><td class="n">10% / 10% / 25%</td><td>From the benchmark and validation results</td></tr>
+<tr><td>Truck dry mass; stop time; approach Δv</td><td class="n">600 kg; 10 days; 20 m/s</td><td>Assumptions</td></tr>
+<tr><td>Kit motor</td><td class="n">I_sp 285 s; 12 kg + 15% tankage</td><td>Assumption (small solid-motor class)</td></tr>
+<tr><td>Kit pod carrier (reuse)</td><td class="n">150 kg; $4M</td><td>Assumption</td></tr>
+</table>
+<p class="note">All code, data and figures are reproducible from the repository (README.md). Results were computed on 16 Oct 2026.</p>
+</section>
+</body>
+</html>
