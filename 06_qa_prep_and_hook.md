@@ -79,6 +79,9 @@ Keep each answer to 20–30 seconds: answer, one piece of evidence, then stop.
 **Q8. Why would insurers care?**
 > "Insurers carry the cost of collisions and failed satellites. A proven removal service lets them offer removal-backed policies. They won't commit before a demo, so they're third."
 
+**Q8b. Isn't Iridium being bought by Rocket Lab?**
+> "Yes. Rocket Lab agreed in June 2026 to buy Iridium for about $8 billion, with closing expected in mid-2027. That could help us: Rocket Lab builds and launches spacecraft and would own the dead first-generation Iridium satellites, so it's both a possible customer and a possible launch or bus partner."
+
 ### Technology and feasibility
 
 **Q9. How do you actually grab the object?**

@@ -115,7 +115,8 @@ These were correct on 16 Oct 2026 but can change:
 4. **FCC Part 100 / FCC 26-47**: check the effective date and any petitions.
 5. **SpaceX rideshare price** ($7,000/kg in 2026, $7,500/kg in 2027).
 6. **Market report ranges** ($1.1–1.6B).
-7. **The 24 dead first-generation Iridium satellites still in orbit**: some may re-enter. Re-run `engine/scripts/catalog_2026.py` to refresh.
+7. **Rocket Lab's purchase of Iridium** (announced 29 Jun 2026, ~$8B, closing expected mid-2027). Check whether it has closed.
+8. **The 24 dead first-generation Iridium satellites still in orbit**: some may re-enter. Re-run `engine/scripts/catalog_2026.py` to refresh.
 
 ---
 

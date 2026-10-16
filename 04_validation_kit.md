@@ -36,6 +36,21 @@ Verified names and official contact routes are in `research/contacts_academic.md
 
 **Volume math:** cold emails to experts typically get a minority of replies, so send ~25–30 emails to get ~5–8 conversations. Start **this week**; replies take 1–3 weeks. Follow up once after 7–10 days.
 
+**The contact list (checked 16 Oct 2026):** `research/outreach_tracker.csv` has 51 rows.
+- 19 researchers (`research/contacts_academic.md`).
+- 32 organisations with a verified channel (`research/contacts_industry.md`): 7 operators, 8 ADR companies, 7 agencies and non-profits, 5 insurers and brokers, 5 propulsion suppliers.
+
+Every address was read on the owner's own page; none were guessed.
+
+**First wave (priority 1, about 10 emails):**
+- Iskender, Felicetti: template A
+- Starfish Space, Beazley, Marsh, Busek, Enpulsion: template B; ask cost ranges for H1/H2
+- ESA education, Secure World Foundation: template C adapted; ask H4
+
+Re-check each address the day you send it. Several company channels are press inboxes, so ask them to forward your request to the right team.
+
+**News to know before emailing operators:** Rocket Lab agreed on 29 Jun 2026 to buy Iridium (~$8B, closing expected mid-2027). Mention it if you email Iridium. Rocket Lab could become both a customer and a partner.
+
 ## 3. Email templates
 Keep emails **short** (under 150 words), specific to *their* work, with one clear small ask. Fill every [__].
 
