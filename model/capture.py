@@ -42,12 +42,12 @@ with sync_playwright() as p:
     pg.evaluate("() => { const c = document.querySelector('canvas'); }")
     pg.wait_for_timeout(800)
     pg.screenshot(path=str(OUT / "truck_firing.png"))
-    times = pg.evaluate("() => { let a = 0; return [...document.querySelectorAll('#ticks button')].map(() => 0); }")
-    # one frame per chapter (chapter durations from the page)
-    for name, t in [("1_launch", 5.5), ("2_deploy", 12.0), ("3_climb", 26.0), ("4_approach", 34.0),
-                    ("5_tag", 41.0), ("6_deorbit", 47.5), ("7_driveon", 56.0)]:
+    shots = [("1_launch", 5.5), ("2_deploy", 12.0), ("3_climb", 24.0), ("4a_hold", 29.0), ("4b_closing", 34.5),
+             ("4c_reach", 38.3), ("5a_grip", 41.5), ("5b_detumble", 45.0), ("5c_kit_out", 47.8), ("5d_latched", 49.5),
+             ("5e_backoff", 52.8), ("6a_burn", 57.5), ("6b_smoke", 60.0), ("6c_reentry_a", 63.6), ("6c_reentry", 65.5), ("7_driveon", 71.0)]
+    for name, t in shots:
         pg.evaluate(f"window.__setJourney({t})")
-        pg.wait_for_timeout(700)
+        pg.wait_for_timeout(900)
         pg.screenshot(path=str(OUT / f"journey_{name}.png"))
     pg.set_viewport_size({"width": 390, "height": 844})
     pg.evaluate("window.__setMode('truck')")
