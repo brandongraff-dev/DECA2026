@@ -1,0 +1,1282 @@
+{
+ "b0_pool": [
+  {
+   "norad": 733,
+   "name": "THOR AGENA D R/B",
+   "owner": "US",
+   "mass_kg": 600.0,
+   "alt_km": 778.0473143070985,
+   "inc_deg": 99.1098
+  },
+  {
+   "norad": 815,
+   "name": "THOR AGENA D R/B",
+   "owner": "US",
+   "mass_kg": 600.0,
+   "alt_km": 796.6059438683687,
+   "inc_deg": 99.8384
+  },
+  {
+   "norad": 7616,
+   "name": "DELTA 1 R/B",
+   "owner": "US",
+   "mass_kg": 845.0,
+   "alt_km": 872.6304027363176,
+   "inc_deg": 97.7259
+  },
+  {
+   "norad": 10704,
+   "name": "DELTA 1 R/B",
+   "owner": "US",
+   "mass_kg": 845.0,
+   "alt_km": 934.6738039550273,
+   "inc_deg": 98.7804
+  },
+  {
+   "norad": 13778,
+   "name": "DELTA 1 R/B",
+   "owner": "US",
+   "mass_kg": 845.0,
+   "alt_km": 860.2903479348897,
+   "inc_deg": 100.0496
+  },
+  {
+   "norad": 16615,
+   "name": "ARIANE 1 R/B",
+   "owner": "FR",
+   "mass_kg": 1800.0,
+   "alt_km": 780.4059968211013,
+   "inc_deg": 98.2182
+  },
+  {
+   "norad": 17528,
+   "name": "N-2 R/B",
+   "owner": "JPN",
+   "mass_kg": 950.0,
+   "alt_km": 710.2573599894513,
+   "inc_deg": 97.4174
+  },
+  {
+   "norad": 20323,
+   "name": "DELTA 1 R/B",
+   "owner": "US",
+   "mass_kg": 919.0,
+   "alt_km": 723.0562078163066,
+   "inc_deg": 97.0671
+  },
+  {
+   "norad": 20443,
+   "name": "ARIANE 40 R/B",
+   "owner": "FR",
+   "mass_kg": 1875.0,
+   "alt_km": 758.5841395626676,
+   "inc_deg": 98.2815
+  },
+  {
+   "norad": 21610,
+   "name": "ARIANE 40 R/B",
+   "owner": "FR",
+   "mass_kg": 1875.0,
+   "alt_km": 748.5538028124911,
+   "inc_deg": 98.174
+  },
+  {
+   "norad": 22830,
+   "name": "ARIANE 40 R/B",
+   "owner": "FR",
+   "mass_kg": 1875.0,
+   "alt_km": 781.9001173587094,
+   "inc_deg": 98.4687
+  },
+  {
+   "norad": 23324,
+   "name": "IRS-P2 R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 834.0740304341789,
+   "inc_deg": 98.8344
+  },
+  {
+   "norad": 23561,
+   "name": "ARIANE 40+ R/B",
+   "owner": "FR",
+   "mass_kg": 1820.0,
+   "alt_km": 758.8731404326818,
+   "inc_deg": 98.4291
+  },
+  {
+   "norad": 23828,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 816.2263357974343,
+   "inc_deg": 99.0421
+  },
+  {
+   "norad": 25261,
+   "name": "ARIANE 40 R/B",
+   "owner": "FR",
+   "mass_kg": 1820.0,
+   "alt_km": 770.3650666288959,
+   "inc_deg": 98.8048
+  },
+  {
+   "norad": 25637,
+   "name": "DELTA 2 R/B",
+   "owner": "US",
+   "mass_kg": 919.0,
+   "alt_km": 727.7828842783838,
+   "inc_deg": 96.4602
+  },
+  {
+   "norad": 25759,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 706.5043461251335,
+   "inc_deg": 98.6015
+  },
+  {
+   "norad": 26066,
+   "name": "MINOTAUR R/B",
+   "owner": "US",
+   "mass_kg": 398.0,
+   "alt_km": 761.6366649827105,
+   "inc_deg": 100.2241
+  },
+  {
+   "norad": 27387,
+   "name": "ARIANE 5 R/B",
+   "owner": "FR",
+   "mass_kg": 1190.0,
+   "alt_km": 769.049632748065,
+   "inc_deg": 98.8042
+  },
+  {
+   "norad": 28050,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 833.4155607398297,
+   "inc_deg": 99.0815
+  },
+  {
+   "norad": 28637,
+   "name": "MINOTAUR R/B",
+   "owner": "US",
+   "mass_kg": 410.0,
+   "alt_km": 851.6044449266738,
+   "inc_deg": 98.7808
+  },
+  {
+   "norad": 37390,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 797.1990927933921,
+   "inc_deg": 98.5235
+  },
+  {
+   "norad": 39093,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 729.6271737455509,
+   "inc_deg": 98.0427
+  },
+  {
+   "norad": 41791,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 681.1018093798784,
+   "inc_deg": 97.8369
+  },
+  {
+   "norad": 41878,
+   "name": "PSLV R/B",
+   "owner": "IND",
+   "mass_kg": 920.0,
+   "alt_km": 811.2340787775656,
+   "inc_deg": 98.626
+  },
+  {
+   "norad": 52896,
+   "name": "KSLV-II R/B",
+   "owner": "SKOR",
+   "mass_kg": 1250.0,
+   "alt_km": 675.6251121720516,
+   "inc_deg": 98.2794
+  }
+ ],
+ "routes": {
+  "B0_SSO_partner/electric": {
+   "order": [
+    1065,
+    17,
+    5354,
+    1135,
+    1452,
+    1029,
+    937,
+    849,
+    5316,
+    682
+   ],
+   "legs": [
+    {
+     "from": 1065,
+     "to": 17,
+     "depart_jd": 2462147.5,
+     "T_days": 15.0,
+     "dv": 0.1131237665436338,
+     "a_d": 7212.211030434179,
+     "i_d": 1.7249856942330837,
+     "t_spiral_days": 8.061084544435621,
+     "feasible": true
+    },
+    {
+     "from": 17,
+     "to": 5354,
+     "depart_jd": 2462172.5,
+     "T_days": 15.0,
+     "dv": 0.1203675009364358,
+     "a_d": 7156.184314307098,
+     "i_d": 1.729792330993076,
+     "t_spiral_days": 8.343658309687225,
+     "feasible": true
+    },
+    {
+     "from": 5354,
+     "to": 1135,
+     "depart_jd": 2462197.5,
+     "T_days": 45.0,
+     "dv": 0.28066817574982017,
+     "a_d": 7398.137,
+     "i_d": 1.7249795855807017,
+     "t_spiral_days": 44.735473911621746,
+     "feasible": true
+    },
+    {
+     "from": 1135,
+     "to": 1452,
+     "depart_jd": 2462252.5,
+     "T_days": 45.0,
+     "dv": 0.16915855495276694,
+     "a_d": 7308.137,
+     "i_d": 1.7265346739442284,
+     "t_spiral_days": 10.862462272343258,
+     "feasible": true
+    },
+    {
+     "from": 1452,
+     "to": 1029,
+     "depart_jd": 2462307.5,
+     "T_days": 20.0,
+     "dv": 0.163942693471654,
+     "a_d": 7248.137,
+     "i_d": 1.7215308149787607,
+     "t_spiral_days": 9.683958995739324,
+     "feasible": true
+    },
+    {
+     "from": 1029,
+     "to": 937,
+     "depart_jd": 2462337.5,
+     "T_days": 60.0,
+     "dv": 0.4202803236166628,
+     "a_d": 7458.137,
+     "i_d": 1.706876012470286,
+     "t_spiral_days": 49.44957435990541,
+     "feasible": true
+    },
+    {
+     "from": 937,
+     "to": 849,
+     "depart_jd": 2462407.5,
+     "T_days": 45.0,
+     "dv": 0.24754069173365348,
+     "a_d": 7126.690802812491,
+     "i_d": 1.713459539852913,
+     "t_spiral_days": 11.506601647046402,
+     "feasible": true
+    },
+    {
+     "from": 849,
+     "to": 5316,
+     "depart_jd": 2462462.5,
+     "T_days": 45.0,
+     "dv": 0.3709400262669193,
+     "a_d": 7278.137,
+     "i_d": 1.691011987678388,
+     "t_spiral_days": 38.92309584057003,
+     "feasible": true
+    },
+    {
+     "from": 5316,
+     "to": 682,
+     "depart_jd": 2462517.5,
+     "T_days": 20.0,
+     "dv": 0.14014063253259768,
+     "a_d": 7188.137,
+     "i_d": 1.7109035051633672,
+     "t_spiral_days": 5.043698020033857,
+     "feasible": true
+    }
+   ],
+   "kit_masses_kg": [
+    75.11408248941623,
+    49.60273107552709,
+    72.73447653841428,
+    73.25520273140309,
+    84.63699965513744,
+    128.75898782226807,
+    121.67222954978365,
+    63.42592836416952,
+    59.0412672004933,
+    123.81404742957989
+   ],
+   "total_dv_kms": 2.026162365804144,
+   "launch_mass_kg": 1587.504681248489,
+   "propellant_kg": 135.44872839229652,
+   "start_jd": 2462137.5,
+   "end_jd": 2462547.5,
+   "duration_days": 410.0,
+   "feasible": 1.0,
+   "plan_mass_kg": 1956.0321746448255,
+   "lam_ms_per_day": 17.80253646067004,
+   "targets": [
+    {
+     "norad": 23324,
+     "name": "IRS-P2 R/B",
+     "owner": "IND",
+     "alt_km": 834.0740304341789,
+     "inc_deg": 98.8344,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 733,
+     "name": "THOR AGENA D R/B",
+     "owner": "US",
+     "alt_km": 778.0473143070985,
+     "inc_deg": 99.1098,
+     "mass_kg": 600.0
+    },
+    {
+     "norad": 41878,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 811.2340787775656,
+     "inc_deg": 98.626,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 23828,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 816.2263357974343,
+     "inc_deg": 99.0421,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 27387,
+     "name": "ARIANE 5 R/B",
+     "owner": "FR",
+     "alt_km": 769.049632748065,
+     "inc_deg": 98.8042,
+     "mass_kg": 1190.0
+    },
+    {
+     "norad": 22830,
+     "name": "ARIANE 40 R/B",
+     "owner": "FR",
+     "alt_km": 781.9001173587094,
+     "inc_deg": 98.4687,
+     "mass_kg": 1875.0
+    },
+    {
+     "norad": 21610,
+     "name": "ARIANE 40 R/B",
+     "owner": "FR",
+     "alt_km": 748.5538028124911,
+     "inc_deg": 98.174,
+     "mass_kg": 1875.0
+    },
+    {
+     "norad": 20323,
+     "name": "DELTA 1 R/B",
+     "owner": "US",
+     "alt_km": 723.0562078163066,
+     "inc_deg": 97.0671,
+     "mass_kg": 919.0
+    },
+    {
+     "norad": 41791,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 681.1018093798784,
+     "inc_deg": 97.8369,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 16615,
+     "name": "ARIANE 1 R/B",
+     "owner": "FR",
+     "alt_km": 780.4059968211013,
+     "inc_deg": 98.2182,
+     "mass_kg": 1800.0
+    }
+   ]
+  },
+  "B0_SSO_partner/chemical": {
+   "order": [
+    21,
+    17,
+    5354,
+    1065,
+    1304,
+    1221,
+    1103,
+    1135,
+    1452,
+    1029
+   ],
+   "legs": [
+    {
+     "from": 21,
+     "to": 17,
+     "depart_jd": 2462147.5,
+     "T_days": 10.0,
+     "dv": 0.1158977712743779,
+     "a_d": 7174.7429438683685,
+     "i_d": 1.7425087999231066,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 17,
+     "to": 5354,
+     "depart_jd": 2462167.5,
+     "T_days": 15.0,
+     "dv": 0.08526558419768489,
+     "a_d": 7156.184314307098,
+     "i_d": 1.729792330993076,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 5354,
+     "to": 1065,
+     "depart_jd": 2462192.5,
+     "T_days": 45.0,
+     "dv": 0.10775192933142683,
+     "a_d": 7278.137,
+     "i_d": 1.7231670611525056,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1065,
+     "to": 1304,
+     "depart_jd": 2462247.5,
+     "T_days": 10.0,
+     "dv": 0.10639073190835643,
+     "a_d": 7212.211030434179,
+     "i_d": 1.7249856942330837,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1304,
+     "to": 1221,
+     "depart_jd": 2462267.5,
+     "T_days": 60.0,
+     "dv": 0.3995748630935281,
+     "a_d": 7368.137,
+     "i_d": 1.7046502813416804,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1221,
+     "to": 1103,
+     "depart_jd": 2462337.5,
+     "T_days": 30.0,
+     "dv": 0.23619675123596892,
+     "a_d": 7278.137,
+     "i_d": 1.7119173960146719,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1103,
+     "to": 1135,
+     "depart_jd": 2462377.5,
+     "T_days": 30.0,
+     "dv": 0.22235559728094664,
+     "a_d": 7278.137,
+     "i_d": 1.7136430903125812,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1135,
+     "to": 1452,
+     "depart_jd": 2462417.5,
+     "T_days": 30.0,
+     "dv": 0.18609234729559343,
+     "a_d": 7248.137,
+     "i_d": 1.717462016160049,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    },
+    {
+     "from": 1452,
+     "to": 1029,
+     "depart_jd": 2462457.5,
+     "T_days": 60.0,
+     "dv": 0.257400876096713,
+     "a_d": 7338.137,
+     "i_d": 1.7123162037487523,
+     "t_spiral_days": 0.0,
+     "feasible": true
+    }
+   ],
+   "kit_masses_kg": [
+    50.8782326172378,
+    49.60273107552709,
+    72.73447653841428,
+    75.11408248941623,
+    61.73241442347029,
+    122.979222961902,
+    120.60795773847227,
+    73.25520273140309,
+    84.63699965513744,
+    128.75898782226807
+   ],
+   "total_dv_kms": 1.7169264517145961,
+   "launch_mass_kg": 2216.217110453709,
+   "propellant_kg": 775.9168024004607,
+   "start_jd": 2462137.5,
+   "end_jd": 2462527.5,
+   "duration_days": 390.0,
+   "feasible": 1.0,
+   "plan_mass_kg": 1956.0321746448255,
+   "lam_ms_per_day": 4.280937422589193,
+   "targets": [
+    {
+     "norad": 815,
+     "name": "THOR AGENA D R/B",
+     "owner": "US",
+     "alt_km": 796.6059438683687,
+     "inc_deg": 99.8384,
+     "mass_kg": 600.0
+    },
+    {
+     "norad": 733,
+     "name": "THOR AGENA D R/B",
+     "owner": "US",
+     "alt_km": 778.0473143070985,
+     "inc_deg": 99.1098,
+     "mass_kg": 600.0
+    },
+    {
+     "norad": 41878,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 811.2340787775656,
+     "inc_deg": 98.626,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 23324,
+     "name": "IRS-P2 R/B",
+     "owner": "IND",
+     "alt_km": 834.0740304341789,
+     "inc_deg": 98.8344,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 25759,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 706.5043461251335,
+     "inc_deg": 98.6015,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 25261,
+     "name": "ARIANE 40 R/B",
+     "owner": "FR",
+     "alt_km": 770.3650666288959,
+     "inc_deg": 98.8048,
+     "mass_kg": 1820.0
+    },
+    {
+     "norad": 23561,
+     "name": "ARIANE 40+ R/B",
+     "owner": "FR",
+     "alt_km": 758.8731404326818,
+     "inc_deg": 98.4291,
+     "mass_kg": 1820.0
+    },
+    {
+     "norad": 23828,
+     "name": "PSLV R/B",
+     "owner": "IND",
+     "alt_km": 816.2263357974343,
+     "inc_deg": 99.0421,
+     "mass_kg": 920.0
+    },
+    {
+     "norad": 27387,
+     "name": "ARIANE 5 R/B",
+     "owner": "FR",
+     "alt_km": 769.049632748065,
+     "inc_deg": 98.8042,
+     "mass_kg": 1190.0
+    },
+    {
+     "norad": 22830,
+     "name": "ARIANE 40 R/B",
+     "owner": "FR",
+     "alt_km": 781.9001173587094,
+     "inc_deg": 98.4687,
+     "mass_kg": 1875.0
+    }
+   ]
+  }
+ },
+ "options": {
+  "B0_SSO_partner/electric": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.039529771315497,
+    "price_per_removal_musd": 15.04941221414437,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 12.007871655657889,
+     "propellant": 0.41420221142364283,
+     "operations": 5.612594113620808,
+     "insurance": 7.360629732452631
+    },
+    "total_musd": 120.39529771315497,
+    "duration_days": 410.0,
+    "launch_mass_kg": 1587.504681248489
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 12.223461882824544,
+    "price_per_removal_musd": 15.27932735353068,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 12.520863935233466,
+     "propellant": 0.604351349719656,
+     "operations": 6.707734428473648,
+     "insurance": 7.401669114818677
+    },
+    "total_musd": 122.23461882824544,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 1649.685563621286,
+    "propellant_kg": 197.6296107650935,
+    "duration_days": 490.0,
+    "insertion_dv_ms": 600.1149512785327,
+    "insertion_days": 80.0,
+    "launch_jd": 2462057.5,
+    "ltan_h": 19.0,
+    "cost_range_over_ltan_musd": [
+     12.145272177250956,
+     12.301693677232977
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.413960469801985,
+    "price_per_removal_musd": 20.51745058725248,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.42701058439902634,
+     "operations": 5.612594113620808,
+     "insurance": 10.6
+    },
+    "total_musd": 164.13960469801984,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 1591.6931616197721,
+    "propellant_kg": 139.63720876357957,
+    "duration_days": 410.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.735960469801984,
+    "price_per_removal_musd": 23.41995058725248,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.42701058439902634,
+     "operations": 5.612594113620808,
+     "insurance": 12.32
+    },
+    "total_musd": 187.35960469801984,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 1591.6931616197721,
+    "propellant_kg": 139.63720876357957,
+    "duration_days": 410.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare",
+   "monte_carlo_best": {
+    "p10": 11.178112824066258,
+    "p50": 13.222852021293747,
+    "p90": 15.374361750707111,
+    "mean": 13.24861919019763
+   },
+   "reuse_10_routes": {
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 150.0,
+     "launch": 89.70371655657893,
+     "pods": 36.0,
+     "propellant": 4.142022114236428,
+     "operations": 56.12594113620808,
+     "insurance": 16.456297324526314
+    },
+    "total": 434.0267825936223,
+    "per_removal": 4.340267825936222,
+    "removals": 100,
+    "years": 11.444216290212182,
+    "first_launch_kg": 3004.1728475442515,
+    "pod_kg": 1002.0559528561926,
+    "propellant_total_kg": 1489.936012315262
+   }
+  },
+  "B0_SSO_partner/chemical": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.574541448084727,
+    "price_per_removal_musd": 15.718176810105907,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 17.203565930203165,
+     "propellant": 0.4267542413202534,
+     "operations": 5.338809034907598,
+     "insurance": 7.776285274416254
+    },
+    "total_musd": 125.74541448084727,
+    "duration_days": 390.0,
+    "launch_mass_kg": 2216.217110453709
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 13.442918604519951,
+    "price_per_removal_musd": 16.80364825564994,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 21.075748643253306,
+     "propellant": 0.6848997555235959,
+     "operations": 9.582477754962355,
+     "insurance": 8.086059891460264
+    },
+    "total_musd": 134.42918604519951,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 2685.572590823423,
+    "propellant_kg": 1245.2722827701746,
+    "duration_days": 700.0,
+    "insertion_dv_ms": 602.8099821208427,
+    "insertion_days": 310.0,
+    "launch_jd": 2461827.5,
+    "ltan_h": 15.0,
+    "cost_range_over_ltan_musd": [
+     12.844565348903236,
+     13.795615557357518
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.386556327622785,
+    "price_per_removal_musd": 20.48319540952848,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.4267542413202534,
+     "operations": 5.338809034907598,
+     "insurance": 10.6
+    },
+    "total_musd": 163.86556327622785,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 2216.217110453709,
+    "propellant_kg": 775.9168024004607,
+    "duration_days": 390.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.708556327622784,
+    "price_per_removal_musd": 23.385695409528477,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.4267542413202534,
+     "operations": 5.338809034907598,
+     "insurance": 12.32
+    },
+    "total_musd": 187.08556327622784,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 2216.217110453709,
+    "propellant_kg": 775.9168024004607,
+    "duration_days": 390.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare"
+  },
+  "B1_SL8_83deg/electric": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.0684774888112,
+    "price_per_removal_musd": 15.085596861013999,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 14.909701565480296,
+     "propellant": 0.17066133154795915,
+     "operations": 3.011635865845311,
+     "insurance": 7.592776125238423
+    },
+    "total_musd": 120.68477488811199,
+    "duration_days": 220.0,
+    "launch_mass_kg": 1982.3793934413682
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 13.04998686841276,
+    "price_per_removal_musd": 16.31248358551595,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 18.13692369563395,
+     "propellant": 1.3668850011249132,
+     "operations": 8.145106091718002,
+     "insurance": 7.850953895650717
+    },
+    "total_musd": 130.4998686841276,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 2373.5578334599927,
+    "propellant_kg": 446.98659291200556,
+    "duration_days": 595.0,
+    "insertion_dv_ms": 3020.032912267934,
+    "insertion_days": 375.0,
+    "launch_jd": 2461762.5,
+    "ltan_h": 7.0,
+    "cost_range_over_ltan_musd": [
+     13.04737852385605,
+     13.063663988679618
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.128229715822705,
+    "price_per_removal_musd": 20.16028714477838,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.1706612923817583,
+     "operations": 3.011635865845311,
+     "insurance": 10.6
+    },
+    "total_musd": 161.28229715822707,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 1982.379380633585,
+    "propellant_kg": 55.80814008559787,
+    "duration_days": 220.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.450229715822708,
+    "price_per_removal_musd": 23.062787144778383,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.1706612923817583,
+     "operations": 3.011635865845311,
+     "insurance": 12.32
+    },
+    "total_musd": 184.50229715822707,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 1982.379380633585,
+    "propellant_kg": 55.80814008559787,
+    "duration_days": 220.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare",
+   "monte_carlo_best": {
+    "p10": 12.275381007745603,
+    "p50": 14.372204685167965,
+    "p90": 16.571458848861393,
+    "mean": 14.400341272523743
+   }
+  },
+  "B1_SL8_83deg/chemical": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.229430429514164,
+    "price_per_removal_musd": 15.286788036892704,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 16.733882614501606,
+     "propellant": 0.15230655402611343,
+     "operations": 2.669404517453799,
+     "insurance": 7.738710609160129
+    },
+    "total_musd": 122.29430429514164,
+    "duration_days": 195.0,
+    "launch_mass_kg": 2203.4922478681933
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 14.151143000457136,
+    "price_per_removal_musd": 17.688928750571417,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 32.23948207338418,
+     "propellant": 1.186013184618285,
+     "operations": 4.1067761806981515,
+     "insurance": 8.979158565870735
+    },
+    "total_musd": 141.51143000457137,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 4082.958848944869,
+    "propellant_kg": 2156.3876083968817,
+    "duration_days": 300.0,
+    "insertion_dv_ms": 1935.5297126328373,
+    "insertion_days": 105.0,
+    "launch_jd": 2462032.5,
+    "ltan_h": 14.0,
+    "cost_range_over_ltan_musd": [
+     14.02109508806836,
+     14.28803553981374
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.09217110714799,
+    "price_per_removal_musd": 20.115213883934988,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.15230655402611343,
+     "operations": 2.669404517453799,
+     "insurance": 10.6
+    },
+    "total_musd": 160.9217110714799,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 2203.4922478681933,
+    "propellant_kg": 276.9210073202062,
+    "duration_days": 195.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.41417110714799,
+    "price_per_removal_musd": 23.017713883934984,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.15230655402611343,
+     "operations": 2.669404517453799,
+     "insurance": 12.32
+    },
+    "total_musd": 184.1417110714799,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 2203.4922478681933,
+    "propellant_kg": 276.9210073202062,
+    "duration_days": 195.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare"
+  },
+  "A1_Iridium_legacy/electric": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.026182002178285,
+    "price_per_removal_musd": 15.032727502722855,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 9.923018491358219,
+     "propellant": 0.5474241168243847,
+     "operations": 7.597535934291582,
+     "insurance": 7.193841479308658
+    },
+    "total_musd": 120.26182002178284,
+    "duration_days": 555.0,
+    "launch_mass_kg": 1305.1677549141114
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 12.524634517666897,
+    "price_per_removal_musd": 15.655793147083621,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 11.518919666058814,
+     "propellant": 1.1389714855800723,
+     "operations": 10.266940451745379,
+     "insurance": 7.321513573284705
+    },
+    "total_musd": 125.24634517666897,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 1498.6103215444866,
+    "propellant_kg": 372.45633930021984,
+    "duration_days": 750.0,
+    "insertion_dv_ms": 2327.381627397552,
+    "insertion_days": 195.0,
+    "launch_jd": 2461942.5,
+    "ltan_h": 11.0,
+    "cost_range_over_ltan_musd": [
+     12.510630758583446,
+     12.54551793305757
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.624264182823687,
+    "price_per_removal_musd": 20.780330228529607,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.5451058939452628,
+     "operations": 7.597535934291582,
+     "insurance": 10.6
+    },
+    "total_musd": 166.24264182823686,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 1304.4096702577601,
+    "propellant_kg": 178.25568801349334,
+    "duration_days": 555.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.946264182823686,
+    "price_per_removal_musd": 23.682830228529607,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.5451058939452628,
+     "operations": 7.597535934291582,
+     "insurance": 12.32
+    },
+    "total_musd": 189.46264182823685,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 1304.4096702577601,
+    "propellant_kg": 178.25568801349334,
+    "duration_days": 555.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare",
+   "monte_carlo_best": {
+    "p10": 11.573660822942939,
+    "p50": 13.642641916115313,
+    "p90": 15.793817667117937,
+    "mean": 13.659334936858931
+   }
+  },
+  "A1_Iridium_legacy/chemical": {
+   "no_launch_leg": {
+    "cost_per_removal_musd": 12.594802241061128,
+    "price_per_removal_musd": 15.74350280132641,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 16.168829226118934,
+     "propellant": 0.5148449572857955,
+     "operations": 6.570841889117043,
+     "insurance": 7.693506338089515
+    },
+    "total_musd": 125.94802241061129,
+    "duration_days": 480.0,
+    "launch_mass_kg": 2062.235722763895
+   },
+   "rideshare": {
+    "cost_per_removal_musd": 13.961695216185802,
+    "price_per_removal_musd": 17.452119020232253,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 26.53742812694238,
+     "propellant": 1.2060848840073586,
+     "operations": 8.350444900752908,
+     "insurance": 8.52299425015539
+    },
+    "total_musd": 139.61695216185802,
+    "feasible": true,
+    "launch_name": "Rideshare to sun-synchronous orbit + truck's own engine",
+    "source": "SpaceX rideshare price API (16 Oct 2026); custom quote above 831 kg",
+    "launch_mass_kg": 3319.0355895303733,
+    "propellant_kg": 2192.8816072861064,
+    "duration_days": 610.0,
+    "insertion_dv_ms": 1493.383521391142,
+    "insertion_days": 130.0,
+    "launch_jd": 2462007.5,
+    "ltan_h": 5.0,
+    "cost_range_over_ltan_musd": [
+     13.797424168957878,
+     14.1191216364459
+    ],
+    "note": "custom rideshare quote needed (above 831 kg per port)",
+    "launch_fixed_musd": null
+   },
+   "neutron": {
+    "cost_per_removal_musd": 16.518568684640282,
+    "price_per_removal_musd": 20.64821085580035,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 52.5,
+     "propellant": 0.5148449572857955,
+     "operations": 6.570841889117043,
+     "insurance": 10.6
+    },
+    "total_musd": 165.18568684640283,
+    "feasible": true,
+    "launch_name": "Dedicated Rocket Lab Neutron",
+    "source": "Rocket Lab investor statements; Light Reading 16 Oct 2026",
+    "launch_mass_kg": 2062.235722763895,
+    "propellant_kg": 936.0817405196282,
+    "duration_days": 480.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 52.5
+   },
+   "falcon9": {
+    "cost_per_removal_musd": 18.84056868464028,
+    "price_per_removal_musd": 23.55071085580035,
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 15.0,
+     "launch": 74.0,
+     "propellant": 0.5148449572857955,
+     "operations": 6.570841889117043,
+     "insurance": 12.32
+    },
+    "total_musd": 188.40568684640283,
+    "feasible": true,
+    "launch_name": "Dedicated SpaceX Falcon 9",
+    "source": "Spaceflight Now, 24 Feb 2026",
+    "launch_mass_kg": 2062.235722763895,
+    "propellant_kg": 936.0817405196282,
+    "duration_days": 480.0,
+    "insertion_dv_ms": 0.0,
+    "insertion_days": 0.0,
+    "launch_jd": 2462137.5,
+    "ltan_h": null,
+    "cost_range_over_ltan_musd": null,
+    "note": "",
+    "launch_fixed_musd": 74.0
+   },
+   "best": "rideshare"
+  }
+ }
+}

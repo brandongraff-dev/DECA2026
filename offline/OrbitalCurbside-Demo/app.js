@@ -321,7 +321,8 @@
     $("compare").innerHTML = `<div class="ro-head"><h2>Cost per removal</h2><span class="pill">US$ millions</span></div>` +
       rows.map((r) => `<div class="bar-row"><div class="lab"><span>${r.lab}</span><b>$${fmt(r.v, 1)}M</b></div>` +
         `<div class="bar ${r.cls}" style="width:${(100 * r.v / max).toFixed(1)}%"></div></div>`).join("") +
-      `<p class="fine">Mission total $${fmt(e.total_musd, 0)}M for ${ms.stops.length} removals. Base-case assumptions: ` +
+      `<p class="fine">Mission total $${fmt(e.total_musd, 0)}M for ${ms.stops.length} removals, including a rideshare ` +
+      (e.launch ? `launch and a ${fmt(e.launch.climb_days, 0)}-day climb to the first stop. ` : `launch. `) + `Base-case assumptions: ` +
       `truck hardware, kit price and operations cost are estimates to be validated. Public contract values from ESA, ` +
       `JAXA/Astroscale, UK Space Agency, NASA OTPS (2023).</p>`;
   }
@@ -335,7 +336,7 @@
       `The three blue rings start in exactly the same plane at 500, 960 and 1,500 km. Watch them fan apart: the labels show how far each has turned. ` +
       `Twisting a plane with a rocket is brutally expensive. Parking at a different height and letting Earth do it costs almost nothing.`,
     3: (ms) => `${ms.title}. The orange truck parks in a "lane" where Earth twists its plane at a different speed, waits until it lines up with the next target, ` +
-      `then hops over and fits a deorbit kit. Route optimised over real 2026 orbits; launch ${new Date(ms.start_ms).toISOString().slice(0, 10)}. ` +
+      `then hops over and fits a deorbit kit. Route optimised over real 2026 orbits; first stop ${new Date(ms.start_ms).toISOString().slice(0, 10)}${ms.economics.launch ? `, after a rideshare launch and a ${ms.economics.launch.climb_days}-day climb` : ''}. ` +
       `Total delta-v ${fmt(ms.total_dv_ms)} m/s, ${fmt(ms.truck.propellant_kg)} kg of xenon for the whole route.`,
     4: (ms) => `Same job, two ways. Big fixed costs (the spacecraft, the launch, the team) get split ${ms.stops.length} ways when one truck does the whole route. ` +
       `That is the business: removal priced like a garbage route, not a moon shot.`,
@@ -434,12 +435,13 @@
 
   // ------------------------------------------------------------------ boot
   const get = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
-  Promise.all([get("data/background.json"), get("data/mission_B1.json"), get("data/mission_A1.json")])
-    .then(([bg, b1, a1]) => {
+  Promise.all([get("data/background.json"), get("data/mission_B1.json"), get("data/mission_A1.json"),
+               get("data/mission_B0.json")])
+    .then(([bg, b1, a1, b0]) => {
       state.bg = buildBackground(bg);
       buildDemo();
-      state.missions = { B1: prepareMission(b1), A1: prepareMission(a1) };
-      state.mission = state.missions.B1;
+      state.missions = { B1: prepareMission(b1), A1: prepareMission(a1), B0: prepareMission(b0) };
+      state.mission = state.missions.B0;
       buildMissionDrawables(state.mission);
       $("ro-title").textContent = state.mission.product.split(":")[0];
       const hash = location.hash.replace("#", "");

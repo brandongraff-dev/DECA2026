@@ -7,7 +7,7 @@ from dataclasses import dataclass, field, asdict
 import numpy as np
 
 from .constants import DAY, R_E, DEG
-from .legs import Propulsion, DriftBounds, leg_cost
+from .legs import Propulsion, DriftBounds, leg_cost, leg_cost_throttled
 from .kits import kit_mass, KitDesign
 from .missions import launch_mass_kits
 from .sequencing import LegOracle, beam_search, simulated_annealing
@@ -43,16 +43,16 @@ def object_kits(pop, idx, controlled_above_kg=5000.0, design=KitDesign()):
     return out
 
 
-def evaluate(pop, truck, order, legs_timing, kit_masses, iterations=3):
+def evaluate(pop, truck, order, legs_timing, kit_masses, iterations=3, plan_mass=None):
     """Re-price a planned route with the truck's real, changing mass."""
     legs = [dict(l) for l in legs_timing]
     m0, prop_kg, masses = None, None, [truck.dry_mass_kg + sum(kit_masses)] * len(legs)
     for _ in range(iterations):
         for k, l in enumerate(legs):
             A, B = l["from"], l["to"]
-            r = leg_cost(truck.prop, pop.a[A], pop.i[A], pop.raan_at(l["depart_jd"], A),
+            r = leg_cost_throttled(truck.prop, pop.a[A], pop.i[A], pop.raan_at(l["depart_jd"], A),
                          pop.a[[B]], pop.i[[B]], pop.raan_at(l["depart_jd"], [B]),
-                         l["T_days"] * DAY, masses[k], truck.bounds, truck.dv_rendezvous_kms)
+                         l["T_days"] * DAY, masses[k], truck.bounds, truck.dv_rendezvous_kms, plan_mass=plan_mass)
             l.update(dv=float(r["dv"][0]), a_d=float(r["a_d"][0]), i_d=float(r["i_d"][0]),
                      t_spiral_days=float(r["t_spiral"][0] / DAY), feasible=bool(r["feasible"][0]))
         m0, prop_kg, masses = launch_mass_kits([l["dv"] for l in legs], truck.prop.isp, truck.dry_mass_kg,
@@ -66,6 +66,7 @@ def evaluate(pop, truck, order, legs_timing, kit_masses, iterations=3):
         "total_dv_kms": float(sum(l["dv"] for l in legs)), "launch_mass_kg": m0, "propellant_kg": prop_kg,
         "start_jd": float(start), "end_jd": float(end), "duration_days": float(end - start),
         "feasible": all(l["feasible"] for l in legs) and np.isfinite(m0),
+        "plan_mass_kg": plan_mass,
     }
 
 
@@ -90,4 +91,4 @@ def plan_mission(pop, pool, n_stops, start_jd, truck, lam_ms_per_day=0.5, beam_w
         order, legs = b["order"], legs_beam
     if not legs:
         return None
-    return evaluate(pop, truck, order, legs, [kits_all[o] for o in order])
+    return evaluate(pop, truck, order, legs, [kits_all[o] for o in order], plan_mass=rep_mass)

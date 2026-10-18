@@ -18,7 +18,7 @@ These come straight from our assumption table and tornado chart (the biggest pri
 |---|---|---|---|---|
 | H1 | Truck hardware costs **$50–115M** | $80M base | ADR companies, thruster makers, aerospace profs | E3 |
 | H2 | One deorbit kit costs **$0.5–3M** | $1.5M base | ADR companies, propulsion and kit makers | E3 |
-| H3 | Operators with dead satellites would pay **~$10–20M per removal** | price ≈ $15.1M (cost $12.1M) | Operators (Product A) | C3, C4 |
+| H3 | Operators with dead satellites would pay **~$10–20M per removal** | price ≈ $15.3M (cost $12.2M, launch included) | Operators (Product A) | C3, C4 |
 | H4 | Agencies buy removal as a **service contract per object** | contracts $40–93M/object today | Agencies, ADR companies, policy experts | C5, E5 |
 | H5 | Customers accept a **1–2 year** route if it's ~5× cheaper | time–price menu | Operators, agencies | C4 |
 | H6 | Capturing *unprepared, tumbling* stages and attaching a kit is feasible with 10 days per stop | 10 days, 20 m/s | ADR engineers, GNC professors | E2 |

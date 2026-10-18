@@ -27,6 +27,11 @@ BLOBS = {
     "d8ebdef4c8b76418695354a601dad630": "truck_close.png",
     "dae0be946fe8ed361c01fc941ae1154f": "scaling.png",
     "ec3c3bfbb793325e6406c39c8a7d2686": "tornado.png",
+    "a25cc5bdef8c6866880709bb1cf5b4c8": "model_tag.png",
+    "0017842c48f57393f1ecf898d7173776": "model_truck.png",
+    "067fb47714ecee436d438a0d0491d9a5": "model_reentry.png",
+    "83f72b75855657a5c62e110f07020266": "scaling.png",
+    "3c397a80a1dd28979d356efa63369396": "tornado.png",
 }
 
 CSS = """

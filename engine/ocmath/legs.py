@@ -174,6 +174,36 @@ def leg_cost(prop, a_A, i_A, raan_A, a_B, i_B, raan_B, T, mass,
     }
 
 
+def leg_cost_throttled(prop, a_A, i_A, raan_A, a_B, i_B, raan_B, T, mass,
+                       bounds=DriftBounds(), dv_rendezvous=0.0, factors=tuple(np.linspace(1.0, 2.2, 25)),
+                       plan_mass=None):
+    """leg_cost, letting an electric truck throttle down.
+
+    Spiral timing shifts where the drift starts, so a leg can close neatly at
+    one thrust level and miss at another.  A real electric thruster can run
+    below full power, so a light truck can always fly a heavier truck's slower
+    schedule: running at 1/f of full thrust is the same, for timing, as being f
+    times heavier.  We try a range of throttle settings (and the planner's own
+    mass, at which every planned leg is known to work) and keep the cheapest.
+    """
+    if prop.kind != "electric":
+        return leg_cost(prop, a_A, i_A, raan_A, a_B, i_B, raan_B, T, mass, bounds, dv_rendezvous)
+    best = None
+    factors = list(factors)
+    if plan_mass is not None and plan_mass > mass:
+        factors.append(plan_mass / mass)        # the mass the planner proved this leg at
+    for f in factors:
+        r = leg_cost(prop, a_A, i_A, raan_A, a_B, i_B, raan_B, T, mass * f, bounds, dv_rendezvous)
+        r["throttle"] = np.full(r["dv"].shape, 1.0 / f)
+        if best is None:
+            best = r
+            continue
+        better = r["dv"] < best["dv"]
+        for k in best:
+            best[k] = np.where(better, r[k], best[k])
+    return best
+
+
 def dv_vs_time_curve(prop, a_A, i_A, raan_A, a_B, i_B, raan_B, times, mass, bounds=DriftBounds()):
     """The wait-vs-burn curve for one leg: cheapest dv for each allowed transfer time."""
     out = []

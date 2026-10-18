@@ -9,6 +9,7 @@ DECA Innovation Plan 2026-27 project by Brandon Graff. **Live demo:** https://cl
 - Paper (11 pages): `paper/OrbitalCurbside_paper.pdf`. One-page summary: `onepager/OrbitalCurbside_OnePager.pdf`
 - Customer validation kit: `04_validation_kit.md`, contacts in `research/`, tracker `research/outreach_tracker.csv`
 - 60-second recording plan: `05_recording_plan.md`. QR codes: `qr/`
+- 3D concept model of the truck and its journey (launch → climb → capture → re-entry): https://claude.ai/artifact/2Zm9XkGrtmnhcBdUdxtxQb, source in `model/` (also inside the offline demo)
 
 **Offline demo (Windows, nothing to install):** open `offline/OrbitalCurbside-Demo/`, double-click `Start Demo.bat` (see its README.txt).
 Credits and licenses: `ATTRIBUTION.md`.
@@ -27,6 +28,7 @@ Credits and licenses: `ATTRIBUTION.md`.
 | `paper/`, `onepager/` | Paper and summary (HTML template + build script + PDF) |
 | `deck/` | Snapshot of the Slides-artifact deck: slide HTML, images, PDF, speaker notes (`build_deck.py` rebuilds). The editable deck is the Slides artifact; re-export if you edit it there |
 | `research/` | Sourced inputs, verified expert and industry contacts, outreach tracker |
+| `model/` | 3D concept truck + journey (three.js, offline). Sized from `model/data/truck.json` (`engine/scripts/export_model.py`) |
 
 ## Re-run everything
 ```bash
@@ -39,10 +41,12 @@ python -m scripts.benchmark_jpl_legs        # Benchmark 1: 113 legs vs JPL
 python -m scripts.benchmark_mission10       # Benchmark 2: optimisers on Mission 10
 python -m scripts.catalog_2026              # 2026 clusters
 python -m scripts.truck_routes_2026         # 10-stop missions (electric + chemical)
+python -m scripts.launch_options_2026       # getting to orbit: rideshare + climb vs dedicated launch; plans the first route
 python -m scripts.validate_sgp4             # SGP4 + numerical validation
 python -m scripts.pareto_economics          # Pareto / stops-per-truck sweep (~20 min, 4 cores)
 python -m scripts.make_figures              # all charts
 python -m scripts.export_sim                # data for the 3D simulation
+python -m scripts.export_model              # numbers for the 3D truck model
 cd .. && python sim/build_offline.py        # offline demo package
 python paper/build_paper.py                  # paper PDF (needs playwright)
 python deck/build_deck.py                    # deck PDF + speaker notes (needs playwright)

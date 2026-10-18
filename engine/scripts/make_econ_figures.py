@@ -11,7 +11,10 @@ from ocmath.truck import ELECTRIC, CHEMICAL
 
 ROOT = Path(__file__).resolve().parents[2]
 RES = ROOT / "results"
-LABEL = {"B1_SL8_83deg": "Product B: SL-8 rocket stages (83°)", "A1_Iridium_legacy": "Product A: dead Iridium satellites"}
+LABEL = {"B1_SL8_83deg": "SL-8 rocket stages (83°)", "A1_Iridium_legacy": "Product A: dead Iridium satellites",
+         "B0_SSO_partner": "First route: partner-nation stages (sun-sync)"}
+BASE = "B0_SSO_partner"        # the first route: where a rideshare already goes
+LAUNCH_NOTE = "Includes a rideshare launch to sun-synchronous orbit and the truck's own climb to its first stop."
 PNAME = {"truck_hw_musd": "Truck hardware cost", "kit_musd": "Deorbit kit unit cost",
          "launch_usd_per_kg": "Launch price per kg", "xenon_usd_per_kg": "Xenon price",
          "chem_prop_usd_per_kg": "Chemical propellant price", "ops_musd_per_year": "Operations cost per year",
@@ -41,7 +44,7 @@ def pareto_front(pts):
 def fig_pareto(theme, data):
     t = style.use(theme)
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.6), sharey=False)
-    for ax, ck in zip(axes, ["B1_SL8_83deg", "A1_Iridium_legacy"]):
+    for ax, ck in zip(axes, [BASE, "B1_SL8_83deg"]):
         for eng, col, lab in (("chemical", t["other"], "Chemical truck"), ("electric", t["truck"], "Electric truck")):
             pts = [(r["duration_days"], r["cost_per_removal_musd"]) for r in data["runs"]
                    if r.get("feasible") and r["cluster"] == ck and r["engine"] == eng and r["n"] == 10]
@@ -61,7 +64,7 @@ def fig_pareto(theme, data):
                  fontweight="bold", fontsize=13, color=t["text"])
     fig.text(0.01, -0.03, "Each dot is one optimised 10-stop mission for a different 'price of time'. Lines = Pareto "
              "frontier (no other plan of that engine is both faster and cheaper). Operations cost per year outweighs "
-             "the extra propellant of faster routes. Base-case assumptions.", fontsize=7.5,
+             "the extra propellant of faster routes. Base-case assumptions. " + LAUNCH_NOTE, fontsize=7.5,
              color=t["text2"])
     fig.tight_layout()
     style.save(fig, _out(theme, "06_pareto"))
@@ -71,9 +74,9 @@ def fig_scaling(theme, data):
     t = style.use(theme)
     fig, ax = plt.subplots(figsize=(8.6, 5))
     for eng, col, lab in (("chemical", t["other"], "Chemical truck"), ("electric", t["truck"], "Electric truck (ours)")):
-        single = next(s for s in data["single_object"] if s["engine"] == eng)
+        single = next(s for s in data["single_object"] if s["engine"] == eng and s.get("cluster") == BASE)
         pts = sorted([(r["n"], r["cost_per_removal_musd"]) for r in data["runs"]
-                      if r.get("feasible") and r["cluster"] == "B1_SL8_83deg" and r["engine"] == eng and r["lam"] == 0.5])
+                      if r.get("feasible") and r["cluster"] == BASE and r["engine"] == eng and r["lam"] == 0.5])
         pts = [(1, single["cost_per_removal_musd"])] + pts
         x, y = zip(*pts)
         ax.plot(x, y, color=col, marker="o", ms=5)
@@ -90,8 +93,9 @@ def fig_scaling(theme, data):
     ax.set_xticks([1, 3, 5, 10, 15, 20])
     ax.set_ylim(0, None)
     ax.set_title("One truck, many stops: the cost per removal collapses")
-    fig.text(0.01, -0.03, "Lines: our cost model (base assumptions), SL-8 83° cluster, real 2026 orbits. Diamonds: "
-             "public contract values for real single-object missions (total / objects).", fontsize=7.5, color=t["text2"])
+    fig.text(0.01, -0.03, "Lines: our cost model (base assumptions), first route (partner-nation stages, sun-synchronous "
+             "band), real 2026 orbits. " + LAUNCH_NOTE + " Diamonds: public contract values for real single-object "
+             "missions (total / objects).", fontsize=7.5, color=t["text2"], wrap=True)
     style.save(fig, _out(theme, "07_scaling"))
 
 
@@ -110,7 +114,7 @@ def fig_tornado(theme, route):
     ax.axvline(0, color=t["text2"], lw=1)
     ax.set_yticks([])
     ax.set_xlabel(f"Change in cost per removal vs base case (\\${ref:.1f}M), US\\$ millions")
-    ax.set_title("What moves the price? (10-stop electric mission, SL-8 cluster)")
+    ax.set_title("What moves the price? (first route, 10 stops, launch included)")
     lo_patch = plt.Rectangle((0, 0), 1, 1, color=t["other"])
     hi_patch = plt.Rectangle((0, 0), 1, 1, color=t["truck"])
     ax.legend([lo_patch, hi_patch], ["Low value of parameter", "High value of parameter"], loc="lower right",
@@ -123,7 +127,7 @@ def fig_tornado(theme, route):
 
 def fig_breakdown(theme, data, route_run):
     t = style.use(theme)
-    single = next(s for s in data["single_object"] if s["engine"] == "electric")
+    single = next(s for s in data["single_object"] if s["engine"] == "electric" and s.get("cluster") == BASE)
     cats = ["truck_hardware", "kits", "launch", "propellant", "operations", "insurance"]
     names = ["Truck", "Kits", "Launch", "Propellant", "Operations", "Insurance"]
     per_single = [single["breakdown"][c] / 1 for c in cats]
@@ -150,52 +154,84 @@ def fig_breakdown(theme, data, route_run):
     style.save(fig, _out(theme, "09_breakdown"))
 
 
-def sim_route(key="B1_SL8_83deg/electric"):
-    """The exact route the 3D simulation flies, priced with the base assumptions."""
-    r = json.loads((RES / "truck_routes_2026.json").read_text())[key]
-    eng = key.split("/")[1]
-    c = mission_cost(r, eng, len(r["order"]), base_values(default_params()))
-    return {"duration_days": r["duration_days"], "launch_mass_kg": r["launch_mass_kg"],
-            "propellant_kg": r["propellant_kg"], "kits_kg": sum(r["kit_masses_kg"]), "dv_kms": r["total_dv_kms"],
+def base_route(key=BASE, eng="electric"):
+    """A route priced the way it would really fly: rideshare launch + climb + the 10 stops."""
+    lo = json.loads((RES / "launch_options_2026.json").read_text())["options"][f"{key}/{eng}"]
+    b = lo[lo["best"]]
+    r = json.loads((RES / "truck_routes_2026.json").read_text())[f"{key}/{eng}"]
+    c = mission_cost(b, eng, len(r["order"]), base_values(default_params()))
+    return {"duration_days": b["duration_days"], "launch_mass_kg": b["launch_mass_kg"],
+            "propellant_kg": b["propellant_kg"], "kits_kg": sum(r["kit_masses_kg"]), "dv_kms": r["total_dv_kms"],
+            "launch_fixed_musd": b.get("launch_fixed_musd"), "insertion_days": b["insertion_days"],
+            "insertion_dv_ms": b["insertion_dv_ms"], "route_days": r["duration_days"],
             "cost_total_musd": c["total"], "cost_per_removal_musd": c["per_removal"], "breakdown": c["breakdown"],
             "n": len(r["order"])}
 
 
+def reuse_curve(key, eng, n_routes, v):
+    """Cost per removal after k routes, k = 1..n_routes. The climb after launch is flown once."""
+    r0 = json.loads((RES / "truck_routes_2026.json").read_text())[f"{key}/{eng}"]
+    r0 = {**r0, "kits_kg": sum(r0["kit_masses_kg"])}
+    lo = json.loads((RES / "launch_options_2026.json").read_text())["options"][f"{key}/{eng}"]
+    b = lo[lo["best"]]
+    dm = b["launch_mass_kg"] - r0["launch_mass_kg"]
+    extra = dm * v["launch_usd_per_kg"] / 1e6 * (1 + v["insurance_frac"]) + v["ops_musd_per_year"] * b["insertion_days"] / 365.25
+    out = []
+    for k in range(1, n_routes + 1):
+        c = reusable_campaign(r0, eng, 10, k, v)
+        c["total"] += extra
+        c["per_removal"] = c["total"] / c["removals"]
+        c["years"] += b["insertion_days"] / 365.25
+        c["first_launch_kg"] += dm
+        out.append(c)
+    return r0, out
+
+
 def fig_reuse(theme, data):
-    """One long-lived truck flying many 10-stop routes, restocked by kit pods."""
+    """One long-lived truck flying many 10-stop routes on the first route, restocked by kit pods.
+
+    Pods ride later rideshares to sun-synchronous orbit, where this truck works, so this only
+    applies to the first route. The electric truck is stopped at its thrusters' rated life.
+    """
     t = style.use(theme)
     v = base_values(default_params())
     fig, ax = plt.subplots(figsize=(8.6, 4.8))
     out = {}
     for eng, col, lab, prop in (("chemical", t["other"], "Chemical truck (needs propellant resupply)", CHEMICAL),
-                                ("electric", t["truck"], "Electric truck (one xenon load for life)", ELECTRIC)):
-        route = next(r for r in data["runs"] if r.get("feasible") and r["cluster"] == "B1_SL8_83deg"
-                     and r["engine"] == eng and r["n"] == 10 and r["lam"] == 2.0)
-        ks = np.arange(1, 11)
-        per = [reusable_campaign(route, eng, 10, int(k), v)["per_removal"] for k in ks]
+                                ("electric", t["truck"], "Electric truck (one xenon load)", ELECTRIC)):
+        r0, camp = reuse_curve(BASE, eng, 10, v)
+        limit = thruster_routes_limit(r0, prop.isp) if eng == "electric" else None
+        n_ok = int(np.floor(limit)) if limit else 10
+        ks = np.arange(1, n_ok + 1)
+        per = [c["per_removal"] for c in camp[:n_ok]]
         ax.plot(ks * 10, per, color=col, marker="o", ms=4)
-        ax.annotate(f"{lab}: \\${per[-1]:.1f}M", (100, per[-1]), xytext=(6, 8 if eng == "chemical" else -8),
+        ax.annotate(f"{lab}: \\${per[-1]:.1f}M", (ks[-1] * 10, per[-1]), xytext=(6, 10 if eng == "chemical" else -12),
                     textcoords="offset points", fontsize=8.5, color=t["text"], va="center")
-        out[eng] = {"route_days": route["duration_days"], "per_removal_by_routes": per,
-                    "campaign_10_routes": reusable_campaign(route, eng, 10, 10, v),
-                    "thruster_route_limit": thruster_routes_limit(route, prop.isp) if eng == "electric" else None}
+        if limit:
+            ax.axvline(limit * 10, color=col, ls=":", lw=1)
+            ax.annotate("thruster rated life", (limit * 10, ax.get_ylim()[1] * 0.0 + per[0] * 0.9), xytext=(4, 0),
+                        textcoords="offset points", fontsize=7.5, color=t["text2"], rotation=90, va="top")
+        out[eng] = {"route_days": r0["duration_days"], "per_removal_by_routes": [c["per_removal"] for c in camp],
+                    "campaign_10_routes": camp[-1], "campaign_at_limit": camp[n_ok - 1], "routes_at_limit": n_ok,
+                    "thruster_route_limit": limit}
     ax.set_xlabel("Objects removed by one truck over its working life")
     ax.set_ylabel("Cost per removal, US$ millions")
     ax.set_ylim(0, None)
-    ax.set_xlim(0, 135)
+    ax.set_xlim(0, 110)
     ax.set_title("Keep the truck, ship new kits: cost per removal keeps falling")
-    fig.text(0.01, -0.03, "SL-8 cluster, 10-stop routes. After route 1, only kit pods are launched (rideshare price). "
-             "Pod carrier mass and price, truck life ~8 years: [ASSUMPTIONS].", fontsize=7.5, color=t["text2"])
+    fig.text(0.01, -0.03, "First route (sun-synchronous band). After route 1, only kit pods are launched, on later "
+             "rideshares that already go to this orbit. Pod carrier mass and price: [ASSUMPTIONS]. The electric line stops "
+             "where its thrusters reach their rated total impulse.", fontsize=7.5, color=t["text2"], wrap=True)
     style.save(fig, _out(theme, "10_reuse"))
     return out
 
 
 def make_all(theme):
     data = load()
-    base = sim_route()
+    base = base_route()
     # make the scaling curve's 10-stop point the simulated route itself
     for r in data["runs"]:
-        if r.get("feasible") and r["cluster"] == "B1_SL8_83deg" and r["engine"] == "electric" and r["n"] == 10 and r["lam"] == 0.5:
+        if r.get("feasible") and r["cluster"] == BASE and r["engine"] == "electric" and r["n"] == 10 and r["lam"] == 0.5:
             r.update(base)
     fig_pareto(theme, data)
     fig_scaling(theme, data)
@@ -204,7 +240,10 @@ def make_all(theme):
     fig_breakdown(theme, data, base)
     if theme == "paper":
         params = default_params()
-        summary = {"base_route": {k: base[k] for k in ("duration_days", "launch_mass_kg", "propellant_kg", "kits_kg")},
+        summary = {"base_key": BASE,
+                   "base_route": {k: base[k] for k in ("duration_days", "launch_mass_kg", "propellant_kg", "kits_kg",
+                                                       "insertion_days", "insertion_dv_ms", "route_days")},
+                   "routes_with_launch": {k: base_route(k) for k in (BASE, "B1_SL8_83deg", "A1_Iridium_legacy")},
                    "base_cost_per_removal_musd": ref,
                    "base_price_per_removal_musd": mission_cost(base, "electric", 10, base_values(params))["price_per_removal"],
                    "monte_carlo_cost_per_removal": monte_carlo(base, "electric", 10, params),
@@ -215,7 +254,7 @@ def make_all(theme):
         print(json.dumps({k: summary[k] for k in ("base_cost_per_removal_musd", "base_price_per_removal_musd",
                                                   "monte_carlo_cost_per_removal")}, indent=1))
         for eng, rr in reuse.items():
-            cmp = rr["campaign_10_routes"]
-            print(f"reuse {eng}: route {rr['route_days']:.0f} d, 10 routes -> ${cmp['per_removal']:.2f}M/removal over "
+            cmp = rr["campaign_at_limit"]
+            print(f"reuse {eng}: route {rr['route_days']:.0f} d, {rr['routes_at_limit']} routes -> ${cmp['per_removal']:.2f}M/removal over "
                   f"{cmp['years']:.1f} y; first launch {cmp['first_launch_kg']:.0f} kg, pod {cmp['pod_kg']:.0f} kg, "
                   f"thruster limit {rr['thruster_route_limit']}")

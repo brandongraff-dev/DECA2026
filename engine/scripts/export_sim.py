@@ -68,13 +68,20 @@ print("background objects:", len(bg["rows"]))
 
 
 # ------------------------------------------------------------------ one mission
-def export_mission(key, route, prop, title, product):
+LAUNCH = json.loads((ROOT / "results/launch_options_2026.json").read_text())["options"]
+PARETO = json.loads((ROOT / "results/pareto_economics.json").read_text())
+
+
+def export_mission(key, route, prop, title, product, route_key):
     truck = TruckDesign(prop=prop)
     order = route["order"]
     kits = route["kit_masses_kg"]
     m0, prop_kg, masses = launch_mass_kits([l["dv"] for l in route["legs"]], prop.isp, truck.dry_mass_kg,
                                            kits, truck.dv_reserve_kms)
-    econ = mission_cost(route, prop.kind, len(order), base_values(default_params()))
+    lo = LAUNCH[f"{route_key}/{prop.kind}"]
+    best = lo[lo["best"]]                         # cheapest way to orbit (rideshare + climb), priced in full
+    econ = {"total": best["total_musd"], "per_removal": best["cost_per_removal_musd"],
+            "price_per_removal": best["price_per_removal_musd"], "breakdown": best["breakdown"]}
     segs, stops = [], []
     jd_arr = route["start_jd"]
     mass = m0
@@ -119,8 +126,9 @@ def export_mission(key, route, prop, title, product):
         cum_dv += l["dv"]
         cum_prop += propellant_for_dv(masses[j], l["dv"], prop.isp)
         jd_arr = jd_next
-    singles = mission_cost({"launch_mass_kg": truck.dry_mass_kg + float(np.mean(kits)) + 60.0, "propellant_kg": 60.0,
-                            "duration_days": 120.0}, prop.kind, 1, base_values(default_params()))
+    single_key = route_key if any(x.get("cluster") == route_key for x in PARETO["single_object"]) else "B1_SL8_83deg"
+    singles = {"per_removal": next(x["cost_per_removal_musd"] for x in PARETO["single_object"]
+                                   if x.get("cluster") == single_key and x["engine"] == prop.kind)}
     mission = {
         "key": key, "title": title, "product": product,
         "truck": {"engine": prop.name, "isp_s": prop.isp, "thrust_N": prop.thrust_N, "dry_mass_kg": truck.dry_mass_kg,
@@ -136,6 +144,9 @@ def export_mission(key, route, prop, title, product):
                       "single_object_per_removal_musd": round(singles["per_removal"], 2),
                       "anchors": [{"name": a["name"], "per_object_musd": round(a["musd"] / a["objects"], 1)}
                                   for a in REAL_WORLD_ANCHORS],
+                      "launch": {"name": best["launch_name"], "climb_days": round(best["insertion_days"]),
+                                 "climb_dv_ms": round(best["insertion_dv_ms"]), "launch_mass_kg": round(best["launch_mass_kg"]),
+                                 "total_days": round(best["duration_days"])},
                       "note": "Base-case assumptions; see research/economics_inputs.md and the paper's assumption table."},
     }
     (OUT / f"mission_{key}.json").write_text(json.dumps(mission, indent=1, default=float))
@@ -145,7 +156,10 @@ def export_mission(key, route, prop, title, product):
 
 
 routes = json.loads((ROOT / "results/truck_routes_2026.json").read_text())
+export_mission("B0", routes["B0_SSO_partner/electric"], ELECTRIC,
+               "10 partner-nation rocket stages in sun-synchronous orbit (US, India, France)",
+               "Product B: first route, partner-nation rocket stages", "B0_SSO_partner")
 export_mission("B1", routes["B1_SL8_83deg/electric"], ELECTRIC, "10 Soviet-era SL-8 rocket stages, one electric truck",
-               "Product B: agency rocket-body cleanup")
+               "Product B: agency rocket-body cleanup", "B1_SL8_83deg")
 export_mission("A1", routes["A1_Iridium_legacy/electric"], ELECTRIC, "10 dead first-generation Iridium satellites",
-               "Product A: operator constellation sweep")
+               "Product A: operator constellation sweep", "A1_Iridium_legacy")

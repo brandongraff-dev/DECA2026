@@ -9,6 +9,8 @@ WINDOWS (nothing to install):
    (Or once, before unzipping: right-click the .zip > Properties > tick "Unblock" > OK.)
 3. Your browser opens http://localhost:8642. Edge or Chrome both work.
 4. Keys: 1-4 jump to scenes, Space = play/pause. Close the black window to stop.
+5. The 3D truck and its launch-to-first-stop journey: click "See the truck in 3D" in the demo,
+   or open http://localhost:8642/truck/index.html
 
 MAC: double-click "Start Demo (Mac).command" (uses the Python that ships with macOS developer tools).
 

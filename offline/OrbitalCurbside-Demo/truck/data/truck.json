@@ -1,0 +1,96 @@
+{
+ "route": {
+  "key": "B0_SSO_partner",
+  "name": "Partner-nation stages, sun-sync",
+  "stops": 10,
+  "days": 410.0,
+  "stop_alt_km": [
+   834.0740304341789,
+   778.0473143070985,
+   811.2340787775656,
+   816.2263357974343,
+   769.049632748065,
+   781.9001173587094,
+   748.5538028124911,
+   723.0562078163066,
+   681.1018093798784,
+   780.4059968211013
+  ],
+  "stop_inc_deg": [
+   98.8344,
+   99.1098,
+   98.626,
+   99.0421,
+   98.8042,
+   98.4687,
+   98.174,
+   97.0671,
+   97.8369,
+   98.2182
+  ],
+  "stop_raan_offsets_deg": [
+   0.0,
+   -0.47218926270089134,
+   2.7307374803251507,
+   -27.433773433960383,
+   -29.449391931551297,
+   -22.360935456368267,
+   -57.747997394973915,
+   -24.98639963623109,
+   -102.70541034414944,
+   -102.72824566086678
+  ]
+ },
+ "launch": {
+  "key": "rideshare",
+  "title": "Rideshare to sun-synchronous orbit",
+  "text": "A shared Falcon 9 rideshare from Vandenberg, California drops the truck at about 550 km, tilted 97.6\u00b0 (sun-synchronous). That is the cheap ride; it only goes to this one kind of orbit.",
+  "short": "Shared rideshare launch"
+ },
+ "insertion": {
+  "from_alt_km": 550.0,
+  "from_inc_deg": 97.6,
+  "to_alt_km": 834.0740304341789,
+  "to_inc_deg": 98.8344,
+  "days": 80.0,
+  "dv_ms": 600.1149512785327,
+  "xenon_kg": 57.99240200151417,
+  "raan_shift_deg": 25.0
+ },
+ "mass": {
+  "dry_kg": 600.0,
+  "kits_kg": [
+   75.11408248941623,
+   49.60273107552709,
+   72.73447653841428,
+   73.25520273140309,
+   84.63699965513744,
+   128.75898782226807,
+   121.67222954978365,
+   63.42592836416952,
+   59.0412672004933,
+   123.81404742957989
+  ],
+  "kits_total_kg": 852.0559528561926,
+  "xenon_kg": 197.6296107650935,
+  "launch_kg": 1649.685563621286
+ },
+ "truck": {
+  "thrusters": "Two Busek BHT-1500-class Hall thrusters: 0.202 N together, Isp 1,710 s, 1.5 kW each",
+  "power_kw": 3.5
+ },
+ "stage": {
+  "name": "PSLV fourth stage (India)",
+  "length_m": 3.0,
+  "diameter_m": 2.0,
+  "mass_kg": 920.0
+ },
+ "kit": {
+  "perigee_km": 250
+ },
+ "cost": {
+  "per_removal_musd": 12.223461882824544,
+  "total_days": 490.0
+ },
+ "note": "Concept sized from our model: kit masses from the rocket equation, xenon from the route plus the climb after launch. Power (\u22483.5 kW) and the 600 kg dry mass are assumptions."
+}

@@ -23,6 +23,7 @@ val = J("validation_sgp4.json")
 econ = J("economics_summary.json")
 pareto = J("pareto_economics.json")
 clusters = J("clusters_2026.json")
+launch = J("launch_options_2026.json")
 
 f0 = lambda x: f"{x:,.0f}"
 f1 = lambda x: f"{x:,.1f}"
@@ -46,26 +47,52 @@ v["B1_DV"] = f0(b1["total_dv_kms"] * 1000); v["B1_PROP"] = f0(b1["propellant_kg"
 v["B1_KITS"] = f0(sum(b1["kit_masses_kg"]))
 v["MASS_SAVING"] = f0((1 - b1["launch_mass_kg"] / b1c["launch_mass_kg"]) * 100)
 v["LAM_E"] = f0(b1.get("lam_ms_per_day", float("nan"))); v["LAM_C"] = f1(b1c.get("lam_ms_per_day", float("nan")))
-v["B1_CPR"] = f1(econ["base_cost_per_removal_musd"]); v["B1_PRICE"] = f1(econ["base_price_per_removal_musd"])
-v["B1_TOTAL"] = f0(econ["base_cost_per_removal_musd"] * len(b1["order"]))
-single = next(s for s in econ["single_object_model"] if s["engine"] == "electric")
+# headline = the first route (B0), priced with its rideshare launch and climb
+b0 = routes["B0_SSO_partner/electric"]
+lo_b0 = launch["options"]["B0_SSO_partner/electric"]; best_b0 = lo_b0[lo_b0["best"]]
+lo_b1 = launch["options"]["B1_SL8_83deg/electric"]; best_b1 = lo_b1[lo_b1["best"]]
+lo_a1 = launch["options"]["A1_Iridium_legacy/electric"]; best_a1 = lo_a1[lo_a1["best"]]
+v["B0_N"] = str(len(b0["order"])); v["B0_POOL"] = str(len(launch["b0_pool"]))
+v["B0_DAYS"] = f0(b0["duration_days"]); v["B0_TOTAL_DAYS"] = f0(best_b0["duration_days"])
+v["B0_MONTHS"] = f0(best_b0["duration_days"] / 30.44)
+v["B0_DV"] = f0(b0["total_dv_kms"] * 1000); v["B0_KITS"] = f0(sum(b0["kit_masses_kg"]))
+v["B0_PROP"] = f0(best_b0["propellant_kg"]); v["B0_LAUNCH_KG"] = f0(best_b0["launch_mass_kg"])
+v["B0_CLIMB_DAYS"] = f0(best_b0["insertion_days"]); v["B0_CLIMB_DV"] = f0(best_b0["insertion_dv_ms"])
+v["HEAD_CPR"] = f1(econ["base_cost_per_removal_musd"]); v["HEAD_PRICE"] = f1(econ["base_price_per_removal_musd"])
+v["HEAD_TOTAL"] = f0(econ["base_cost_per_removal_musd"] * len(b0["order"]))
+v["B1_CPR_NOLAUNCH"] = f1(lo_b1["no_launch_leg"]["cost_per_removal_musd"])
+v["B1_CPR"] = f1(best_b1["cost_per_removal_musd"]); v["B1_TOTAL_DAYS"] = f0(best_b1["duration_days"])
+v["B1_CLIMB_DAYS"] = f0(best_b1["insertion_days"]); v["B1_CLIMB_DV"] = f0(best_b1["insertion_dv_ms"])
+v["B1_LAUNCH_KG"] = f0(best_b1["launch_mass_kg"])
+v["A1_CPR"] = f1(best_a1["cost_per_removal_musd"])
+v["NEUTRON_B1"] = f1(lo_b1["neutron"]["cost_per_removal_musd"]); v["F9_B1"] = f1(lo_b1["falcon9"]["cost_per_removal_musd"])
+lo_b1c = launch["options"]["B1_SL8_83deg/chemical"]
+v["B1C_LAUNCH_KG"] = f0(lo_b1c["rideshare"]["launch_mass_kg"]); v["B1C_CPR"] = f1(lo_b1c["rideshare"]["cost_per_removal_musd"])
+single = next(s for s in econ["single_object_model"] if s["engine"] == "electric" and s.get("cluster") == "B0_SSO_partner")
 v["SINGLE_CPR"] = f0(single["cost_per_removal_musd"])
 v["MC_P10"] = f1(econ["monte_carlo_cost_per_removal"]["p10"]); v["MC_P90"] = f1(econ["monte_carlo_cost_per_removal"]["p90"])
 re_e, re_c = econ["reuse"]["electric"], econ["reuse"]["chemical"]
-v["REUSE_CPR"] = f1(re_e["campaign_10_routes"]["per_removal"]); v["REUSE_CPR_CHEM"] = f1(re_c["campaign_10_routes"]["per_removal"])
-v["REUSE_YEARS"] = f0(re_e["campaign_10_routes"]["years"])
-v["REUSE_CHEM_PROP"] = f"{round(re_c['campaign_10_routes']['propellant_total_kg'], -2):,.0f}"
-v["REUSE_ELEC_PROP"] = f"{round(re_e['campaign_10_routes']['propellant_total_kg'], -1):,.0f}"
+nr = re_e["routes_at_limit"]                         # electric truck stops at its thrusters' rated life
+v["REUSE_ROUTES"] = str(nr); v["REUSE_OBJECTS"] = str(10 * nr)
+v["REUSE_CPR"] = f1(re_e["campaign_at_limit"]["per_removal"])
+v["REUSE_CPR_CHEM"] = f1(re_c["per_removal_by_routes"][nr - 1])
+v["REUSE_YEARS"] = f0(re_e["campaign_at_limit"]["years"])
+v["THRUSTER_LIMIT"] = f1(re_e["thruster_route_limit"])
+v["REUSE_ELEC_PROP"] = f"{round(re_e['campaign_at_limit']['propellant_total_kg'], -1):,.0f}"
 tor = {r["param"]: r for r in econ["tornado"]}
 v["TOR_HW_LO"] = f1(tor["truck_hw_musd"]["low"]); v["TOR_HW_HI"] = f1(tor["truck_hw_musd"]["high"])
 for n in (3, 5, 15, 20):
-    r = next(r for r in pareto["runs"] if r.get("feasible") and r["cluster"] == "B1_SL8_83deg"
-             and r["engine"] == "electric" and r["n"] == n)
+    r = next(r for r in pareto["runs"] if r.get("feasible") and r["cluster"] == "B0_SSO_partner"
+             and r["engine"] == "electric" and r["n"] == n and r["lam"] == 0.5)
     v[f"N{n}"] = f1(r["cost_per_removal_musd"])
 vb1 = [x["target_plane_err_deg"] for x in val["B1_SL8_83deg/electric"] if "target_plane_err_deg" in x]
 v["VAL_B1"] = f2(np.median(vb1))
 vb1c = [x["correction_dv_ms"] for x in val["B1_SL8_83deg/chemical"] if "correction_dv_ms" in x]
 v["VAL_B1_DV"] = f1(np.median(vb1c))
+vb0 = [x["target_plane_err_deg"] for x in val["B0_SSO_partner/electric"] if "target_plane_err_deg" in x]
+v["VAL_B0"] = f2(np.median(vb0)); v["VAL_B0_MAX"] = f1(np.max(vb0))
+vb0c = [x["correction_dv_ms"] for x in val["B0_SSO_partner/chemical"] if "correction_dv_ms" in x]
+v["VAL_B0_DV"] = f1(np.median(vb0c)); v["VAL_B0_DV_MAX"] = f0(np.max(vb0c))
 
 # ---------------------------------------------------------------- tables
 def table(head, rows, cap, num_cols=()):
@@ -93,7 +120,8 @@ v["M10_TABLE"] = table(["GTOC9 Mission 10 (10 objects; all scored by our model)"
                        f"{m10[0].get('m0_jpl_actual', 0):,.1f} kg.", (1, 2))
 
 rrow = []
-names = {"B1_SL8_83deg": "SL-8 stages, 83°, ~960 km (Product B)", "B2_SL8_74deg_750km": "SL-8 stages, 74°, ~750 km",
+names = {"B0_SSO_partner": "Partner-nation stages, sun-sync (first route)",
+         "B1_SL8_83deg": "SL-8 stages, 83°, ~960 km (Product B)", "B2_SL8_74deg_750km": "SL-8 stages, 74°, ~750 km",
          "A1_Iridium_legacy": "Dead Iridium, 86° (Product A)"}
 for k, r in routes.items():
     c, eng = k.split("/")
@@ -102,11 +130,27 @@ for k, r in routes.items():
         continue
     rrow.append([names[c], eng, f0(r["total_dv_kms"] * 1000), f0(r["propellant_kg"]), f0(sum(r["kit_masses_kg"])),
                  f0(r["launch_mass_kg"]), f0(r["duration_days"])])
-v["ROUTES_TABLE"] = table(["10-stop mission, launch 1 Jan 2029", "Engine", "Δv m/s", "Propellant kg", "Kits kg",
+order = ["B0_SSO_partner", "B1_SL8_83deg", "B2_SL8_74deg_750km", "A1_Iridium_legacy"]
+rrow.sort(key=lambda row: next(k for k, c in enumerate(order) if names[c] == row[0]))
+v["ROUTES_TABLE"] = table(["10-stop route, first stop 1 Jan 2029", "Engine", "Δv m/s", "Propellant kg", "Kits kg",
                            "Launch kg", "Days"], rrow,
                           "<b>Table 3.</b> Optimised missions on the real 2026 catalogue (simulated plans), each planned with the "
-                          "price of time derived from the cost model. At ~750 km and 74° the electric truck cannot keep pace "
-                          "at that price; it was feasible only on much slower plans in earlier runs.", (2, 3, 4, 5, 6))
+                          "price of time derived from the cost model. These are the routes themselves, from the first stop; "
+                          "Table 5 adds the launch and the climb to the first stop.", (2, 3, 4, 5, 6))
+
+lrow = []
+for key in ("B0_SSO_partner", "B1_SL8_83deg", "A1_Iridium_legacy"):
+    o = launch["options"][f"{key}/electric"]
+    cell = lambda lk: (f"<b>{f1(o[lk]['cost_per_removal_musd'])}</b>" if lk == o["best"] else f1(o[lk]["cost_per_removal_musd"]))
+    rs = o["rideshare"]
+    lrow.append([names[key], f1(o["no_launch_leg"]["cost_per_removal_musd"]),
+                 f"{cell('rideshare')} ({f0(rs['insertion_days'])} d, {f0(rs['insertion_dv_ms'])} m/s climb; {f0(rs['launch_mass_kg'])} kg)",
+                 cell("neutron"), cell("falcon9")])
+v["LAUNCH_TABLE"] = table(["Electric truck, 10 stops ($M per removal)", "Launch not counted", "Rideshare + own climb",
+                           "Dedicated Neutron", "Dedicated Falcon 9"], lrow,
+                          "<b>Table 5.</b> Getting to the first stop. Rideshare: SpaceX Transporter-class drop-off at 550 km, "
+                          "97.6°, $7,500/kg, median over all 24 launch times of day. Dedicated: Neutron $52.5M, Falcon 9 $74M, "
+                          "straight into the first target's orbit. Bold: cheapest.", (1, 3, 4))
 
 vrow = []
 for k, rows in val.items():

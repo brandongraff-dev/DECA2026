@@ -496,5 +496,171 @@
    "plane_angle_highfidelity_deg": 0.6386228468685573,
    "correction_dv_ms": 15.244036961377466
   }
+ ],
+ "B0_SSO_partner/electric": [
+  {
+   "leg": "IRS-P2 R/B->THOR AGENA D R/B",
+   "arrive_jd": 2462162.5,
+   "target_plane_err_deg": 0.19496731578555868,
+   "target_alt_sgp4_km": 790.3649136316526,
+   "target_alt_model_km": 778.0473143070985
+  },
+  {
+   "leg": "THOR AGENA D R/B->PSLV R/B",
+   "arrive_jd": 2462187.5,
+   "target_plane_err_deg": 0.1270471414723077,
+   "target_alt_sgp4_km": 815.9185175262364,
+   "target_alt_model_km": 811.2340787775656
+  },
+  {
+   "leg": "PSLV R/B->PSLV R/B",
+   "arrive_jd": 2462242.5,
+   "target_plane_err_deg": 0.11380789610730387,
+   "target_alt_sgp4_km": 819.2425774240655,
+   "target_alt_model_km": 816.2263357974343
+  },
+  {
+   "leg": "PSLV R/B->ARIANE 5 R/B",
+   "arrive_jd": 2462297.5,
+   "target_plane_err_deg": 0.12306260220322116,
+   "target_alt_sgp4_km": 791.368545359086,
+   "target_alt_model_km": 769.049632748065
+  },
+  {
+   "leg": "ARIANE 5 R/B->ARIANE 40 R/B",
+   "arrive_jd": 2462327.5,
+   "target_plane_err_deg": 0.3044764763389776,
+   "target_alt_sgp4_km": 783.7769572080524,
+   "target_alt_model_km": 781.9001173587094
+  },
+  {
+   "leg": "ARIANE 40 R/B->ARIANE 40 R/B",
+   "arrive_jd": 2462397.5,
+   "target_plane_err_deg": 0.5328428521479632,
+   "target_alt_sgp4_km": 738.0263554456587,
+   "target_alt_model_km": 748.5538028124911
+  },
+  {
+   "leg": "ARIANE 40 R/B->DELTA 1 R/B",
+   "arrive_jd": 2462452.5,
+   "target_plane_err_deg": 0.6850234573327147,
+   "target_alt_sgp4_km": 739.3906193987423,
+   "target_alt_model_km": 723.0562078163066
+  },
+  {
+   "leg": "DELTA 1 R/B->PSLV R/B",
+   "arrive_jd": 2462507.5,
+   "target_plane_err_deg": 0.7839718829773659,
+   "target_alt_sgp4_km": 709.8775374518154,
+   "target_alt_model_km": 681.1018093798784
+  },
+  {
+   "leg": "PSLV R/B->ARIANE 1 R/B",
+   "arrive_jd": 2462537.5,
+   "target_plane_err_deg": 0.5178925591052761,
+   "target_alt_sgp4_km": 788.5429712604737,
+   "target_alt_model_km": 780.4059968211013
+  }
+ ],
+ "B0_SSO_partner/chemical": [
+  {
+   "leg": "THOR AGENA D R/B->THOR AGENA D R/B",
+   "arrive_jd": 2462157.5,
+   "target_plane_err_deg": 0.199467688102902,
+   "target_alt_sgp4_km": 803.158847212434,
+   "target_alt_model_km": 778.0473143070985,
+   "drift_days": 0.0,
+   "plane_angle_model_deg": 0.7858955655078478,
+   "plane_angle_highfidelity_deg": 0.7416803563226483,
+   "correction_dv_ms": 5.751817750855551
+  },
+  {
+   "leg": "THOR AGENA D R/B->PSLV R/B",
+   "arrive_jd": 2462182.5,
+   "target_plane_err_deg": 0.1330769034409218,
+   "target_alt_sgp4_km": 811.0830218015499,
+   "target_alt_model_km": 811.2340787775656,
+   "drift_days": 14.787413853090843,
+   "plane_angle_model_deg": 0.5218553885072729,
+   "plane_angle_highfidelity_deg": 0.5122917099146834,
+   "correction_dv_ms": 1.245736092692462
+  },
+  {
+   "leg": "PSLV R/B->IRS-P2 R/B",
+   "arrive_jd": 2462237.5,
+   "target_plane_err_deg": 0.08640058843684549,
+   "target_alt_sgp4_km": 802.8137914694344,
+   "target_alt_model_km": 834.0740304341789,
+   "drift_days": 45.0,
+   "plane_angle_model_deg": 0.28841806443227885,
+   "plane_angle_highfidelity_deg": 0.3418776803647608,
+   "correction_dv_ms": 6.9049466963407164
+  },
+  {
+   "leg": "IRS-P2 R/B->PSLV R/B",
+   "arrive_jd": 2462257.5,
+   "target_plane_err_deg": 0.3095606798238222,
+   "target_alt_sgp4_km": 715.8232126351559,
+   "target_alt_model_km": 706.5043461251335,
+   "drift_days": 10.0,
+   "plane_angle_model_deg": 0.4945654813811652,
+   "plane_angle_highfidelity_deg": 0.2888240151502776,
+   "correction_dv_ms": 26.69508313130864
+  },
+  {
+   "leg": "PSLV R/B->ARIANE 40 R/B",
+   "arrive_jd": 2462327.5,
+   "target_plane_err_deg": 0.508561778896409,
+   "target_alt_sgp4_km": 758.6111123299206,
+   "target_alt_model_km": 770.3650666288959,
+   "drift_days": 60.0,
+   "plane_angle_model_deg": 1.318318615826748,
+   "plane_angle_highfidelity_deg": 1.1787031122082803,
+   "correction_dv_ms": 17.921536953149296
+  },
+  {
+   "leg": "ARIANE 40 R/B->ARIANE 40+ R/B",
+   "arrive_jd": 2462367.5,
+   "target_plane_err_deg": 0.4802259454772194,
+   "target_alt_sgp4_km": 754.5141446473253,
+   "target_alt_model_km": 758.8731404326818,
+   "drift_days": 30.0,
+   "plane_angle_model_deg": 1.0097620164483077,
+   "plane_angle_highfidelity_deg": 0.6524025718707126,
+   "correction_dv_ms": 46.15617473781414
+  },
+  {
+   "leg": "ARIANE 40+ R/B->PSLV R/B",
+   "arrive_jd": 2462407.5,
+   "target_plane_err_deg": 0.16430131505541276,
+   "target_alt_sgp4_km": 844.9405610751764,
+   "target_alt_model_km": 816.2263357974343,
+   "drift_days": 30.0,
+   "plane_angle_model_deg": 1.1232534994975456,
+   "plane_angle_highfidelity_deg": 1.0685397420767435,
+   "correction_dv_ms": 7.066637571117196
+  },
+  {
+   "leg": "PSLV R/B->ARIANE 5 R/B",
+   "arrive_jd": 2462447.5,
+   "target_plane_err_deg": 0.1646932600536078,
+   "target_alt_sgp4_km": 738.8831633335894,
+   "target_alt_model_km": 769.049632748065,
+   "drift_days": 30.0,
+   "plane_angle_model_deg": 0.5460864831925568,
+   "plane_angle_highfidelity_deg": 0.5070263536520448,
+   "correction_dv_ms": 5.055477139066109
+  },
+  {
+   "leg": "ARIANE 5 R/B->ARIANE 40 R/B",
+   "arrive_jd": 2462517.5,
+   "target_plane_err_deg": 0.4225309917094019,
+   "target_alt_sgp4_km": 765.5797770507916,
+   "target_alt_model_km": 781.9001173587094,
+   "drift_days": 60.0,
+   "plane_angle_model_deg": 0.4913678003891314,
+   "plane_angle_highfidelity_deg": 0.3669903967224535,
+   "correction_dv_ms": 15.998960537569392
+  }
  ]
 }

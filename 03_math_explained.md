@@ -104,22 +104,41 @@ The 20 m/s per-stop approach allowance plus a 10% fuel margin covers the first t
 ## Layer 8: Economics
 **For judges:** *"The truck, the launch and the team are big fixed costs. Ten stops split them ten ways."*
 
-### 2026 mission results (launch 1 Jan 2029, 10 stops each, planned with the economic price of time)
+### 2026 mission results (first stop 1 Jan 2029, 10 stops each, planned with the economic price of time)
 The planner minimises Δv + λ·days, where λ comes from the cost model (one day of operations vs. the propellant and launch cost of 1 m/s): λ ≈ 11 m/s/day electric, ≈ 2.7 chemical. This made the SL-8 route 2.4× faster (525 → 220 days) **and** cheaper.
 
 | Route | Engine | Δv | Propellant | Kits | Launch mass | Days |
 |---|---|---|---|---|---|---|
 | SL-8 83° (Product B) | electric | 678 m/s | 56 kg | 1,327 kg | 1,982 kg | 220 |
 | | chemical | 574 m/s | 277 kg | 1,327 kg | 2,203 kg | 195 |
-| Dead Iridium (Product A) | electric | 3,937 m/s | 225 kg | 526 kg | 1,351 kg | 555 |
+| Dead Iridium (Product A) | electric | 3,165 m/s | 179 kg | 526 kg | 1,305 kg | 555 |
 | | chemical | 2,290 m/s | 936 kg | 526 kg | 2,062 kg | 480 |
+| **Partner-nation stages, sun-sync (first route)** | electric | 2,026 m/s | 135 kg | 852 kg | 1,588 kg | 410 |
+| | chemical | 1,717 m/s | — | 852 kg | 2,216 kg | 390 |
+
+These are the routes themselves, from the first stop. The next section adds getting there.
+
+### Layer 9: Getting to the first stop (launch)
+**For judges:** *"The cheap ride only goes to one kind of orbit. Earth's bulge can't change an orbit's tilt, so if the junk is tilted differently, the truck has to do it."*
+
+- A rideshare (SpaceX Transporter-class, $7,500/kg, custom quote above 831 kg) drops the truck at about 550 km in a sun-synchronous orbit, tilted 97.6°. The truck then flies one more drift leg to its first target, with every kit aboard.
+- We test all 24 launch times of day (they set where the drop-off orbit faces) and use the median.
+- The alternatives: a dedicated Rocket Lab Neutron ($50–55M) or Falcon 9 ($74M) straight into the target's orbit.
+
+| Route (electric) | Launch not counted | Rideshare + own climb | Dedicated Neutron | Dedicated Falcon 9 |
+|---|---|---|---|---|
+| First route (sun-sync) | $12.0M | **$12.2M** (80-day, 600 m/s climb) | $16.4M | $18.7M |
+| SL-8 83° | $12.1M | **$13.0M** (375-day, 3,020 m/s climb) | $16.1M | $18.5M |
+| Dead Iridium | $12.0M | **$12.5M** (190-day climb) | $16.6M | $18.9M |
+
+The rideshare wins every time. Reaching 83° from 97.6° costs about 3 km/s; a chemical truck would launch at about 4.1 t for that, so this is where electric propulsion clearly wins. It also explains the first route: rideshares go straight to the sun-synchronous band, where 26 stages owned by the US, India and France sit above 650 km.
 
 ### Price per removal (base assumptions)
-- **10-stop electric truck, SL-8 cluster: $12.1M per removal** (uncertainty P10–P90: $11.0M–$15.2M from a 20,000-run Monte Carlo). At a 20% margin, the price is about $15.1M.
-- Same cost model, one mission per object: **$96.2M** (8× more).
+- **First route, 10 stops, launch included: $12.2M per removal** (uncertainty P10–P90: $11.2M–$15.4M from a 20,000-run Monte Carlo). At a 20% margin, the price is about $15.3M. The SL-8 route costs $13.0M and the Iridium route $12.5M, launch included.
+- Same cost model, one mission per object, same way to orbit: **$97M** (8× more).
 - Public single-object contracts: ClearSpace-1 ≈ $93M, ADRAS-J2 ≈ $82M, NASA's ELSA-M estimate ≈ $60M, UK/ClearSpace 2026 ≈ $40M per object.
-- Stops per truck: 3 → $33M, 5 → $21M, 10 → $12.1M, 15 → $9.8M, 20 → $8.3M per removal (Chart 7).
-- **Reusable truck, restocked with kit pods:** about **$4.4M per removal** after 100 removals over about 8 years (Chart 10).
+- Stops per truck (first route, launch included): 3 → $34M, 5 → $22M, 10 → $12.2M, 15 → $10.0M, 20 → $8.1M per removal (Chart 7).
+- **Reusable truck, restocked with kit pods:** about **$5.2M per removal** after 50 removals over about 6 years (Chart 10). That is where the thrusters reach their rated life (≈5.7 routes). Pods ride later rideshares, so this only works on the first route; pods can't reach the 83° SL-8 cluster cheaply.
 
 ### What the numbers really say (important for Q&A)
 1. **The business lever is stops per truck plus reuse, not the engine.** Electric and chemical trucks cost within about 1–3% of each other per removal in the dense SL-8 cluster, because the truck hardware, kits and operations dominate (tornado, Chart 8).

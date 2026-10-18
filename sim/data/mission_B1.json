@@ -640,18 +640,18 @@
   }
  ],
  "economics": {
-  "total_musd": 120.68,
-  "per_removal_musd": 12.07,
-  "price_per_removal_musd": 15.09,
+  "total_musd": 130.5,
+  "per_removal_musd": 13.05,
+  "price_per_removal_musd": 16.31,
   "breakdown_musd": {
    "truck_hardware": 80.0,
    "kits": 15.0,
-   "launch": 14.91,
-   "propellant": 0.17,
-   "operations": 3.01,
-   "insurance": 7.59
+   "launch": 18.14,
+   "propellant": 1.37,
+   "operations": 8.15,
+   "insurance": 7.85
   },
-  "single_object_per_removal_musd": 96.2,
+  "single_object_per_removal_musd": 99.17,
   "anchors": [
    {
     "name": "ESA ClearSpace-1",
@@ -670,6 +670,13 @@
     "per_object_musd": 60.0
    }
   ],
+  "launch": {
+   "name": "Rideshare to sun-synchronous orbit + truck's own engine",
+   "climb_days": 375,
+   "climb_dv_ms": 3020,
+   "launch_mass_kg": 2374,
+   "total_days": 595
+  },
   "note": "Base-case assumptions; see research/economics_inputs.md and the paper's assumption table."
  }
 }

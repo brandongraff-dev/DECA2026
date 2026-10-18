@@ -35,6 +35,17 @@ shutil.copytree(SIM / "lib", OUT / "lib")
 shutil.copytree(SIM / "data", OUT / "data")
 shutil.copytree(SIM / "fonts", OUT / "lib" / "fonts")
 shutil.copy(SIM / "serve.ps1", OUT / "serve.ps1")
+# the 3D truck model (model/), served at /truck/ next to the mission demo
+MODEL = SIM.parent / "model"
+shutil.copytree(MODEL, OUT / "truck", ignore=shutil.ignore_patterns("capture.py", "__pycache__"))
+mbody = (MODEL / "index.html").read_text()
+(OUT / "truck" / "index.html").write_text(
+    "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
+    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n"
+    "<style>body{margin:0}</style>\n</head>\n<body>\n" + mbody + "\n</body>\n</html>\n")
+# in the offline copy the "See the truck" link points at the local model
+idx = OUT / "index.html"
+idx.write_text(re.sub(r'href="https://claude\.ai/[^"]*" id="truckLink"', 'href="truck/index.html" id="truckLink"', idx.read_text()))
 (OUT / "Start Demo.bat").write_text(
     '@echo off\r\n'
     'title Orbital Curbside demo\r\n'
@@ -69,6 +80,8 @@ WINDOWS (nothing to install):
    (Or once, before unzipping: right-click the .zip > Properties > tick "Unblock" > OK.)
 3. Your browser opens http://localhost:8642. Edge or Chrome both work.
 4. Keys: 1-4 jump to scenes, Space = play/pause. Close the black window to stop.
+5. The 3D truck and its launch-to-first-stop journey: click "See the truck in 3D" in the demo,
+   or open http://localhost:8642/truck/index.html
 
 MAC: double-click "Start Demo (Mac).command" (uses the Python that ships with macOS developer tools).
 

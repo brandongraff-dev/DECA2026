@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}</style>
+</head>
+<body>
+<title>Orbital Curbside Truck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600&family=IBM+Plex+Mono:wght@400;600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Layout: full-bleed WebGL stage; one quiet instrument panel left, a spec card right,
+   a mission timeline along the bottom in Journey mode. Single dark world: it is space. */
+:root {
+  color-scheme: dark;
+  --void: #05070b;          /* space behind everything */
+  --panel: rgba(13, 16, 22, 0.86);
+  --line: rgba(242, 240, 234, 0.12);
+  --ink: #f2f0ea;           /* primary text */
+  --ink-2: #b8bcc6;         /* secondary text */
+  --ink-3: #7c818d;         /* captions */
+  --truck: #e8620c;         /* the truck, our accent */
+  --xenon: #8c7cff;         /* electric propulsion glow */
+  --kit: #f2b33d;           /* deorbit kits */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', Arial, sans-serif;
+  --font-body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { background: var(--void); color: var(--ink); font-family: var(--font-body); font-size: 14px; overflow: hidden; }
+#stage { position: fixed; inset: 0; }
+#stage canvas { display: block; width: 100%; height: 100%; }
+
+.hud { position: fixed; z-index: 2; pointer-events: none; }
+.hud > * { pointer-events: auto; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+#left { top: calc(16px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); width: 340px; max-width: calc(100% - 32px); display: flex; flex-direction: column; gap: 12px; }
+#left .card { padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 12px; }
+.brand { font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: 0.5px; line-height: 1; text-transform: uppercase; }
+.brand b { color: var(--truck); font-weight: 600; }
+.tag { color: var(--ink-2); font-size: 13px; line-height: 1.4; }
+.concept { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 3px; }
+.seg button { font: 600 13px var(--font-body); color: var(--ink-2); background: none; border: 0; border-radius: 7px; padding: 8px 6px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: rgba(232, 98, 12, 0.16); color: var(--ink); box-shadow: inset 0 0 0 1px var(--truck); }
+button:focus-visible { outline: 2px solid var(--truck); outline-offset: 2px; }
+
+.toggles { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 12px var(--font-body); color: var(--ink-2); background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; cursor: pointer; }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--truck); }
+
+.parts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.parts li button { width: 100%; display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: baseline; text-align: left; background: none; border: 0; border-radius: 8px; padding: 6px 6px; color: var(--ink); font: 13px var(--font-body); cursor: pointer; }
+.parts li button:hover, .parts li button[aria-pressed="true"] { background: rgba(255,255,255,0.05); }
+.parts .n { font: 600 12px var(--font-mono); color: var(--truck); }
+.parts .m { font: 12px var(--font-mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.partnote { color: var(--ink-2); font-size: 12.5px; line-height: 1.45; min-height: 3.2em; }
+
+#right { top: calc(16px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: 300px; }
+#right .card { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.h { font-family: var(--font-display); font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
+.big { font: 600 34px var(--font-display); line-height: 1; font-variant-numeric: tabular-nums; }
+.big small { font: 13px var(--font-mono); color: var(--ink-2); margin-left: 4px; }
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.06); }
+.bar span { display: block; height: 100%; }
+.legend { display: grid; grid-template-columns: 10px 1fr auto; gap: 6px 8px; align-items: center; font-size: 12.5px; }
+.legend i { width: 10px; height: 10px; border-radius: 3px; display: block; }
+.legend .v { font: 12px var(--font-mono); color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
+.specs { display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; font-size: 12.5px; }
+.specs dt { color: var(--ink-3); }
+.specs dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.fine { font-size: 11.5px; color: var(--ink-3); line-height: 1.45; }
+
+/* Journey */
+#chapter { bottom: calc(96px + env(safe-area-inset-bottom, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); width: 420px; max-width: calc(100% - 32px); }
+#chapter .card { padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.eyebrow { font: 600 11px var(--font-mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--truck); }
+#chTitle { font: 600 26px var(--font-display); text-transform: uppercase; line-height: 1.05; letter-spacing: 0.4px; text-wrap: balance; }
+#chText { color: var(--ink-2); line-height: 1.5; font-size: 13.5px; }
+.gauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.gauges div { display: flex; flex-direction: column; gap: 2px; }
+.gauges b { font: 600 18px var(--font-mono); font-variant-numeric: tabular-nums; }
+.gauges span { font-size: 11px; color: var(--ink-3); }
+
+#timeline { left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+#timeline .card { padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; }
+#play { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--truck); background: rgba(232, 98, 12, 0.14); color: var(--ink); font: 600 13px var(--font-body); cursor: pointer; }
+.track { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.ticks { display: grid; gap: 4px; }
+.ticks button { background: none; border: 0; padding: 0; text-align: left; cursor: pointer; color: var(--ink-3); font: 11px var(--font-mono); letter-spacing: 0.6px; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ticks button[aria-current="true"] { color: var(--ink); }
+.ticks .rail { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); overflow: hidden; margin-bottom: 5px; }
+.ticks .rail i { display: block; height: 100%; width: 0; background: var(--truck); }
+
+/* 3D labels */
+#labels { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+.lbl { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 6px; font: 600 11px var(--font-mono); color: var(--ink); white-space: nowrap; transition: opacity 0.2s; }
+.lbl i { width: 20px; height: 20px; border-radius: 50%; background: var(--truck); color: #101216; display: grid; place-items: center; font-style: normal; font-size: 11px; box-shadow: 0 0 0 3px rgba(232, 98, 12, 0.25); }
+.lbl span { background: rgba(5, 7, 11, 0.7); padding: 2px 6px; border-radius: 4px; }
+.lbl.dim { opacity: 0.25; }
+
+#loading { position: fixed; inset: 0; z-index: 5; display: grid; place-items: center; background: var(--void); font: 13px var(--font-mono); color: var(--ink-2); letter-spacing: 1px; text-transform: uppercase; }
+#err { color: var(--kit); max-width: 420px; text-align: center; line-height: 1.5; text-transform: none; letter-spacing: 0; }
+
+@media (max-width: 760px) {
+  #right { display: none; }
+  #left { width: auto; right: max(16px, env(safe-area-inset-right, 0px)); }
+  #left .card { padding: 12px 14px; gap: 8px; }
+  .brand { font-size: 22px; }
+  .tag, #partsWrap { display: none; }
+  #chapter { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  #chTitle { font-size: 20px; }
+  #chText { font-size: 12.5px; }
+  .lbl span { display: none; }
+  .ticks button { font-size: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .lbl { transition: none; } }
+</style>
+
+<div id="stage" aria-label="3D model of the Orbital Curbside truck"></div>
+<div id="labels"></div>
+
+<div id="left" class="hud">
+  <div class="card">
+    <div class="brand">Orbital <b>Curbside</b></div>
+    <div class="tag" id="tagline">The truck: one electric spacecraft that carries ten deorbit kits.</div>
+    <div class="seg" role="group" aria-label="View">
+      <button id="mTruck" aria-pressed="true">The truck</button>
+      <button id="mJourney" aria-pressed="false">The journey</button>
+    </div>
+    <div class="toggles" id="truckToggles">
+      <button class="chip" id="tLabels" aria-pressed="true">Labels</button>
+      <button class="chip" id="tXray" aria-pressed="false">See inside</button>
+      <button class="chip" id="tWings" aria-pressed="true">Wings open</button>
+      <button class="chip" id="tFire" aria-pressed="false">Thrusters on</button>
+    </div>
+    <div id="partsWrap">
+      <ul class="parts" id="parts"></ul>
+    </div>
+    <div class="partnote" id="partNote">Tap a part to learn what it does. Drag to spin, pinch or scroll to zoom.</div>
+    <div class="concept">Concept design, sized from our model. Not a flight design.</div>
+  </div>
+</div>
+
+<div id="right" class="hud">
+  <div class="card">
+    <div class="h">Launch mass</div>
+    <div class="big" id="mTotal">— <small>kg</small></div>
+    <div class="bar" id="mBar"></div>
+    <div class="legend" id="mLegend"></div>
+    <dl class="specs" id="specs"></dl>
+    <div class="fine" id="specNote"></div>
+  </div>
+</div>
+
+<div id="chapter" class="hud" hidden>
+  <div class="card">
+    <div class="eyebrow" id="chEyebrow"></div>
+    <div id="chTitle"></div>
+    <div id="chText"></div>
+    <div class="gauges" id="gauges">
+      <div><b id="gDay">0</b><span>days</span></div>
+      <div><b id="gAlt">0</b><span>altitude, km</span></div>
+      <div><b id="gInc">0</b><span>tilt, °</span></div>
+      <div><b id="gXe">0</b><span>xenon used, kg</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="timeline" class="hud" hidden>
+  <div class="card">
+    <button id="play" aria-label="Pause">❚❚</button>
+    <div class="track"><div class="ticks" id="ticks"></div></div>
+  </div>
+</div>
+
+<div id="loading"><div id="err">Loading the truck…</div></div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

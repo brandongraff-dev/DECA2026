@@ -39,7 +39,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 
 | # | Criterion (pts) | Evidence in deck | Likely band now | Biggest gap → fix |
 |---|---|---|---|---|
-| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4 (about, model, customers, value $12.1M vs $40–93M); hook on slide 1 | Proficient–Exemplary | Make sure the closing "why worth pursuing" line is said with conviction |
+| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4 (about, model, customers, value $12.2M vs $40–93M); hook on slide 1 | Proficient–Exemplary | Make sure the closing "why worth pursuing" line is said with conviction |
 | 2 | **Business Opportunity** (15): root causes, scope, urgency, relevance | 5 (47k objects, Kessler, top-50 study), 6 (real contract prices), 7 (FCC 5-yr, 0.9 rule, market range) | Proficient–Exemplary | Root cause is said aloud (collisions outpace decay); keep it in |
 | 3 | **Customer Segments** (15): needs, behaviours, challenges, why chosen | 8 (3-segment table), 9 (Iridium CEO quote, 24 dead sats), 10 (SL-8 cluster, consent issue) | **Developing–Proficient** | **No interview evidence yet.** This is the weakest criterion. Run the validation kit and add 1–2 real findings to slides 8–9 (and appendix: questionnaire/letters, which DECA explicitly suggests) |
 | 4 | **Unique Value Proposition** (15): single, clear, differentiated, with comparisons | 11 (one-line UVP), 12 (side-by-side vs one-object missions) | Proficient–Exemplary | Be ready for "hasn't this been done?" (Q&A Q1); honesty here helps |
@@ -117,6 +117,7 @@ These were correct on 16 Oct 2026 but can change:
 6. **Market report ranges** ($1.1–1.6B).
 7. **Rocket Lab's purchase of Iridium** (announced 29 Jun 2026, ~$8B, closing expected mid-2027). Check whether it has closed.
 8. **The 24 dead first-generation Iridium satellites still in orbit**: some may re-enter. Re-run `engine/scripts/catalog_2026.py` to refresh.
+9. **Launch prices and schedules**: SpaceX rideshare $/kg and the 831 kg port limit; Rocket Lab Neutron's first flight (slipped to 2027) and price ($50–55M); Falcon 9 list price ($74M).
 
 ---
 

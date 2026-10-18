@@ -42,8 +42,8 @@ ul { margin: 0 0 5px; padding-left: 15px; } li { margin-bottom: 2px; }
 <div class="stats">
   <div class="stat"><b>~47,000</b><span>objects tracked in orbit (ESA, Oct 2026)</span></div>
   <div class="stat"><b>$40–93M</b><span>paid today per object in real single-removal contracts</span></div>
-  <div class="stat"><b>$12.1M</b><span>our modelled cost per removal, 10 stops per truck</span></div>
-  <div class="stat"><b>~$4.4M</b><span>modelled, reusable truck restocked with kit pods</span></div>
+  <div class="stat"><b>$12.2M</b><span>our modelled cost per removal, 10 stops, launch included</span></div>
+  <div class="stat"><b>~$5.2M</b><span>modelled, reusable truck restocked with kit pods</span></div>
 </div>
 
 <div class="grid">
@@ -58,7 +58,7 @@ ul { margin: 0 0 5px; padding-left: 15px; } li { margin-bottom: 2px; }
   <ul>
     <li><b>Route optimiser</b> (Python): J2 drift, chemical and low-thrust (Edelbaum) transfers, four search algorithms plus dynamic-programming timing.</li>
     <li><b>Benchmarked</b> against the winning JPL solution of ESA's GTOC9 "Kessler Run": our model matches its 113 legs within 2.2% (r = 0.99).</li>
-    <li><b>Real data:</b> the 16 Oct 2026 public catalogue (CelesTrak). Routes re-checked with SGP4 (0.07° plane error at 960 km).</li>
+    <li><b>Real data:</b> the 16 Oct 2026 public catalogue (CelesTrak). Routes re-checked with SGP4 (0.06° plane error on the SL-8 route, 0.30° on the first route). Launch included: rideshare to orbit, then the truck climbs to its first stop.</li>
     <li><b>3D simulation</b> (CesiumJS) that flies the optimised route; runs fully offline.</li>
   </ul>
 
@@ -69,9 +69,9 @@ ul { margin: 0 0 5px; padding-left: 15px; } li { margin-bottom: 2px; }
   <img src="../figures/paper/03_wait_vs_burn.png" alt="Propellant needed versus days allowed for one hop">
   <p class="cap">Hopping between two real SL-8 stages 19° apart: about 1,094 kg of propellant if done now by brute force, about 19 kg if the electric truck waits a year.</p>
   <img src="../figures/paper/07_scaling.png" alt="Cost per removal versus objects per truck">
-  <p class="cap">Modelled cost per removal falls as one truck makes more stops (base assumptions), compared with public single-object contract values.</p>
+  <p class="cap">Modelled cost per removal, launch included, falls as one truck makes more stops (base assumptions), compared with public single-object contract values.</p>
   <h2>Two <b>products</b></h2>
-  <p><b>A: Constellation sweep</b> for operators with failed satellites (e.g. 24 dead first-generation Iridium). <b>B: Rocket-body cleanup</b> for agencies (e.g. 142 Soviet-era SL-8 stages clustered at 83°, ~960 km).</p>
+  <p><b>A: Constellation sweep</b> for operators with failed satellites (e.g. 24 dead first-generation Iridium). <b>B: Rocket-body cleanup</b> for agencies. First route: 10 US, Indian and French stages in the sun-synchronous band, where rideshares already go. Later: 142 Soviet-era SL-8 stages at 83° ($13.0M each, with Russia's consent).</p>
 </div>
 </div>
 

@@ -1,92 +1,206 @@
 {
+ "base_key": "B0_SSO_partner",
  "base_route": {
-  "duration_days": 220.0,
-  "launch_mass_kg": 1982.3793934413682,
-  "propellant_kg": 55.80815289338102,
-  "kits_kg": 1326.5712405479871
+  "duration_days": 490.0,
+  "launch_mass_kg": 1649.685563621286,
+  "propellant_kg": 197.6296107650935,
+  "kits_kg": 852.0559528561926,
+  "insertion_days": 80.0,
+  "insertion_dv_ms": 600.1149512785327,
+  "route_days": 410.0
  },
- "base_cost_per_removal_musd": 12.0684774888112,
- "base_price_per_removal_musd": 15.085596861013999,
+ "routes_with_launch": {
+  "B0_SSO_partner": {
+   "duration_days": 490.0,
+   "launch_mass_kg": 1649.685563621286,
+   "propellant_kg": 197.6296107650935,
+   "kits_kg": 852.0559528561926,
+   "dv_kms": 2.026162365804144,
+   "launch_fixed_musd": null,
+   "insertion_days": 80.0,
+   "insertion_dv_ms": 600.1149512785327,
+   "route_days": 410.0,
+   "cost_total_musd": 122.23461882824544,
+   "cost_per_removal_musd": 12.223461882824544,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 15.0,
+    "launch": 12.520863935233466,
+    "propellant": 0.604351349719656,
+    "operations": 6.707734428473648,
+    "insurance": 7.401669114818677
+   },
+   "n": 10
+  },
+  "B1_SL8_83deg": {
+   "duration_days": 595.0,
+   "launch_mass_kg": 2373.5578334599927,
+   "propellant_kg": 446.98659291200556,
+   "kits_kg": 1326.5712405479871,
+   "dv_kms": 0.6775271630050329,
+   "launch_fixed_musd": null,
+   "insertion_days": 375.0,
+   "insertion_dv_ms": 3020.032912267934,
+   "route_days": 220.0,
+   "cost_total_musd": 130.4998686841276,
+   "cost_per_removal_musd": 13.04998686841276,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 15.0,
+    "launch": 18.13692369563395,
+    "propellant": 1.3668850011249132,
+    "operations": 8.145106091718002,
+    "insurance": 7.850953895650717
+   },
+   "n": 10
+  },
+  "A1_Iridium_legacy": {
+   "duration_days": 750.0,
+   "launch_mass_kg": 1498.6103215444866,
+   "propellant_kg": 372.45633930021984,
+   "kits_kg": 526.1539822442668,
+   "dv_kms": 3.1648716147009512,
+   "launch_fixed_musd": null,
+   "insertion_days": 195.0,
+   "insertion_dv_ms": 2327.381627397552,
+   "route_days": 555.0,
+   "cost_total_musd": 125.24634517666897,
+   "cost_per_removal_musd": 12.524634517666897,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 15.0,
+    "launch": 11.518919666058814,
+    "propellant": 1.1389714855800723,
+    "operations": 10.266940451745379,
+    "insurance": 7.321513573284705
+   },
+   "n": 10
+  }
+ },
+ "base_cost_per_removal_musd": 12.223461882824544,
+ "base_price_per_removal_musd": 15.27932735353068,
  "monte_carlo_cost_per_removal": {
-  "p10": 10.970911227164219,
-  "p50": 13.016962913622528,
-  "p90": 15.168300929380184,
-  "mean": 13.042672458122004
+  "p10": 11.178112824066258,
+  "p50": 13.222852021293747,
+  "p90": 15.374361750707111,
+  "mean": 13.24861919019763
  },
  "single_object_model": [
   {
    "engine": "electric",
+   "cluster": "B1_SL8_83deg",
    "n": 1,
-   "launch_mass_kg": 734.9839097431425,
-   "cost_per_removal_musd": 95.51972697763875,
-   "price_per_removal_musd": 119.39965872204844,
+   "launch_mass_kg": 879.9205811400512,
+   "duration_days": 260.0,
+   "insertion_days": 140.0,
+   "cost_per_removal_musd": 99.17082461190942,
+   "price_per_removal_musd": 123.96353076488677,
    "breakdown": {
     "truck_hardware": 80.0,
     "kits": 1.5,
-    "launch": 5.516964412869336,
-    "propellant": 0.018694939460609277,
-    "operations": 1.6427104722792607,
-    "insurance": 6.841357153029548
+    "launch": 6.7126919518938335,
+    "propellant": 0.4619112805923563,
+    "operations": 3.5592060232717317,
+    "insurance": 6.937015356151506
    }
   },
   {
    "engine": "chemical",
+   "cluster": "B1_SL8_83deg",
    "n": 1,
-   "launch_mass_kg": 762.2704217982862,
-   "cost_per_removal_musd": 95.76252484140336,
-   "price_per_removal_musd": 119.70315605175419,
+   "launch_mass_kg": 1408.7889881073181,
+   "duration_days": 305.0,
+   "insertion_days": 185.0,
+   "cost_per_removal_musd": 104.41110245678401,
+   "price_per_removal_musd": 130.51387807098,
    "breakdown": {
     "truck_hardware": 80.0,
     "kits": 1.5,
-    "launch": 5.742078137324271,
-    "propellant": 0.018369980813891858,
-    "operations": 1.6427104722792607,
-    "insurance": 6.859366250985942
+    "launch": 11.075856309373785,
+    "propellant": 0.37395519228385943,
+    "operations": 4.175222450376454,
+    "insurance": 7.286068504749903
+   }
+  },
+  {
+   "engine": "electric",
+   "cluster": "B0_SSO_partner",
+   "n": 1,
+   "launch_mass_kg": 707.7954860462745,
+   "duration_days": 230.0,
+   "insertion_days": 110.0,
+   "cost_per_removal_musd": 97.00676141840358,
+   "price_per_removal_musd": 121.25845177300448,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 1.5,
+    "launch": 5.3521107115751185,
+    "propellant": 0.1779534447005456,
+    "operations": 3.1485284052019162,
+    "insurance": 6.82816885692601
+   }
+  },
+  {
+   "engine": "chemical",
+   "cluster": "B0_SSO_partner",
+   "n": 1,
+   "launch_mass_kg": 1027.9484322085534,
+   "duration_days": 410.0,
+   "insertion_days": 290.0,
+   "cost_per_removal_musd": 102.35352656805101,
+   "price_per_removal_musd": 127.94190821006376,
+   "breakdown": {
+    "truck_hardware": 80.0,
+    "kits": 1.5,
+    "launch": 7.993372517413921,
+    "propellant": 0.20809013562316447,
+    "operations": 5.612594113620808,
+    "insurance": 7.039469801393113
    }
   }
  ],
  "tornado": [
   {
    "param": "truck_hw_musd",
-   "low": 8.828477488811199,
-   "high": 15.848477488811199,
+   "low": 8.983461882824546,
+   "high": 16.003461882824546,
    "swing": 7.02
   },
   {
    "param": "kit_musd",
-   "low": 11.0684774888112,
-   "high": 13.568477488811201,
+   "low": 11.223461882824544,
+   "high": 13.723461882824546,
    "swing": 2.5000000000000018
   },
   {
    "param": "launch_usd_per_kg",
-   "low": 11.961127637539741,
-   "high": 13.67872525788307,
-   "swing": 1.7175976203433283
-  },
-  {
-   "param": "insurance_frac",
-   "low": 11.783748384114757,
-   "high": 12.44811629507312,
-   "swing": 0.6643679109583633
+   "low": 12.133311662490865,
+   "high": 13.575715187829758,
+   "swing": 1.442403525338893
   },
   {
    "param": "ops_musd_per_year",
-   "low": 11.948012054177386,
-   "high": 12.36964107539573,
-   "swing": 0.4216290212183438
+   "low": 11.9551525056856,
+   "high": 12.894235325671909,
+   "swing": 0.939082819986309
+  },
+  {
+   "param": "insurance_frac",
+   "low": 11.945899291018844,
+   "high": 12.593545338565479,
+   "swing": 0.647646047546635
   },
   {
    "param": "xenon_usd_per_kg",
-   "low": 12.0684774888112,
-   "high": 12.125078117475665,
-   "swing": 0.0566006286644658
+   "low": 12.223461882824544,
+   "high": 12.423897834062503,
+   "swing": 0.20043595123795832
   },
   {
    "param": "dv_margin_frac",
-   "low": 12.0684774888112,
-   "high": 12.077585379363398,
-   "swing": 0.009107890552199294
+   "low": 12.223461882824544,
+   "high": 12.255715035301408,
+   "swing": 0.03225315247686389
   }
  ],
  "anchors": [
@@ -117,72 +231,110 @@
  ],
  "reuse": {
   "chemical": {
-   "route_days": 225.0,
+   "route_days": 390.0,
    "per_removal_by_routes": [
-    12.240211167722542,
-    7.953961167722541,
-    6.525211167722542,
-    5.810836167722541,
-    5.3822111677225415,
-    5.096461167722541,
-    4.892354024865398,
-    4.739273667722541,
-    4.620211167722541,
-    4.524961167722541
+    13.379086259189672,
+    8.6905638536372,
+    7.127723051786375,
+    6.346302650860963,
+    5.877450410305715,
+    5.56488224993555,
+    5.341619278242576,
+    5.174172049472845,
+    5.043935315985276,
+    4.939745929195221
    ],
    "campaign_10_routes": {
     "breakdown": {
      "truck_hardware": 80.0,
      "kits": 150.0,
-     "launch": 134.3225159474633,
+     "launch": 141.66065930203163,
      "pods": 36.0,
-     "propellant": 1.3469781937576168,
-     "operations": 30.800821355236142,
-     "insurance": 20.025801275797065
+     "propellant": 4.267542413202534,
+     "operations": 53.38809034907597,
+     "insurance": 20.612852744162527
     },
-    "total": 452.49611677225414,
-    "per_removal": 4.524961167722541,
+    "total": 493.9745929195221,
+    "per_removal": 4.939745929195221,
     "removals": 100,
-    "years": 6.160164271047228,
-    "first_launch_kg": 2195.9668792995108,
-    "pod_kg": 1745.9668792995105,
-    "propellant_total_kg": 2693.956387515234
+    "years": 11.526351813826146,
+    "first_launch_kg": 2763.164271063469,
+    "pod_kg": 1843.8087906937553,
+    "propellant_total_kg": 8535.08482640507
    },
+   "campaign_at_limit": {
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 150.0,
+     "launch": 141.66065930203163,
+     "pods": 36.0,
+     "propellant": 4.267542413202534,
+     "operations": 53.38809034907597,
+     "insurance": 20.612852744162527
+    },
+    "total": 493.9745929195221,
+    "per_removal": 4.939745929195221,
+    "removals": 100,
+    "years": 11.526351813826146,
+    "first_launch_kg": 2763.164271063469,
+    "pod_kg": 1843.8087906937553,
+    "propellant_total_kg": 8535.08482640507
+   },
+   "routes_at_limit": 10,
    "thruster_route_limit": null
   },
   "electric": {
-   "route_days": 285.0,
+   "route_days": 410.0,
    "per_removal_by_routes": [
-    12.142989598342522,
-    7.8567395983425214,
-    6.4279895983425215,
-    5.713614598342522,
-    5.284989598342523,
-    4.999239598342522,
-    4.795132455485379,
-    4.642052098342522,
-    4.522989598342522,
-    4.427739598342522
+    12.199410317522746,
+    7.833220044419123,
+    6.3778232867179145,
+    5.65012490786731,
+    5.213505880556948,
+    4.922426529016706,
+    4.7145127064879615,
+    4.5585773395914035,
+    4.437294276449636,
+    4.340267825936222
    ],
    "campaign_10_routes": {
     "breakdown": {
      "truck_hardware": 80.0,
      "kits": 150.0,
-     "launch": 117.72467826621354,
+     "launch": 89.70371655657893,
      "pods": 36.0,
-     "propellant": 1.3369335901091155,
-     "operations": 39.01437371663244,
-     "insurance": 18.697974261297084
+     "propellant": 4.142022114236428,
+     "operations": 56.12594113620808,
+     "insurance": 16.456297324526314
     },
-    "total": 442.7739598342522,
-    "per_removal": 4.427739598342522,
+    "total": 434.0267825936223,
+    "per_removal": 4.340267825936222,
     "removals": 100,
-    "years": 7.8028747433264884,
-    "first_launch_kg": 2407.48260389659,
-    "pod_kg": 1476.5712405479871,
-    "propellant_total_kg": 480.9113633486027
+    "years": 11.444216290212182,
+    "first_launch_kg": 3004.1728475442515,
+    "pod_kg": 1002.0559528561926,
+    "propellant_total_kg": 1489.936012315262
    },
-   "thruster_route_limit": 17.731856682091742
+   "campaign_at_limit": {
+    "breakdown": {
+     "truck_hardware": 80.0,
+     "kits": 75.0,
+     "launch": 46.539358278289455,
+     "pods": 16.0,
+     "propellant": 2.071011057118214,
+     "operations": 28.06297056810404,
+     "insurance": 11.403148662263156
+    },
+    "total": 260.6752940278474,
+    "per_removal": 5.213505880556948,
+    "removals": 50,
+    "years": 5.831622176591376,
+    "first_launch_kg": 2259.2048413866205,
+    "pod_kg": 1002.0559528561926,
+    "propellant_total_kg": 744.968006157631
+   },
+   "routes_at_limit": 5,
+   "thruster_route_limit": 5.723367514579149
   }
  }
 }

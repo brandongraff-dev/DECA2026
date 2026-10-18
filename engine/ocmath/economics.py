@@ -68,7 +68,9 @@ def mission_cost(route, prop_kind, n_removed, v, isp=None):
     c = {
         "truck_hardware": v["truck_hw_musd"],
         "kits": v["kit_musd"] * n_removed,
-        "launch": m0 * v["launch_usd_per_kg"] / 1e6,
+        # a dedicated rocket has a fixed price (ocmath.launch); a rideshare is priced per kg
+        "launch": (route["launch_fixed_musd"] if route.get("launch_fixed_musd") is not None
+                   else m0 * v["launch_usd_per_kg"] / 1e6),
         "propellant": prop * prop_price / 1e6,
         "operations": v["ops_musd_per_year"] * years,
     }

@@ -68,6 +68,8 @@ select { background: var(--panel-solid); border: 1px solid var(--line); border-r
 .scene-btn[aria-pressed="true"] .no { color: var(--truck); }
 .scene-btn:hover { border-color: var(--ink-3); }
 .narration { margin: 0; color: var(--ink); line-height: 1.5; font-size: 13.5px; text-wrap: pretty; }
+.truck-link { display: block; font-size: 13px; font-weight: 600; color: var(--truck-hi); text-decoration: none; border: 1px solid var(--truck); border-radius: 8px; padding: 8px 10px; }
+.truck-link:hover, .truck-link:focus-visible { background: rgba(232, 98, 12, 0.10); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; color: var(--ink-2); }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
 
@@ -146,6 +148,7 @@ button:focus-visible, select:focus-visible { outline: 2px solid var(--truck-hi);
     <div class="scenario">
       <label for="mission">Route</label>
       <select id="mission">
+        <option value="B0">Product B · first route: 10 partner-nation stages (sun-sync)</option>
         <option value="B1">Product B · 10 SL-8 rocket stages (83°, ~960 km)</option>
         <option value="A1">Product A · 10 dead Iridium satellites (86°)</option>
       </select>
@@ -156,6 +159,7 @@ button:focus-visible, select:focus-visible { outline: 2px solid var(--truck-hi);
       <li><button class="scene-btn" data-scene="3" aria-pressed="false"><span class="no">3</span><span class="t">The garbage truck</span><span class="s">Fly the optimised route</span></button></li>
       <li><button class="scene-btn" data-scene="4" aria-pressed="false"><span class="no">4</span><span class="t">The comparison</span><span class="s">One truck vs one mission per object</span></button></li>
     </ol>
+    <a class="truck-link" href="truck/index.html" id="truckLink" target="_blank" rel="noopener">See the truck in 3D, and how it gets to orbit →</a>
     <p class="narration" id="narration"></p>
     <div class="legend" id="legend">
       <span><i style="background:#5d6680"></i>Working satellite</span>
