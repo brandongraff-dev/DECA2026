@@ -37,7 +37,7 @@ shutil.copytree(SIM / "fonts", OUT / "lib" / "fonts")
 shutil.copy(SIM / "serve.ps1", OUT / "serve.ps1")
 # the 3D truck model (model/), served at /truck/ next to the mission demo
 MODEL = SIM.parent / "model"
-shutil.copytree(MODEL, OUT / "truck", ignore=shutil.ignore_patterns("capture.py", "__pycache__"))
+shutil.copytree(MODEL, OUT / "truck", ignore=shutil.ignore_patterns("capture*.py", "backgrounds.html", "__pycache__"))
 mbody = (MODEL / "index.html").read_text()
 (OUT / "truck" / "index.html").write_text(
     "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"

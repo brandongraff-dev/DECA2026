@@ -8,6 +8,8 @@
 | JPL GTOC9 solution tables (`data/gtoc9/jpl_solution.json`, parsed by us) | Petropoulos et al., Acta Futura 11 (2018) 25-35, doi:10.5281/zenodo.1139152 | Cited facts; paper itself not redistributed here |
 | CesiumJS 1.120.0 (`sim/lib/cesium`) | Cesium GS | Apache-2.0 (see `sim/lib/cesium/LICENSE.md`) |
 | Natural Earth II imagery (inside CesiumJS) | Natural Earth | Public domain |
+| three.js r160 (`model/lib`) | three.js authors | MIT |
+| Earth imagery (`model/textures/earth_day.jpg`, `earth_night.jpg`, `clouds.jpg`): Blue Marble Next Generation (Dec 2004), Black Marble 2012 city lights, cloud composite | NASA Visible Earth / NASA Earth Observatory, https://visibleearth.nasa.gov | Public domain (NASA imagery); credit NASA |
 | satellite.js 5.0.0 (`sim/lib/satellite.min.js`) | Shashwat Kandadai and contributors | MIT (see `sim/lib/satellite.js-LICENSE.md`) |
 | Fonts: Big Shoulders Display, Instrument Sans, IBM Plex Mono (`sim/fonts`) | Google Fonts | SIL Open Font License 1.1 |
 | Python: numpy, scipy, sgp4, matplotlib | PyPI | BSD / MIT-style |

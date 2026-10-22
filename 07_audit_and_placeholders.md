@@ -21,12 +21,12 @@ Deck: Slides artifact https://claude.ai/artifact/6f8NpoMRLD1zp9vsZ6h4Kf. It is p
 | Cover slide first; it need not be numbered "1" | ✅ unnumbered | slide 1 |
 | Title slide numbered "2": "Innovation Plan", school name, school address, city/state/ZIP, participant names, date | ⚠️ "Innovation Plan" ✅, participant name ✅; **school name, address, city/state/ZIP, date are placeholders** | slide 2 |
 | Table of contents follows, one slide, numbered "3" | ✅ | slide 3 |
-| Body starts with I. Overview, numbered "4", in order I–VIII | ✅ I (4), II (5–7), III (8–10), IV (11–12), V (13–17), VI (18), VII (19), VIII (20) | deck |
+| Body starts with I. Overview, numbered "4", in order I–VIII | ✅ I (4), II (5–7), III (8–9), IV (10–11), V (12–17), VI (18), VII (19), VIII (20) | deck |
 | Every section titled, incl. bibliography and appendix | ✅ each slide has a section eyebrow ("III · Customer Segments") | all |
-| Bibliography required | ✅ 24 sources, full list with links in paper | slide 19 |
+| Bibliography required | ✅ 24 entries (incl. CelesTrak collision page, NASA debris newsletter, NASA imagery credit); full list with links in paper | slide 19 |
 | Numbering continues through bibliography and appendix | ✅ 19, 20 | – |
 | Statement of Assurances and Academic Integrity: signed, submitted **separately**, not numbered | ❌ **you must sign and submit it** | separate |
-| Presentation ≤ 15 min **including** judge questions | ✅ script ≈ 10 min + ~1 min demo, leaving ~4 min for questions | `06_qa_prep_and_hook.md` |
+| Presentation ≤ 15 min **including** judge questions | ⚠️ script ≈ 10½ min + ~1 min demo, leaving ~3½ min for questions. Tight: time your rehearsals | `06_qa_prep_and_hook.md` |
 | No power or internet supplied | ✅ demo runs fully offline; **charge the laptop**, bring the deck as a PDF on USB too | `offline/` |
 | Visuals hand-carried, set up by you, set-up time counts | ⚠️ practise opening laptop, deck and demo in under 60 s | – |
 | Items left with judges: flyers and brochures OK | ✅ the one-page summary is a good leave-behind | `onepager/` |
@@ -39,15 +39,15 @@ These are my estimates of where the **materials** sit today, not a prediction of
 
 | # | Criterion (pts) | Evidence in deck | Likely band now | Biggest gap → fix |
 |---|---|---|---|---|
-| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4 (about, model, customers, value $12.2M vs $40–93M); hook on slide 1 | Proficient–Exemplary | Make sure the closing "why worth pursuing" line is said with conviction |
-| 2 | **Business Opportunity** (15): root causes, scope, urgency, relevance | 5 (47k objects, Kessler, top-50 study), 6 (real contract prices), 7 (FCC 5-yr, 0.9 rule, market range) | Proficient–Exemplary | Root cause is said aloud (collisions outpace decay); keep it in |
-| 3 | **Customer Segments** (15): needs, behaviours, challenges, why chosen | 8 (3-segment table), 9 (Iridium CEO quote, 24 dead sats), 10 (SL-8 cluster, consent issue) | **Developing–Proficient** | **No interview evidence yet.** This is the weakest criterion. Run the validation kit and add 1–2 real findings to slides 8–9 (and appendix: questionnaire/letters, which DECA explicitly suggests) |
-| 4 | **Unique Value Proposition** (15): single, clear, differentiated, with comparisons | 11 (one-line UVP), 12 (side-by-side vs one-object missions) | Proficient–Exemplary | Be ready for "hasn't this been done?" (Q&A Q1); honesty here helps |
-| 5 | **Solution** (15): key features → problem/UVP, feasibility | 13 (park/drift/hop/tag + chart), 14 (JPL & SGP4 checks), 15 (live demo), 16 (economics), 17 (risks + roadmap) | Exemplary on technical feasibility; business feasibility depends on unvalidated costs | Get even one expert reaction on truck or kit cost |
+| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4 (problem, fix, who pays, price: $12.2M vs $40–93M); hook on slide 1 written for a non-expert | Proficient–Exemplary | Say the closing "why worth pursuing" line with conviction |
+| 2 | **Business Opportunity** (15): root causes, scope, urgency, relevance | 5 (47k objects, 2 in 3 junk, real-catalogue image), 6 (2009 crash → ~2,200 pieces; ISS moved 41×; chain reaction; everyday services), 7 (contract prices, FCC 5-year and 0.9 rules, market range) | Proficient–Exemplary | Root cause (crashes outpace decay) is now on slide 6; keep it in |
+| 3 | **Customer Segments** (15): needs, behaviours, challenges, why chosen | 8 (3 segments: why they care, how they buy; Iridium CEO quote), 9 (first route: US/India/France stages, consent; SL-8 later) | **Developing–Proficient** | **No interview evidence yet.** This is the weakest criterion. Run the validation kit and add 1–2 real findings to slide 8 (and the appendix: questionnaire/letters, which DECA explicitly suggests) |
+| 4 | **Unique Value Proposition** (15): single, clear, differentiated, with comparisons | 10 (one trip, ten pickups vs one mission per piece; the promise), 11 ("We let Earth bring it to us"; 1,094 kg vs 19 kg) | Proficient–Exemplary | Be ready for "hasn't this been done?" (Q&A Q1); honesty here helps |
+| 5 | **Solution** (15): key features → problem/UVP, feasibility | 12 (four steps with renders), 13 (the truck and its mass), 14 (JPL & SGP4 checks), 15 (live demo), 16 (the money), 17 (risks + roadmap) | Exemplary on technical feasibility; business feasibility depends on unvalidated costs | Get even one expert reaction on truck or kit cost |
 | 6 | **Organization** (5) | Official I–VIII order, TOC with page numbers, section eyebrows | 4–5 | – |
-| 7 | **Persuasion** (5) | Clear problem → price gap → mechanism → proof → ask | 4 | A real customer signal would make it 5 |
+| 7 | **Persuasion** (5) | Plain-language story: problem → why it matters → price gap → our idea → proof → money → ask | 4 | A real customer signal would make it 5 |
 | 8 | **Delivery** (5): interactive techniques (e.g. visual storytelling) | Live 3D demo, story arc "garbage truck", QR to try it | 4–5 if rehearsed | Rehearse the demo hand-off; keep it ≤ 60 s |
-| 9 | **Presentation Design** (5) | Consistent brand, real charts and sim images, large type | 4–5 | Fill title-slide placeholders and headshot |
+| 9 | **Presentation Design** (5) | Dark orbital theme: Earth backgrounds rendered from NASA imagery, glass panels, big type, one idea per slide | 4–5 | Fill title-slide placeholders and headshot |
 | 10 | **Overall Impression** (5): professionalism, poise | – | depends on you | Business attire, eye contact, timed practice ×3 |
 
 **Single highest-value action:** customer and expert interviews (Step 7 kit). They strengthen criteria 3, 5 and 7, and give you true answers for Q&A Q4.
@@ -117,7 +117,8 @@ These were correct on 16 Oct 2026 but can change:
 6. **Market report ranges** ($1.1–1.6B).
 7. **Rocket Lab's purchase of Iridium** (announced 29 Jun 2026, ~$8B, closing expected mid-2027). Check whether it has closed.
 8. **The 24 dead first-generation Iridium satellites still in orbit**: some may re-enter. Re-run `engine/scripts/catalog_2026.py` to refresh.
-9. **Launch prices and schedules**: SpaceX rideshare $/kg and the 831 kg port limit; Rocket Lab Neutron's first flight (slipped to 2027) and price ($50–55M); Falcon 9 list price ($74M).
+9. **ISS debris-avoidance count** (41 manoeuvres since 1999, NASA ODQN 29(3)). A newer issue may raise it.
+10. **Launch prices and schedules**: SpaceX rideshare $/kg and the 831 kg port limit; Rocket Lab Neutron's first flight (slipped to 2027) and price ($50–55M); Falcon 9 list price ($74M).
 
 ---
 

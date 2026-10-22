@@ -8,6 +8,7 @@ import { EffectComposer } from './lib/EffectComposer.js';
 import { RenderPass } from './lib/RenderPass.js';
 import { UnrealBloomPass } from './lib/UnrealBloomPass.js';
 import { OutputPass } from './lib/OutputPass.js';
+import { loadEarthTextures, makeRealEarth, setEarthSun } from './earth.js';
 
 const $ = (id) => document.getElementById(id);
 const fmt = (x, d = 0) => Number(x).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -174,31 +175,6 @@ const plumeTex = canvasTex(64, 256, (g, w, h) => {
   grd.addColorStop(0, 'rgba(255,255,255,1)'); grd.addColorStop(0.12, 'rgba(255,255,255,0.8)'); grd.addColorStop(1, 'rgba(255,255,255,0)');
   g.fillStyle = grd; g.fillRect(0, 0, w, h);
 });
-// procedural clouds (fractal value noise), wrapped around the globe
-function cloudTex() {
-  const W = 1024, H = 512, r = mulberry(21);
-  const grid = (n) => { const a = new Float32Array(n * n); for (let k = 0; k < a.length; k++) a[k] = r(); return a; };
-  const octs = [8, 16, 32, 64, 128].map((n) => ({ n, g: grid(n) }));
-  return canvasTex(W, H, (g) => {
-    const img = g.createImageData(W, H);
-    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
-      let v = 0;
-      for (const [oi, o] of octs.entries()) {
-        const amp = [0.22, 0.32, 0.22, 0.14, 0.1][oi];
-        const fx = (x / W) * o.n, fy = (y / H) * o.n * 0.5;
-        const x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
-        const sx = tx * tx * (3 - 2 * tx), sy = ty * ty * (3 - 2 * ty);
-        const at = (i, j) => o.g[(((j % o.n) + o.n) % o.n) * o.n + (((i % o.n) + o.n) % o.n)];
-        v += amp * lerp(lerp(at(x0, y0), at(x0 + 1, y0), sx), lerp(at(x0, y0 + 1), at(x0 + 1, y0 + 1), sx), sy);
-      }
-      const lat = Math.abs(y / H - 0.5) * 2;
-      const c = clamp((v - 0.53 + 0.08 * Math.cos(lat * 7)) * 4.5, 0, 1);
-      const k = (y * W + x) * 4;
-      img.data[k] = img.data[k + 1] = img.data[k + 2] = 255; img.data[k + 3] = Math.floor(c * 235);
-    }
-    g.putImageData(img, 0, 0);
-  });
-}
 
 const M = {
   mli: new THREE.MeshStandardMaterial({ map: mliColor, bumpMap: mliBump, bumpScale: 1.6, metalness: 0.85, roughness: 0.32 }),
@@ -553,30 +529,7 @@ function makeStage(S) {
 
 // ------------------------------------------------------------------ Earth: a globe (journey) and a backdrop (close-ups)
 const RE_KM = 6378.137;
-const ATMO_VERT = 'varying vec3 vN; varying vec3 vP; void main(){ vN = normalize(normalMatrix * normal); vec4 p = modelViewMatrix * vec4(position,1.0); vP = p.xyz; gl_Position = projectionMatrix * p; }';
-const ATMO_FRAG = `uniform vec3 sunDir; uniform float power; uniform float strength; varying vec3 vN; varying vec3 vP;
-void main(){ vec3 v = normalize(-vP); float rim = pow(1.0 - abs(dot(vN, v)), power); float lit = clamp(dot(vN, sunDir) * 0.8 + 0.35, 0.0, 1.0);
-gl_FragColor = vec4(vec3(0.35,0.62,1.0) * rim * lit * strength, rim * lit); }`;
-function atmoMat(side, power, strength) {
-  return new THREE.ShaderMaterial({ vertexShader: ATMO_VERT, fragmentShader: ATMO_FRAG, side, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-    uniforms: { sunDir: { value: new THREE.Vector3() }, power: { value: power }, strength: { value: strength } } });
-}
-function makeEarth(radius, tex, clouds, atmoScale) {
-  const g = new THREE.Group();
-  const ground = new THREE.Mesh(new THREE.SphereGeometry(radius, 128, 96), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.92, metalness: 0, envMapIntensity: 0 }));
-  const cl = new THREE.Mesh(new THREE.SphereGeometry(radius * 1.004, 128, 96), new THREE.MeshStandardMaterial({ map: clouds, color: 0xdcdcdc, transparent: true, roughness: 1, metalness: 0, depthWrite: false, envMapIntensity: 0 }));
-  const atmo = new THREE.Mesh(new THREE.SphereGeometry(radius * atmoScale, 128, 96), atmoMat(THREE.BackSide, 2.2, 1.6));
-  const halo = new THREE.Mesh(new THREE.SphereGeometry(radius * 1.006, 128, 96), atmoMat(THREE.FrontSide, 4.0, 0.45));
-  g.add(ground, cl, atmo, halo);
-  g.userData = { atmo, halo };
-  return g;
-}
-function updateAtmo(earthGroup) {
-  camera.updateMatrixWorld();
-  const s = SUN_DIR.clone().transformDirection(camera.matrixWorldInverse);
-  earthGroup.userData.atmo.material.uniforms.sunDir.value.copy(s);
-  earthGroup.userData.halo.material.uniforms.sunDir.value.copy(s);
-}
+function updateAtmo(earthGroup) { setEarthSun(earthGroup, SUN_DIR); }   // NASA Earth (earth.js): world-space sun
 const world = new THREE.Group(); world.visible = false; scene.add(world);
 let globe, backdrop;
 function geo(latDeg, lonDeg, r = 1) {
@@ -1118,12 +1071,10 @@ function loop() {
 async function boot() {
   try {
     D = await (await fetch('data/truck.json')).json();
-    const tex = await new THREE.TextureLoader().loadAsync('textures/earth.jpg');
-    tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
-    const clouds = cloudTex();
+    const tex = await loadEarthTextures('textures/');                     // NASA Blue Marble, Black Marble, clouds
     T = buildTruck(D);
-    globe = makeEarth(1, tex, clouds, 1.025); world.add(globe);
-    backdrop = makeEarth(6378, tex, clouds, 1.016); scene.add(backdrop);
+    globe = makeRealEarth(1, tex, { atmo: 1.025 }); world.add(globe);
+    backdrop = makeRealEarth(6378, tex, { atmo: 1.016 }); scene.add(backdrop);
     backdrop.rotation.set(0.35, 2.2, 0);
     stage = makeStage(D.stage); stage.visible = false; scene.add(stage);
     plate = new THREE.Group();

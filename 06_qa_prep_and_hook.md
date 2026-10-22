@@ -6,38 +6,48 @@ Every number below comes from our model files (`results/*.json`, `paper/paper_nu
 
 ---
 
-## 1. The 30-second hook (cover slide)
+## 1. The 40-second hook (cover slide)
 
-> "Right now there are about forty-seven thousand tracked objects circling Earth, and a lot of them are dead: old satellites and rocket stages that nobody is coming to collect. Today, removing just one of them is a custom space mission that costs forty to ninety million dollars. So we asked a simple question: what if a spacecraft worked like a garbage truck, running a route and picking up ten pieces on one trip? And what if Earth itself did most of the driving? That's Orbital Curbside."
+Written for a judge who has never heard of space junk.
+
+> "Look up tonight and you won't see it. But right now, about forty-seven thousand objects that we can track are racing around Earth at about twenty-seven thousand kilometres an hour. Two out of every three are junk: dead satellites, old rocket parts and broken pieces.
+>
+> When two of them crash, they shatter into thousands more. And the satellites we use every day, for maps, weather and the internet, have to fly through it.
+>
+> Today, cleaning up just one piece of junk costs forty to ninety million dollars. We're building a cheaper way: a garbage truck for space. That's Orbital Curbside."
 
 Delivery:
-- Say it slowly; it's about 85 words, so 30–35 seconds.
-- Look at the judge on "garbage truck" and on "Earth itself did most of the driving".
+- Say it slowly; it's about 110 words, so 40–45 seconds.
+- Pause after "thousands more". Look at the judge on "a garbage truck for space".
 - Don't read the slide.
+
+Where the hook's facts come from: 47,000 tracked / 16,000 working (ESA DISCOSweb, Oct 2026, so about two in three are not working); 27,000 km/h is orbital speed at 400–1,000 km (basic physics, 7.4–7.7 km/s); the 2009 Iridium–Cosmos crash made about 2,200 tracked pieces (CelesTrak).
 
 **10-second version** (for hallway or elevator use):
 > "Orbital Curbside is a space garbage truck. One electric spacecraft removes ten dead satellites per trip by letting Earth's bulge line their orbits up, at about an eighth of today's price per object."
 
 ---
 
-## 2. Timing plan (target 11 minutes, leaving about 4 for questions)
+## 2. Timing plan (target about 11 minutes, leaving about 3–4 for questions)
+
+The deck tells one simple story: what's up there → why it matters → why it isn't fixed → who pays → our idea → how it works → proof → money → ask.
 
 | Slides | Section | Target time |
 |---|---|---|
-| 1–3 | Hook, title, contents | 0:50 |
-| 4 | I. Overview | 0:35 |
-| 5–7 | II. Business Opportunity | 1:50 |
-| 8–10 | III. Customer Segments | 2:10 |
-| 11–12 | IV. Unique Value Proposition | 1:00 |
-| 13–14 | V. Solution: how it works, proof | 1:25 |
+| 1–3 | Hook, title, contents | 1:00 |
+| 4 | I. Overview: the idea on one page | 0:35 |
+| 5–7 | II. Business Opportunity: the junk, why it matters, why it isn't fixed | 2:10 |
+| 8–9 | III. Customer Segments: who pays, our first route | 1:30 |
+| 10–11 | IV. Unique Value Proposition: one trip, ten pickups; Earth does the steering | 1:15 |
+| 12–14 | V. Solution: four steps, the truck, proof | 1:50 |
 | 15 | Live demo (offline) | 0:45–1:00 |
-| 16–17 | V. Solution: economics, risks and roadmap | 1:20 |
-| 18 | VI. Conclusion and ask | 0:45 |
+| 16–17 | V. Solution: the money, risks and roadmap | 1:30 |
+| 18 | VI. Conclusion and ask | 0:40 |
 | 19–20 | Bibliography and appendix (not presented; for questions) | – |
 
-The full spoken script is about 1,390 words, which is about 10 minutes at a calm pace, plus about 1 minute of demo.
+The spoken script is about 1,520 words, which is about 10½ minutes at a calm pace, plus about 1 minute of demo. That leaves only about 3½ minutes for questions, so if your practice runs long, cut the "Q&A backup" material you're tempted to add aloud, and shorten slide 7 (skip the market number) and slide 17 (read only the risk titles).
 
-**Practise with a timer.** If you're past 6:00 when you reach slide 11, shorten the demo to 30 seconds.
+**Practise with a timer.** If you're past 6:00 when you reach slide 10, shorten the demo to 30 seconds.
 
 **Demo fallback:** if the laptop or demo fails, stay on slide 15. The screenshot is the same scene; say "this is the route from our simulation" and continue.
 

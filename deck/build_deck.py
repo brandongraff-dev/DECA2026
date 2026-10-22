@@ -32,12 +32,24 @@ BLOBS = {
     "067fb47714ecee436d438a0d0491d9a5": "model_reentry.png",
     "83f72b75855657a5c62e110f07020266": "scaling.png",
     "3c397a80a1dd28979d356efa63369396": "tornado.png",
+    "9bb06939db0f6ad40069026aa4d628ff": "bg_horizon.jpg",
+    "95c94fb048f564a93d205bfdb2567a35": "bg_night.jpg",
+    "955145882e7c133388a4eab6a5e867bb": "bg_globe.jpg",
+    "2fcdc920e3eef9b2e61a9316b3def59d": "bg_debris.jpg",
+    "c98a1cf573b756f54463d09b34455832": "bg_lanes.jpg",
+    "c5e32a1d0fd60ef05c11aa509fb58585": "bg_limb.jpg",
+    "e48f27c9ce56b2289acbf9ad28754204": "journey_deploy.jpg",
+    "0ad6a98d6bfcf988c5f044a88f9de36e": "journey_climb.jpg",
+    "849bb31310e5c29d81df36dfe0f59d13": "journey_latched.jpg",
+    "e5469e7698611e387c19c7541be6518f": "journey_smoke.jpg",
+    "0c6f103207ed312c367bd755e27c96ff": "truck_hero.jpg",
+    "7db19cceb6252ff6e5fc7df2b49e1f03": "journey_grip.jpg",
 }
 
 CSS = """
 @page { size: 1920px 1080px; margin: 0; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: #101216; }
+html, body { background: #04060A; }
 section { position: relative; width: 1920px; height: 1080px; overflow: hidden; page-break-after: always; break-after: page; }
 section aside { display: none; }
 section > :not([style*="position:absolute"]) { position: relative; }

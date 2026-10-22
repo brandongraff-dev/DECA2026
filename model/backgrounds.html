@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Deck backgrounds</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style></head>
+<body>
+<script type="module">
+// Renders 1920x1080 background plates for the pitch deck. Usage: backgrounds.html#horizon (see SCENES).
+import * as THREE from './lib/three.module.min.js';
+import { EffectComposer } from './lib/EffectComposer.js';
+import { RenderPass } from './lib/RenderPass.js';
+import { UnrealBloomPass } from './lib/UnrealBloomPass.js';
+import { OutputPass } from './lib/OutputPass.js';
+import { loadEarthTextures, makeRealEarth, setEarthSun } from './earth.js';
+
+const W = 1920, H = 1080;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, logarithmicDepthBuffer: true });
+renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x010204);
+const camera = new THREE.PerspectiveCamera(35, W / H, 0.001, 500);
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.38, 0.55, 0.88));
+composer.addPass(new OutputPass());
+
+function mulberry(a) { return () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+(function stars() {
+  const n = 5000, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), r = mulberry(4);
+  for (let k = 0; k < n; k++) {
+    const u = r() * 2 - 1, th = r() * Math.PI * 2, s = Math.sqrt(1 - u * u), R = 300;
+    pos.set([R * s * Math.cos(th), R * u, R * s * Math.sin(th)], k * 3);
+    const b = 0.35 + 0.65 * Math.pow(r(), 3); col.set([b * 0.9, b * 0.95, b], k * 3);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 1.3, sizeAttenuation: false, vertexColors: true, transparent: true, depthWrite: false })));
+})();
+function orbitRing(r, incDeg, raanDeg, color, opacity) {
+  const pts = [], i = incDeg * Math.PI / 180, O = raanDeg * Math.PI / 180;
+  for (let k = 0; k <= 400; k++) {
+    const u = k / 400 * Math.PI * 2, x = Math.cos(u), y = Math.sin(u);
+    pts.push(new THREE.Vector3(r * (x * Math.cos(O) - y * Math.cos(i) * Math.sin(O)), r * y * Math.sin(i), -r * (x * Math.sin(O) + y * Math.cos(i) * Math.cos(O))));
+  }
+  return new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color, transparent: true, opacity, toneMapped: false }));
+}
+// a glowing ring with real thickness (WebGL lines are always 1 px)
+function ringTube(r, incDeg, raanDeg, color, thick, opacity = 1) {
+  const pts = orbitRing(r, incDeg, raanDeg, color, 1).geometry.attributes.position;
+  const v = []; for (let k = 0; k < pts.count - 1; k++) v.push(new THREE.Vector3().fromBufferAttribute(pts, k));
+  const curve = new THREE.CatmullRomCurve3(v, true);
+  const c = new THREE.Color(color).multiplyScalar(1.6);
+  return new THREE.Mesh(new THREE.TubeGeometry(curve, 600, thick, 10, true),
+    new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity, toneMapped: false, depthWrite: false }));
+}
+async function debris() {
+  const bg = await (await fetch('../sim/data/background.json')).json();
+  const C = { 0: [0.3, 0.45, 0.6], 1: [1.0, 0.4, 0.22], 2: [1.0, 0.62, 0.2], 3: [1.0, 0.62, 0.2] };
+  const rows = bg.rows.filter((r) => r[0] * (1 + r[1]) < 6378.137 + 2000);  // low Earth orbit only
+  const n = rows.length, pos = new Float32Array(n * 3), col = new Float32Array(n * 3);
+  const t0 = Math.max(...rows.map((r) => r[6]));
+  rows.forEach(([a, e, i, raan, argp, M0, ep, type], k) => {
+    // move every object to one common instant (many epochs sit at the equator crossing)
+    const M = (M0 + Math.sqrt(398600.4418 / a ** 3) * (t0 - ep) * 86400) % (2 * Math.PI);
+    let E = M; for (let j = 0; j < 8; j++) E = E - (E - e * Math.sin(E) - M) / (1 - e * Math.cos(E));
+    const nu = 2 * Math.atan2(Math.sqrt(1 + e) * Math.sin(E / 2), Math.sqrt(1 - e) * Math.cos(E / 2));
+    const r = a * (1 - e * Math.cos(E)) / 6378.137, u = argp + nu;
+    const x = Math.cos(u), y = Math.sin(u);
+    const X = x * Math.cos(raan) - y * Math.cos(i) * Math.sin(raan), Y = x * Math.sin(raan) + y * Math.cos(i) * Math.cos(raan), Z = y * Math.sin(i);
+    pos.set([r * X, r * Z, -r * Y], k * 3); col.set(C[type] || C[0], k * 3);
+  });
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  return new THREE.Points(g, new THREE.PointsMaterial({ size: 2.6, sizeAttenuation: false, vertexColors: true, transparent: true, opacity: 0.85, depthWrite: true, toneMapped: false }));
+}
+
+const SCENES = {
+  // low orbit view: Earth's curve across the bottom, daylight, thin blue atmosphere, stars above
+  horizon: { cam: [0, 1.06, 0.0], look: [0, 0.915, -1.0], sun: [0.45, 0.6, -0.65], rot: [0.785, 1.309, 0], atmo: 1.012 },
+  // the night side along the bottom with city lights and sunrise breaking over the horizon
+  night: { cam: [0, 1.06, 0.0], look: [0, 0.915, -1.0], sun: [0.45, -0.22, -0.86], rot: [0.663, 1.396, 0], atmo: 1.012 },
+  // a whole globe on the right, day and night, with faint orbit rings
+  globe: { cam: [0, 0.35, 3.6], look: [-0.95, 0.0, 0], sun: [-1.0, 0.25, 0.35], rot: [0.3, -1.6, 0], rings: true },
+  // the debris cloud: every tracked object in our catalogue around Earth
+  debris: { cam: [0.0, 0.7, 3.3], look: [-0.85, 0.0, 0], sun: [-0.8, 0.4, 0.6], rot: [0.2, 0.4, 0], debris: true },
+  // orbit "lanes": three rings at different heights, spread apart
+  lanes: { cam: [0.0, 2.3, 3.1], look: [-0.9, -0.1, 0], sun: [-0.6, 0.7, 0.6], rot: [0.0, 0.3, 0], lanes: true },
+  // close limb seen edge-on, mostly night, for a dark title slide
+  limb: { cam: [2.4, 0.25, 2.2], look: [0.6, 0.15, 0], sun: [0.2, 0.25, -1.0], rot: [0.1, 3.63, 0] },
+};
+
+const key = (location.hash || '#horizon').slice(1);
+const S = SCENES[key];
+const tex = await loadEarthTextures('textures/');
+const earth = makeRealEarth(1, tex, { segments: 256, nightGain: 3.5, atmo: S.atmo || 1.015 });
+earth.rotation.set(...S.rot);
+scene.add(earth);
+setEarthSun(earth, new THREE.Vector3(...S.sun));
+if (S.rings) {
+  scene.add(ringTube(1.14, 98, 70, 0xe8620c, 0.0022, 0.8), ringTube(1.2, 83, 140, 0x5fd4ff, 0.0016, 0.55), ringTube(1.1, 53, 210, 0x5fd4ff, 0.0014, 0.4));
+}
+if (S.debris) scene.add(await debris());
+if (S.lanes) {
+  scene.add(ringTube(1.09, 98, -25, 0x5fd4ff, 0.004), ringTube(1.17, 98, 5, 0xf2b33d, 0.004), ringTube(1.26, 98, 40, 0xe8620c, 0.0045));
+}
+camera.position.set(...S.cam); camera.lookAt(...S.look);
+composer.render(); composer.render();
+window.__ready = true;
+</script>
+</body></html>

@@ -28,7 +28,8 @@ Credits and licenses: `ATTRIBUTION.md`.
 | `paper/`, `onepager/` | Paper and summary (HTML template + build script + PDF) |
 | `deck/` | Snapshot of the Slides-artifact deck: slide HTML, images, PDF, speaker notes (`build_deck.py` rebuilds). The editable deck is the Slides artifact; re-export if you edit it there |
 | `research/` | Sourced inputs, verified expert and industry contacts, outreach tracker |
-| `model/` | 3D concept truck + journey (three.js, offline). Sized from `model/data/truck.json` (`engine/scripts/export_model.py`) |
+| `model/` | 3D concept truck + journey (three.js, offline). Sized from `model/data/truck.json` (`engine/scripts/export_model.py`). Earth from NASA imagery (`model/earth.js`) |
+| `model/backgrounds.html` | Renders the deck's Earth background plates (horizon, night, globe, debris swarm, orbit rings); `python model/capture_backgrounds.py` writes them to `figures/backgrounds/`. `python model/capture_clean.py` writes clean model renders to `figures/model_clean/` |
 
 ## Re-run everything
 ```bash

@@ -3,193 +3,219 @@ Word-for-word scripts. Text in [brackets] is a stage cue, not spoken. "Q&A backu
 
 ## Slide 1: cover
 
-HOOK (30 seconds, say it before anything else, slowly):
-"Right now there are about forty-seven thousand tracked objects circling Earth, and a lot of them are dead: old satellites and rocket stages that nobody is coming to collect. Today, removing just one of them is a custom space mission that costs forty to ninety million dollars. So we asked a simple question: what if a spacecraft worked like a garbage truck, running a route and picking up ten pieces on one trip? And what if Earth itself did most of the driving? That's Orbital Curbside."
+HOOK (about 40 seconds; say it before anything else, slowly):
+"Look up tonight and you won't see it. But right now, about forty-seven thousand objects that we can track are racing around Earth at about twenty-seven thousand kilometres an hour. Two out of every three are junk: dead satellites, old rocket parts and broken pieces.
 
-[Pause, then advance.]
+When two of them crash, they shatter into thousands more. And the satellites we use every day, for maps, weather and the internet, have to fly through it.
 
-Delivery tip: make eye contact on "garbage truck". Hold the clicker; do not read the slide.
+Today, cleaning up just one piece of junk costs forty to ninety million dollars. We're building a cheaper way: a garbage truck for space. That's Orbital Curbside."
+
+[Pause, then advance. Look at the judge on "garbage truck for space".]
 
 ## Slide 2: title
 
-"Good morning. I'm Brandon Graff, founder and CEO of Orbital Curbside. I'm here today to show you a business that removes space junk the way a city removes trash: on a route, many pickups per trip, at a price customers can actually plan around."
+"Good morning. I'm Brandon Graff, founder and CEO of Orbital Curbside. I'm going to show you a problem most people have never heard of, why it matters to all of us, and a business that cleans it up the way a city collects trash: on a route, with many pickups per trip."
 
-[Advance after about 10 seconds. Do not read the school address aloud.]
+[About 10 seconds. Don't read the address aloud.]
 
 Fill before competition: school name, street address, city/state/ZIP, presentation date, headshot.
 
 ## Slide 3: contents
 
-"Here's the plan: what we do, the opportunity, who pays, why we're different, how it works, and what we're asking for."
+"Here's the plan: the problem, who pays to fix it, what makes us different, how it works, and what we're asking for."
 
 [About 5 seconds. Advance.]
 
 ## Slide 4: overview
 
-"Orbital Curbside is a space garbage truck. One electric spacecraft runs a route through a cluster of dead satellites or old rocket stages. At each stop it attaches a small rocket kit that drops the object into the atmosphere to burn up, then it drives on.
+"Here's the whole idea on one slide.
 
-Customers pay a fixed fee per object, when it's confirmed coming down. We serve space agencies, satellite operators and insurers.
+The problem: dead satellites and old rocket parts are piling up around Earth, and every crash makes more junk.
 
-And the value is the price: our model says about twelve million dollars per removal, including the launch, versus forty to ninety-three million in today's contracts."
+Our fix: one spacecraft that picks up ten pieces per trip, like a garbage truck on a route.
 
-Q&A backup: Why "modelled"? Because no one has flown this yet. Every number comes from our open-source model, benchmarked against NASA JPL's competition-winning solution, with every assumption listed in the appendix.
+Who pays: space agencies first, then satellite companies and insurers, with a fixed fee for each piece we remove.
 
-## Slide 5: problem
+And the price: our model says about twelve million dollars per piece, including the launch. Today it's forty to ninety-three million."
 
-"This is low Earth orbit in our simulation, using this October's real catalogue. The European Space Agency tracks about forty-seven thousand objects; only about sixteen thousand still work.
+Q&A backup: Why "our model"? Nobody has flown this yet. Every number comes from our open-source model, checked against NASA JPL's competition-winning solution, with every assumption in the appendix.
 
-ESA's own conclusion this year: even with no new launches, debris keeps growing, because collisions create pieces faster than they fall. That's the Kessler syndrome.
+## Slide 5: junk
 
-But the risk is concentrated. A 2021 study found that removing just the fifty most dangerous derelicts, mostly old rocket stages, would cut their collision risk roughly in half."
+"This is every object in low orbit from this October's real catalogue. About forty-seven thousand objects are big enough to track. Only about sixteen thousand still work. The rest is junk: dead satellites, used rocket stages and broken pieces.
 
-Q&A backup: Why not just let them fall? Above about 800 km, dead objects can stay up for a century or more. The SL-8 stages we target sit near 960 km.
+And they all move at about twenty-seven thousand kilometres an hour. Picture a highway where two of every three cars are abandoned wrecks, still moving at full speed."
 
-## Slide 6: cost-today
+Q&A backup: The speed is basic orbital physics: 7.4 to 7.7 km/s between 400 and 1,000 km. Object counts: ESA Space Environment Statistics (DISCOSweb). Why not let them fall? Above about 800 km, dead objects can stay up for a century or more.
 
-"Governments have started paying to clean up. ESA's ClearSpace-1: eighty-six million euros for one object. Japan's ADRAS-J2: about eighty-two million dollars. This month the UK announced about eighty million to remove two satellites.
+## Slide 6: crashes
 
-Every one is a custom mission for one or two objects. That's hiring a dedicated truck for every trash bag. At these prices, nobody can clean up thousands."
+"Why does this matter? Because junk makes more junk.
 
-Q&A backup: The UK figure is per the 15 Oct 2026 announcement ("more than £60m" for two satellites; press reports ≈£61M). The SDA contract covers one deorbit plus options; the number of options is not public.
+In 2009, a dead Russian satellite smashed into a working American one. That single crash created about two thousand two hundred new pieces of tracked junk.
 
-## Slide 7: why-now
+The International Space Station, with people on board, has had to move out of the way of junk forty-one times since 1999.
 
-"Why now? Three numbers.
+And it's turned into a chain reaction: crashes now make new pieces faster than old ones fall back. The European Space Agency says the junk keeps growing even if we stopped launching tomorrow.
 
-Five years: the FCC now requires low-orbit satellites to deorbit within five years after their mission ends.
+What's at stake is everything satellites do for us: GPS maps, weather forecasts, TV and internet."
 
-Zero point nine: since July, each satellite needs at least a ninety percent chance of disposing of itself. So up to one in ten can fail and still comply. That's a steady supply of customers.
+Q&A backup: The chain reaction is called the Kessler syndrome (Kessler and Cour-Palais, 1978). A 2021 study (McKnight et al.) found that removing the fifty most dangerous derelicts, mostly old rocket stages, would cut their collision risk roughly in half.
 
-And one point one to one point six billion dollars: analysts' estimate of the debris market in 2025, with removal growing fast."
+## Slide 7: cost-today
 
-Q&A backup: Market reports are paid analyst estimates and disagree by definition, so we show the range and don't build our plan on them. We build bottom-up from real contract prices.
+"So why hasn't anyone cleaned it up? Because it's expensive.
 
-## Slide 8: segments
+Governments have started paying: Europe, Japan, the UK and the US. But each one is a custom mission for one or two objects, at forty to ninety-three million dollars per piece. That's like hiring a whole garbage truck for every trash bag. At those prices, nobody can clean up thousands.
 
-"We have three customer segments, ordered by who pays first.
+Meanwhile the rules just got stricter. In the US, dead satellites must now come down within five years, and up to one in ten satellites is allowed to fail at that. So there will always be some that need a pickup. Analysts put this market at over a billion dollars already."
 
-First, space agencies: ESA, JAXA, the UK, NASA, the Space Force. They're already signing removal contracts and buy with milestone payments. Their challenge: many dangerous objects belong to other countries.
+Q&A backup: Contract values: ClearSpace-1 (ESA, 2020) €86M; ADRAS-J2 (JAXA, 2024) ≈¥13.2B; UK ADR (15 Oct 2026) "more than £60m" for two satellites; US SDA disposal service (Starfish, Jan 2026) $52.5M including options. Market reports are paid analyst estimates that disagree, so we don't build on them; we build bottom-up from contract prices.
 
-Second, satellite operators like Iridium and OneWeb, who need a plan for satellites that die early. They're very price-sensitive.
+## Slide 8: who-pays
 
-Third, insurers, who want to retire risk but will wait for a proven demo.
+"Who pays to take out the trash? Three customers, in the order they'll pay.
 
-We chose them because they already carry the cost of debris."
+First, space agencies: Europe, Japan, the UK and the US. Their old rockets are up there, and they're already signing cleanup contracts.
 
-Q&A backup: Why not start with operators? They have the clearest legal right (they own the objects), but the smallest budgets. Agencies have budgets now. We pursue both, with operators as early design partners.
+Second, satellite companies like Iridium and OneWeb. They must bring dead satellites down within five years, and some will fail. But listen to Iridium's CEO: at millions per satellite, he said, it doesn't make sense. So companies need a much lower price, which is exactly what a route gives.
 
-## Slide 9: operators
+Third, insurers, who pay out when satellites are lost. They'll join once removal is proven."
 
-"Operators are our Product A. In 2019, Iridium's CEO said he'd pay to remove his dead satellites, and joked about ten thousand dollars each. But at millions, he said, it doesn't make sense.
+Q&A backup: Why agencies first? They have budgets now. Companies own their satellites, which makes them legally simple, but they're price-sensitive, so they're early design partners. 24 dead first-generation Iridium satellites are still in orbit (Oct 2026 data); a 10-stop route through them models ≈$12.5M each. Rocket Lab agreed to buy Iridium in June 2026 (≈$8B).
 
-Twenty-four of those dead Iridium satellites are still up there. On a ten-stop route through them, launch included, our model gives about twelve and a half million dollars each, almost eight times cheaper than one mission per object, but still far above ten thousand. Finding the price operators will say yes to is the first thing my interviews test."
+## Slide 9: first-route
 
-Q&A backup: Why would an operator pay at all? To meet the five-year rule, to avoid collision liability and maneuvers near its own fleet, and for reputation. The FCC's 0.9 success rule means some satellites will always fail.
+"So where do we start? With ten old rocket stages from the US, India and France.
 
-## Slide 10: agencies
+We picked them for two reasons. First, they sit in the orbit band where cheap, shared SpaceX launches already go, so our truck makes its first pickup just eighty days after launch.
 
-"Product B is for agencies. Each dot here is an object we downloaded. The dead ones, in orange, line up in tight clusters, and clusters are routes.
+Second, no permission problem. Under space law, every object still belongs to the country that launched it. These belong to countries whose space agencies already pay for cleanup.
 
-Our first route is in the sun-synchronous band. That matters because the cheap shared rockets, rideshares, drop satellites right there. Twenty-six old stages there belong to the US, India and France, the same countries whose agencies already pay for removal. Our truck reaches its first stop eighty days after launch.
+The bigger prize comes later: a hundred forty-two Soviet-era rocket stages. But Russia must agree, and getting there takes a year of thrusting, so those cost about thirteen million each."
 
-The bigger prize is the SL-8 cluster: a hundred forty-two Soviet stages. But they belong to Russia, which must consent, and getting there takes a year of thrusting to change our orbit's tilt. So that comes later, at about thirteen million each."
+Q&A backup: The stages: 4 Indian PSLV, 4 French Ariane and 2 US (Agena, Delta) upper stages, 600–1,900 kg each, in the sun-synchronous band at 650–850 km. Legal basis: Outer Space Treaty, Article VIII (state of registry keeps jurisdiction and control).
 
-Q&A backup: Legal basis: Outer Space Treaty (1967), Article VIII: the state of registry keeps jurisdiction and control over its objects. First-route stages: 4 Indian PSLV, 4 French Ariane and 2 US (Agena, Delta) upper stages, 600–1,900 kg each.
+## Slide 10: one-trip
 
-## Slide 11: uvp-statement
+"Here's what makes us different. Today, every piece of junk gets its own custom mission, at forty to ninety-three million dollars each.
 
-"Here's what makes us different: we don't chase the junk, we let Earth bring it to us.
+We run a route instead. One truck, one launch, ten stops. Because the expensive parts, the spacecraft and the launch, are shared by ten pickups, our model comes out at about twelve million dollars per piece.
 
-Earth bulges at the equator, and that bulge slowly swings every orbit around, at a speed that depends on height. So instead of burning fuel to turn toward the next target, our truck parks at a slightly different height and waits for the target's orbit to swing over to meet it."
+And we price it like a garbage route: a fixed fee per piece, paid only when it's confirmed coming down."
 
-[Pause after the headline. Let it land.]
+Q&A backup: Is multi-target removal new? The idea has been studied (ESA's GTOC9 contest in 2017, Di Carlo and Vasile, a 2026 IAC paper), and Astroscale and ClearSpace are working on servicing more than one object. We know of no company selling a priced, multi-stop route on today's catalogue; we'd welcome being corrected.
 
-Q&A backup: Is the drift trick new? No. It was used in GTOC9 (2017) and studied by Di Carlo, Vasile and others, and in a 2026 IAC paper. What's new here is pricing it as a customer-facing service on the live 2026 catalogue, with two products and a reusable truck.
+## Slide 11: secret
 
-## Slide 12: uvp-compare
+"So how can one truck reach ten objects cheaply? Here's the secret: we don't chase the junk. We let Earth bring it to us.
 
-"Side by side. Today's missions remove one or two objects per launch, at forty to ninety-three million dollars each, burning fuel to change orbits.
+Every orbit slowly swings around Earth, like the hand of a clock. And lower orbits swing faster, because Earth isn't a perfect ball; it bulges at the equator.
 
-We remove ten per route, and about fifty per reusable truck. Our model says about twelve million per object including the launch, and about five with reuse. From launch to the last stop, the truck uses about two hundred kilograms of xenon. And our software picks the route from the live catalogue. Every assumption is in the appendix."
+So our truck parks a little higher or lower than its next target, and simply waits until the two line up, like the hands of a clock meeting.
 
-Q&A backup: Who else does multi-target? Astroscale ELSA-M and ClearSpace are working on servicing more than one client object, and research tugs exist. We know of no company publicly selling a priced, drift-planned multi-stop route on today's catalogue; we'd welcome being corrected.
+The difference is huge. Turning with fuel to close one of these gaps would take about a thousand kilograms of propellant. Waiting a year takes about nineteen."
 
-## Slide 13: how-it-works
+Q&A backup: The swing is called nodal precession, caused by Earth's oblateness (the J2 term): dΩ/dt = −1.5·n·J2·(R/p)²·cos i. Our planner prices waiting time against fuel, so routes aren't just fuel-optimal; they're cost-optimal.
 
-"Four steps: park, drift, hop, tag.
+## Slide 12: how-it-works
 
-Park at a slightly different height than the next target. Drift while Earth's bulge closes the gap for free. Hop with a short, gentle electric burn. Tag the object with a small rocket kit that drops it into the atmosphere, then drive on.
+"Here's one trip, in four steps.
 
-The chart shows why waiting matters. Closing a nineteen-degree gap right away takes about one thousand ninety-four kilograms of propellant, more than half the truck. Drifting for a year takes about nineteen."
+One: the truck rides a shared SpaceX rocket, the cheapest seat to space.
 
-Q&A backup: The formula is the J2 nodal precession rate, dΩ/dt = −1.5·n·J2·(R/p)²·cos i. We correct it with second-order terms so it matches the SGP4 model used for real satellite tracking (slide 14).
+Two: it climbs to the junk's height and drifts, letting Earth line up the next target.
+
+Three: a robot arm holds the old rocket, and the truck latches on a small rocket kit.
+
+Four: the kit fires, the old rocket falls into the atmosphere and burns up, and the truck drives on to the next stop. Ten times per trip."
+
+Q&A backup: The kit lowers the stage's lowest point to 250 km so it re-enters within months; heavy objects get a controlled re-entry over the ocean. Kits weigh about 85 kg each on our first route. The arm and capture are the least-proven part; Japan's ADRAS-J2 plans to demonstrate capture around 2027–28.
+
+## Slide 13: truck
+
+"This is the truck, from our 3D model. At launch it weighs about one thousand six hundred fifty kilograms, about as heavy as a car.
+
+It has electric engines that run on xenon gas and are about five times more fuel-efficient than chemical rockets. A robot arm to hold each old rocket steady. Ten rocket kits, one for each pickup. And solar wings that power the engines.
+
+More than half its launch weight is the kits. The fuel for the whole trip is only about two hundred kilograms."
+
+Q&A backup: Mass budget (first route): kits 852 kg, dry truck 600 kg, xenon 198 kg. Two Hall thrusters, 0.202 N each class, Isp 1,710 s. "5× more efficient" compares specific impulse (≈1,710 s vs ≈300 s for a chemical engine). An electric truck can run about five routes before its thrusters wear out.
 
 ## Slide 14: proof
 
 "How do you know a high-schooler's math is right? I checked it against the best.
 
-In 2017, ESA ran a global competition to plan exactly this kind of route. NASA's Jet Propulsion Laboratory won and published every leg. I rebuilt all one hundred thirteen. My total lands within two point two percent of theirs.
+In 2017, the European Space Agency held a contest to plan exactly this kind of route. NASA's Jet Propulsion Laboratory won, and published every move. I rebuilt all one hundred thirteen. My fuel totals land within two point two percent of theirs. Each dot here is one move; on the line is a perfect match.
 
-Against SGP4, the model used to track real satellites, my orbit planes match within six hundredths of a degree on the SL-8 route, and three tenths of a degree on our first route. And four search methods compete to pick the best of two point four times ten to the twenty-first possible routes."
+I also checked my orbit predictions against SGP4, the model used to track real satellites. They match within six hundredths of a degree."
 
-Q&A backup: Our model is about 2% optimistic, which is why the plan carries a 10% Δv margin. The four methods are beam search, simulated annealing, a genetic algorithm and ant colony optimisation.
+Q&A backup: 0.06° median on the SL-8 route; 0.30° on our first route. Our model is about 2% optimistic, so plans carry a 10% fuel margin. Four search methods (beam search, simulated annealing, genetic algorithm, ant colony) compete to pick the best of 2.4×10²¹ possible routes.
 
 ## Slide 15: demo
 
 [LIVE DEMO CUE: on the laptop, open Start Demo.bat (offline). It opens on our first route. Click Scene 3 "The garbage truck" and press play. Then click "See the truck in 3D", choose "The journey" and tap "Tag it". If anything fails, stay on this slide; the image is the same scene.]
 
-"Let me show you. This is our first route, on the real orbits of these stages as of October sixteenth. The orange line is our truck. It doesn't chase each stage: it parks at a different height, lets the orbits swing into line, then hops over.
+"Let me show you one trip. These are the real orbits of these rocket stages as of October sixteenth. The orange line is our truck. Watch: it doesn't chase each stage. It parks, lets the orbits swing into line, then hops over.
 
-And this is the truck itself, at one stop. It holds the old stage with its arm, latches a deorbit kit onto it, backs away, and the kit sends the stage down to burn up.
+And here's a pickup up close: the arm holds the old stage, a kit latches on, the truck backs away, and the kit sends the stage down to burn up.
 
-Ten stages. Sixteen months from launch to the last stop. About two hundred kilograms of xenon for the whole job."
+Ten stages. Sixteen months. About two hundred kilograms of fuel for the whole trip."
 
 [Demo: 60 seconds max. Then return to slides.]
 
-Q&A backup: The route is computed by our Python planner and exported to the simulation; satellite.js propagates every object with SGP4 in the browser. The truck is a concept sized from our mass budget (kits 852 kg, xenon 198 kg, 600 kg dry), not a flight design. Capturing a tumbling stage has not been demonstrated yet.
+Q&A backup: The route comes from our Python planner; the browser propagates every object with SGP4. The truck is a concept sized from our mass budget, not a flight design.
 
 ## Slide 16: economics
 
-"Now the money, and every number here includes getting to orbit. With our truck removing just one object, our model says about ninety-seven million dollars, right in line with today's contracts. That's our sanity check.
+"Now the money. Every number here includes the launch.
 
-Ten stops on our first route: about twelve million per object. Across twenty thousand Monte Carlo runs, eighty percent land between eleven and fifteen million.
+Today's missions cost forty to ninety-three million per piece. As a sanity check, if our truck picked up just one piece, our model says ninety-seven million: right in line with today.
 
-Keep the truck and send it new kits on later rideshares: about five million per object, for about fifty removals before its thrusters wear out.
+But with ten pickups on one trip, it drops to about twelve million per piece. And if we keep the truck and just send up new kits, about five million, for around fifty pickups.
 
-The biggest unknown is the truck's own cost, fifty to a hundred fifteen million, and that's what I'm working hardest to pin down."
+Out of twenty thousand simulated cases, eighty percent land between eleven and fifteen million. The biggest unknown is what the truck itself costs, and that's what I'm working hardest to pin down."
 
-Q&A backup: Where does the money go on one route? Truck hardware ($80M base), kits ($15M for 10 at an assumed $1.5M each), launch (~$12M at $7,500/kg for 1,650 kg), operations (~$7M), insurance (~$7M). A dedicated rocket instead of a rideshare would add $4–7M per removal. Electric vs chemical changes the price by a few percent; the levers are stops per route and reuse.
+Q&A backup: Where the money goes on one route: truck $80M, kits $15M (10 × assumed $1.5M), launch ≈$12.5M ($7,500/kg × 1,650 kg), operations ≈$7M, insurance ≈$7M. Price at a 20% margin: ≈$15.3M. A dedicated rocket instead of a rideshare adds $4–7M per piece.
 
 ## Slide 17: risks-roadmap
 
-"Our four biggest risks. Capture: nobody has grabbed a tumbling rocket stage yet, so we watch Japan's ADRAS-J2 and partner with whoever proves it. Cost: our prices are estimates, and a rideshare this heavy needs a custom quote, so I'm testing both with experts. Legal: owners keep control of their objects, so our first route uses American, Indian and French stages. Safety: heavy objects get a controlled re-entry over the ocean.
+"What could stop us? Four things, and here's what we do about each.
 
-The roadmap: validate this year, sign a capture partner, fly a small pathfinder, then our first ten-stop truck from 2029."
+Grabbing it: nobody has grabbed a tumbling old rocket yet. Japan plans to try in 2027 or 2028, and we'll partner with whoever proves it rather than invent our own arm.
 
-Q&A backup: Why not build the capture system ourselves? It's the hardest, least-proven part, and two funded companies (Astroscale, ClearSpace) are already working on it. Our edge is the route and the pricing, not the arm. Dates after 2027 are targets, not commitments.
+Cost: our prices are estimates, so I'm testing them with experts.
+
+Permission: every object belongs to its country, so our first route uses American, Indian and French stages.
+
+Falling pieces: heavy objects are steered to burn up over the open ocean.
+
+The plan: talk to customers and experts this year, sign a partner, fly a small test trip, then our first ten-pickup truck from 2029."
+
+Q&A backup: Why not build the arm ourselves? It's the hardest, least-proven part, and funded companies (Astroscale, ClearSpace) are already on it. Our edge is the route and the pricing. A rideshare as heavy as our truck needs a custom quote above the 831 kg standard port limit.
 
 ## Slide 18: conclusion
 
-"Three things to remember. One: removing one object costs forty to ninety-three million dollars today; our first route models about twelve, including the launch. Two: a cheap rideshare gets us there, Earth's bulge does the steering, and the math is checked against NASA JPL. Three: one reusable truck can remove about fifty dangerous old stages.
+"Three things to remember. One: space junk is growing, and every crash makes more. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
 
-Our ask: [$__] in pre-seed funding for twelve months, to finish customer validation, design the deorbit kit, and sign a pathfinder partner.
+Our ask: [$__] in pre-seed funding for twelve months, to finish customer interviews, design the rocket kit, and sign a partner for a test trip.
 
 We don't chase the junk. We let Earth bring it to us. Thank you; I'm happy to take your questions."
 
-Q&A backup: Why ~50? The truck's two thrusters are rated for about 13 MN·s of total impulse, enough for about 5.7 routes of 10 stops on the first route; we count 5. The QR opens the online 3D demo (shared by link); the offline copy is on the laptop.
+Q&A backup: The QR opens the online 3D demo (shared by link); the offline copy is on the laptop. Why about 50 pickups per reused truck? The thrusters are rated for about 13 MN·s of total impulse, enough for about 5.7 ten-stop routes; we count 5.
 
 ## Slide 19: bibliography
 
-[Do not present this slide aloud. It is here for judges to review. If asked: "Every number in this deck traces to one of these sources or to our own model, and the paper lists each with a link."]
+[Do not present this slide aloud. It's here for judges. If asked: "Every number in this deck traces to one of these sources or to our own model, and the paper lists each with a link."]
 
-Q&A backup: Images and charts are our own (simulation screenshots and model output). Cesium and satellite.js credits are in ATTRIBUTION.md in the project repository.
+Q&A backup: Earth images are rendered by us from NASA's public-domain imagery; charts and truck renders are our own model output. Cesium, satellite.js and three.js credits are in ATTRIBUTION.md.
 
 ## Slide 20: appendix
 
 [Backup slide: use only if judges ask about assumptions.]
 
-"Here's every assumption behind the cost numbers. Anything marked 'assumption' is my estimate, and the kit price is the one with no public number at all, so it's a top question in my expert interviews.
+"Here's every assumption behind the cost numbers. Anything marked 'assumption' is my estimate; the kit price has no public number at all, so it's a top question in my expert interviews.
 
-The tornado chart shows which inputs matter. Truck hardware cost dominates: across NASA's range it swings our cost per removal from about nine to sixteen million. Xenon price and fuel margin barely move it, which is why we say fuel is nearly free but time and hardware are not."
+The bars show what moves the price. Truck hardware matters most: across NASA's range it swings our cost per piece from about nine to sixteen million. Xenon price barely moves it, which is why we say fuel is nearly free, but hardware and time are not."
 
-Q&A backup: Kit mass comes from the rocket equation. SL-16 stages (≈9 t) would need ≈870 kg kits, so they're not suited to a multi-stop truck.
+Q&A backup: Kit mass comes from the rocket equation. SL-16 stages (≈9 t) would need ≈870 kg kits, so they don't suit a multi-stop truck.
