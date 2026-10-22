@@ -68,6 +68,14 @@ Keep each answer to 20–30 seconds: answer, one piece of evidence, then stop.
 **Q3. Why should we believe a high-school student's math?**
 > "I checked it against NASA JPL's winning GTOC9 solution: across their 113 legs I'm within 2.2 percent, with a correlation of 0.99. I also checked my orbit predictions against SGP4, the model used for real satellite tracking, and they match within 0.06 degrees. The code and data are public in my repository."
 
+**Q2b. There are 47,000 pieces up there. How can 10 at a time ever matter? Who could afford to remove them all?**
+> "Nobody has to remove them all. More than half are small fragments that can't be grabbed. The danger sits in about five hundred big dead rocket stages and satellites, because they're what shatter into thousands of new pieces. Experts ranked the fifty worst: removing just those would cut the risk of junk-making crashes about in half. NASA's models say removing about five big objects a year could keep low orbit from getting worse, and one of our reusable trucks does about eight a year."
+
+Sources: ESA Space Environment Report (more than half of tracked objects are fragments from 500+ breakups); McKnight, IAA memo (about 480 massive derelicts in LEO, about 810 tonnes); McKnight, Top 50 update presented at IAC 2025 (about half; top 10 about 30%), reported by [Ars Technica via Slashdot](https://science.slashdot.org/story/25/10/06/0148246/removing-50-objects-from-orbit-would-cut-danger-from-space-junk-in-half) and [heise](https://heise.de/-10728122); Liou & Johnson (2009) and Liou (2011), NASA ([NTRS](https://ntrs.nasa.gov/citations/20120013266)), where NASA itself calls "about 5 a year" a notional planning benchmark.
+
+**Q2c. Are your first-route stages on that most-dangerous list?**
+> "No, and I want to be upfront about it. The worst-fifty list is mostly Russian and Soviet stages (34 of 50) and Chinese ones (10). My first route uses US, Indian and French stages because their owners can say yes today and cheap rideshares already go there. That route proves the truck. The 1.4-tonne Soviet SL-8 stages, which are on the list, fit our truck and are the next route, once Russia agrees. The 9-tonne SL-16 stages at the top of the list are too heavy for a ten-stop truck; they'd need a bigger tug or a partner."
+
 ### Customers and market
 
 **Q4. Has anyone said they'd pay?**
@@ -164,4 +172,5 @@ Judges reward honesty over bluffing.
 | JPL benchmark | 113 legs, within 2.2%, r = 0.99 |
 | SGP4 check | 0.06° median (SL-8), 0.30° (first route) |
 | SL-8 cluster | 142 stages, ~960 km, 83° |
+| Big derelicts that matter | ~500 in LEO; the worst 50 ≈ half the risk; NASA benchmark ≈ 5 a year; one reused truck ≈ 8 a year |
 | FCC rules | 5-year deorbit; 0.9 disposal reliability |

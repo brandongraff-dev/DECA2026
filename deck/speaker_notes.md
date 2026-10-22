@@ -50,17 +50,17 @@ Q&A backup: The speed is basic orbital physics: 7.4 to 7.7 km/s between 400 and 
 
 ## Slide 6: crashes
 
-"Why does this matter? Because junk makes more junk.
+"Here's the good news: we don't have to remove all forty-seven thousand.
 
-In 2009, a dead Russian satellite smashed into a working American one. That single crash created about two thousand two hundred new pieces of tracked junk.
+More than half of them are small pieces from past crashes, far too many and too small to grab one by one.
 
-The International Space Station, with people on board, has had to move out of the way of junk forty-one times since 1999.
+The real danger is about five hundred big dead rocket stages and satellites, mostly one to nine tonnes each. They're the bombs. When two of them collide, one crash can make thousands of new pieces, like the two thousand two hundred from 2009.
 
-And it's turned into a chain reaction: crashes now make new pieces faster than old ones fall back. The European Space Agency says the junk keeps growing even if we stopped launching tomorrow.
+Experts have ranked the fifty worst. Removing just those would cut the risk of junk-making crashes about in half.
 
-What's at stake is everything satellites do for us: GPS maps, weather forecasts, TV and internet."
+And NASA's models say removing about five big objects a year could keep low orbit from getting worse. One of our reusable trucks does about eight a year."
 
-Q&A backup: The chain reaction is called the Kessler syndrome (Kessler and Cour-Palais, 1978). A 2021 study (McKnight et al.) found that removing the fifty most dangerous derelicts, mostly old rocket stages, would cut their collision risk roughly in half.
+Q&A backup: Sources: ESA (more than half of tracked objects are fragments from 500+ breakups); McKnight, IAA memo (about 480 massive derelicts in LEO, about 810 tonnes); McKnight, Top 50 update presented at IAC 2025 (removing all 50 roughly halves debris-generating potential; the top 10 about 30%; reported by Ars Technica); Liou & Johnson, NASA (2009) and Liou (2011) (about 5 a year; NASA calls it a notional planning benchmark). About 8 a year = about 50 removals over about 6 years for one reused truck, our model. Also: the ISS has moved out of the way of junk 41 times since 1999 (NASA ODQN 29(3)). Honest limit: 34 of the 2025 top 50 are Russian/Soviet and 10 Chinese; about 30 are SL-16 and SL-8 stages. Our truck fits the 1.4-tonne SL-8s (a later route, with Russia's consent). The 9-tonne SL-16s need about 870 kg kits each, too heavy for a 10-stop truck, so they need a bigger tug or a partner.
 
 ## Slide 7: cost-today
 
@@ -92,9 +92,9 @@ We picked them for two reasons. First, they sit in the orbit band where cheap, s
 
 Second, no permission problem. Under space law, every object still belongs to the country that launched it. These belong to countries whose space agencies already pay for cleanup.
 
-The bigger prize comes later: a hundred forty-two Soviet-era rocket stages. But Russia must agree, and getting there takes a year of thrusting, so those cost about thirteen million each."
+The bigger prize comes later: a hundred forty-two Soviet-era rocket stages, the same type that shows up on experts' list of the fifty most dangerous objects. But Russia must agree, and getting there takes a year of thrusting, so those cost about thirteen million each."
 
-Q&A backup: The stages: 4 Indian PSLV, 4 French Ariane and 2 US (Agena, Delta) upper stages, 600–1,900 kg each, in the sun-synchronous band at 650–850 km. Legal basis: Outer Space Treaty, Article VIII (state of registry keeps jurisdiction and control).
+Q&A backup: The stages: 4 Indian PSLV, 4 French Ariane and 2 US (Agena, Delta) upper stages, 600–1,900 kg each, in the sun-synchronous band at 650–850 km. Legal basis: Outer Space Treaty, Article VIII (state of registry keeps jurisdiction and control). Are these the most dangerous objects? No, and say so: the first route is chosen for consent and cheap access, to prove the truck works. The most-dangerous list is mostly Russian/Soviet (34 of 50) and Chinese (10); 11 SL-8 stages were on the 2021 list (McKnight et al. 2021).
 
 ## Slide 10: one-trip
 
@@ -196,7 +196,7 @@ Q&A backup: Why not build the arm ourselves? It's the hardest, least-proven part
 
 ## Slide 18: conclusion
 
-"Three things to remember. One: space junk is growing, and every crash makes more. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
+"Three things to remember. One: we don't need to remove all the junk; taking out the worst fifty would cut the danger about in half. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
 
 Our ask: [$__] in pre-seed funding for twelve months, to finish customer interviews, design the rocket kit, and sign a partner for a test trip.
 
