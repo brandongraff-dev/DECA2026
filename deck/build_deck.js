@@ -51,15 +51,15 @@ function show(n){
   const v = S[i].querySelector('video[data-video]');
   if (v && VIDEO) {
     const poster = S[i].querySelector('img[data-poster]');
-    v.style.display='block'; if (poster) poster.style.visibility='hidden';
-    v.currentTime = 0; v.play().catch(()=>{ v.style.display='none'; if (poster) poster.style.visibility='visible'; });
+    v.style.display='block'; if (poster) poster.style.visibility='hidden'; const sc=S[i].querySelector('.scrim-l'); if (sc) sc.style.display='none';
+    v.currentTime = 0; v.play().catch(()=>{ v.style.display='none'; if (poster) poster.style.visibility='visible'; if (sc) sc.style.display=''; });
   }
   history.replaceState(null,'','#'+(i+1));
 }
 addEventListener('DOMContentLoaded',()=>{
   S=[...document.querySelectorAll('#stage>section')];
   S.forEach(s=>{ const v=s.querySelector('video[data-video]'); if(v && VIDEO){ v.src=VIDEO; v.loop=true;
-    v.addEventListener('error',()=>{ v.style.display='none'; const p=s.querySelector('img[data-poster]'); if(p) p.style.visibility='visible'; }); } });
+    v.addEventListener('error',()=>{ v.style.display='none'; const p=s.querySelector('img[data-poster]'); if(p) p.style.visibility='visible'; const c=s.querySelector('.scrim-l'); if(c) c.style.display=''; }); } });
   fit(); show((parseInt(location.hash.slice(1))||1)-1);
   setTimeout(()=>{document.getElementById('hint').style.opacity=0},4000);
 });

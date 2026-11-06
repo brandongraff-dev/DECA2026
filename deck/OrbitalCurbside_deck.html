@@ -18,15 +18,15 @@ function show(n){
   const v = S[i].querySelector('video[data-video]');
   if (v && VIDEO) {
     const poster = S[i].querySelector('img[data-poster]');
-    v.style.display='block'; if (poster) poster.style.visibility='hidden';
-    v.currentTime = 0; v.play().catch(()=>{ v.style.display='none'; if (poster) poster.style.visibility='visible'; });
+    v.style.display='block'; if (poster) poster.style.visibility='hidden'; const sc=S[i].querySelector('.scrim-l'); if (sc) sc.style.display='none';
+    v.currentTime = 0; v.play().catch(()=>{ v.style.display='none'; if (poster) poster.style.visibility='visible'; if (sc) sc.style.display=''; });
   }
   history.replaceState(null,'','#'+(i+1));
 }
 addEventListener('DOMContentLoaded',()=>{
   S=[...document.querySelectorAll('#stage>section')];
   S.forEach(s=>{ const v=s.querySelector('video[data-video]'); if(v && VIDEO){ v.src=VIDEO; v.loop=true;
-    v.addEventListener('error',()=>{ v.style.display='none'; const p=s.querySelector('img[data-poster]'); if(p) p.style.visibility='visible'; }); } });
+    v.addEventListener('error',()=>{ v.style.display='none'; const p=s.querySelector('img[data-poster]'); if(p) p.style.visibility='visible'; const c=s.querySelector('.scrim-l'); if(c) c.style.display=''; }); } });
   fit(); show((parseInt(location.hash.slice(1))||1)-1);
   setTimeout(()=>{document.getElementById('hint').style.opacity=0},4000);
 });
@@ -397,9 +397,9 @@ I also checked my orbit predictions against SGP4, the model used to track real s
 Q&A backup: 0.06° median on the SL-8 route; 0.30° on our first route. Our model is about 2% optimistic, so plans carry a 10% fuel margin. Four search methods (beam search, simulated annealing, genetic algorithm, ant colony) compete to pick the best of 2.4×10²¹ possible routes.</aside>
 </section>
 
-<section id="demo">
+<section id="demo" style="background:#000">
 <img class="bleed" src="assets/journey_grip.jpg" alt="Concept render: the truck's robot arm holding an old rocket stage above Earth" data-poster="1">
-<video class="bleed" data-video="1" muted playsinline preload="auto" style="display:none"></video>
+<video data-video="1" muted playsinline preload="auto" style="display:none;position:absolute;left:560px;top:158px;width:1360px;height:765px;object-fit:cover;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%);mask-image:linear-gradient(90deg,transparent 0,#000 18%)"></video>
 <div class="scrim-l" style="background:linear-gradient(90deg,#0A0A0A 0%,rgba(10,10,10,.92) 30%,rgba(10,10,10,0) 52%)"></div>
 <p class="kicker"><b>V</b>Solution · watch one pickup</p>
 <h2 style="max-width:700px">Grab it. Tag it. <em>Send it down.</em></h2>
