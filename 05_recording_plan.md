@@ -1,6 +1,6 @@
 # 60-Second Backup Recording Plan (if the live demo glitches)
 
-> **Already done for slide 15:** `deck/assets/demo_pickup.mp4` is a pre-rendered 29-second clip of one pickup (grab, tag, burn, re-entry) from the 3D model. It plays automatically in the offline presenter (`deck/OrbitalCurbside_deck.html`) and is embedded in `deck/OrbitalCurbside_deck.pptx`. Use this plan only if you also want a screen recording of the orbit simulation.
+> **Already done for slide 15:** `deck/assets/demo_pickup.mp4` is a pre-rendered 26-second clip of one pickup (grab, tag, burn, re-entry) from the 3D model. It plays automatically in the offline presenter (`deck/OrbitalCurbside_deck.html`) and is embedded in `deck/OrbitalCurbside_deck.pptx`. Use this plan only if you also want a screen recording of the orbit simulation.
 
 **Record on your Windows laptop** with the built-in **Snipping Tool → Record** (Windows 11) or **Xbox Game Bar** (`Win + Alt + R` starts and stops). Both are free and already installed.
 Run the offline demo (`Start Demo.bat`), press `F11` for full screen, and close every notification first.
