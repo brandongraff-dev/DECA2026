@@ -141,9 +141,10 @@ Sources: ESA Space Environment Report (more than half of tracked objects are fra
 > "A fixed fee per object, paid on confirmed deorbit. At a 20 percent margin that's about $15.3 million per object on a single route, falling with reuse. The final price depends on what interviews show customers will pay."
 
 **Q20. What exactly is the ask for?**
-> "[$__] for twelve months: complete customer and expert interviews, a design study for the deorbit kit, and a signed pathfinder or capture partner."
->
-> Fill in the amount with your advisor; don't invent one in the room.
+> "Two hundred fifty thousand dollars for twelve months: complete customer and expert interviews, a design study for the deorbit kit, and a signed pathfinder or capture partner."
+
+**Q20b. How would you spend the $250K?** (suggested split: adjust with your advisor so you can defend every line)
+> "About half, $120K, goes to a design study of the deorbit kit with an engineering partner, because the kit price is our biggest unknown after the truck. $50K covers legal and partnership work: agreements with a capture partner and export-control advice. $40K pays for customer and expert interviews, including two industry conferences. The last $40K is software, data and a contingency."
 
 **Q21. What happens next if we fund you?**
 > "First, validate pricing with operators and agencies. Then sign a capture partner. Then a pathfinder with two or three stops for one paying customer, around 2028–29. The first ten-stop truck follows from 2029."

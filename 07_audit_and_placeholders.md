@@ -78,7 +78,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 | `[City, State ZIP]` | 2 Title | |
 | `[Presentation date]` | 2 Title | competition date (TBD) |
 | `[headshot]` | 2 Title | upload a photo, or delete the circle |
-| `[$__]` pre-seed ask | 18 Conclusion, `deck/slides/conclusion.html` (slide text **and** script) | decide with your advisor; see Q&A Q20 |
+| ~~`[$__]` pre-seed ask~~ | 18 Conclusion | ✅ filled: **$250K** (slide, script, Q&A Q20/Q20b) |
 | QR code on slide 18 | 18 | points to the sim artifact, already shared as “anyone with the link”. Re-check it opens on a phone |
 
 ### Paper and one-pager
@@ -102,7 +102,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 |---|---|
 | `[__number__]` | how many people you've contacted |
 | `[__N__]`, `[__finding__]` | real interview counts/findings |
-| `[$__]` | the ask amount |
+| ~~`[$__]`~~ | ✅ the ask: $250K |
 
 ### Unknown numbers (model assumptions to validate, not placeholders)
 These numbers are **assumptions**, labelled as such in the paper and appendix. They are not facts.

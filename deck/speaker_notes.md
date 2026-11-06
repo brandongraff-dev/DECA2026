@@ -204,7 +204,7 @@ Q&A backup: Why not build the arm ourselves? It's the hardest, least-proven part
 
 "Every crash makes more junk, so waiting makes this problem bigger and more expensive. Three things to remember. One: we don't need to remove all the junk; taking out the worst fifty would cut the danger about in half. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
 
-Our ask: [$__] in pre-seed funding for twelve months, to finish customer interviews, design the rocket kit, and sign a partner for a test trip.
+Our ask: two hundred fifty thousand dollars in pre-seed funding for twelve months, to finish customer interviews, design the rocket kit, and sign a partner for a test trip.
 
 We don't chase the junk. We let Earth bring it to us. Thank you; I'm happy to take your questions."
 
