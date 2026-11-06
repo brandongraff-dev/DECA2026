@@ -3,7 +3,7 @@
 DECA Innovation Plan 2026-27 project by Brandon Graff. **Live demo:** https://claude.ai/artifact/RxGuDPANAdifw94SYwp76U
 
 **Start here for competition:**
-- Pitch deck (20 slides): `deck/OrbitalCurbside_deck.pdf`. Script: `deck/speaker_notes.md`
+- Pitch deck (20 slides): **present from `deck/OrbitalCurbside_deck.html`** (offline; → / click to advance, F = full screen; the demo video plays on slide 15). Upload `deck/OrbitalCurbside_deck.pdf` to DECA. PowerPoint backup with the video embedded: `deck/OrbitalCurbside_deck.pptx`. Script: `deck/speaker_notes.md`. Copy the whole `deck/` folder to a USB stick
 - Hook, timing and Q&A prep: `06_qa_prep_and_hook.md`
 - Rubric audit and the placeholder checklist (fill these in!): `07_audit_and_placeholders.md`
 - Paper (11 pages): `paper/OrbitalCurbside_paper.pdf`. One-page summary: `onepager/OrbitalCurbside_OnePager.pdf`
@@ -26,7 +26,7 @@ Credits and licenses: `ATTRIBUTION.md`.
 | `sim/` | CesiumJS + satellite.js simulation source (published as the artifact) |
 | `offline/OrbitalCurbside-Demo/` | No-internet demo package with launchers |
 | `paper/`, `onepager/` | Paper and summary (HTML template + build script + PDF) |
-| `deck/` | Snapshot of the Slides-artifact deck: slide HTML, images, PDF, speaker notes (`build_deck.py` rebuilds). The editable deck is the Slides artifact; re-export if you edit it there |
+| `deck/` | The pitch deck. Source: `deck/slides/*.html` + `deck/theme.css` (fonts bundled in `deck/fonts/`). `node deck/build_deck.js --png DIR` builds the presenter HTML, PDF and notes; `python3 deck/make_pptx.py DIR` builds the PowerPoint. `deck/archive_v1_slides/` is the old design (the earlier Slides artifact is now out of date) |
 | `research/` | Sourced inputs, verified expert and industry contacts, outreach tracker |
 | `model/` | 3D concept truck + journey (three.js, offline). Sized from `model/data/truck.json` (`engine/scripts/export_model.py`). Earth from NASA imagery (`model/earth.js`) |
 | `model/backgrounds.html` | Renders the deck's Earth background plates (horizon, night, globe, debris swarm, orbit rings); `python model/capture_backgrounds.py` writes them to `figures/backgrounds/`. `python model/capture_clean.py` writes clean model renders to `figures/model_clean/` |
@@ -50,6 +50,7 @@ python -m scripts.export_sim                # data for the 3D simulation
 python -m scripts.export_model              # numbers for the 3D truck model
 cd .. && python sim/build_offline.py        # offline demo package
 python paper/build_paper.py                  # paper PDF (needs playwright)
-python deck/build_deck.py                    # deck PDF + speaker notes (needs playwright)
+node deck/build_deck.js --png /tmp/oc_png   # deck presenter HTML + PDF + notes (needs Node playwright)
+python3 deck/make_pptx.py /tmp/oc_png       # PowerPoint backup (needs python-pptx)
 ```
 Data note: CelesTrak needs a browser-like User-Agent from some networks; it also rate-limits, so download politely.

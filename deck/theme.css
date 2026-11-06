@@ -1,5 +1,5 @@
 /* Orbital Curbside deck, v2 "hazard" theme: black, white, one alarm colour. */
-@import url(../fonts/fonts.css);
+@import url(fonts/fonts.css);
 :root { --bg:#0A0A0A; --ink:#F2F0EB; --mid:#A3A09A; --dim:#6B6964; --rule:#2B2A28; --red:#FF3D1F; --ok:#F2F0EB; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { background:#000; }
@@ -19,8 +19,8 @@ h2 { font-weight:800; font-size:70px; line-height:1.02; letter-spacing:-2px; max
 h2 em, h1 em { font-style:normal; color:var(--red); }
 .lede { font-size:32px; line-height:1.35; color:var(--mid); max-width:1200px; }
 .lede b { color:var(--ink); font-weight:600; }
-.big { font-weight:800; font-size:120px; line-height:.9; letter-spacing:-4px; }
-.mid { font-weight:800; font-size:72px; line-height:.9; letter-spacing:-2px; }
+.big { white-space:nowrap; font-weight:800; font-size:120px; line-height:.9; letter-spacing:-4px; }
+.mid { white-space:nowrap; font-weight:800; font-size:72px; line-height:.9; letter-spacing:-2px; }
 .lab { font-size:24px; line-height:1.35; color:var(--mid); margin-top:12px; }
 .lab b { color:var(--ink); font-weight:600; }
 .red { color:var(--red); }

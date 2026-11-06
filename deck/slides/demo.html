@@ -1,15 +1,27 @@
-<section id="demo" data-transition="fade" style="background:radial-gradient(1200px 700px at 85% 15%, rgba(40,90,160,0.22), rgba(4,6,10,0) 60%), radial-gradient(900px 600px at 10% 100%, rgba(255,122,46,0.10), rgba(4,6,10,0) 60%), #04060A;color:#F4F7FB;font-family:'Hanken Grotesk', Arial, sans-serif;padding:170px 112px 150px;display:flex;flex-direction:column;justify-content:center;gap:30px">
-<img src="/_blob/7db19cceb6252ff6e5fc7df2b49e1f03" alt="Concept render: the Orbital Curbside truck's robotic arm holding an old rocket stage above Earth" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover"><div style="position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg, rgba(4,6,10,0.97) 0%, rgba(4,6,10,0.88) 45%, rgba(4,6,10,0.2) 68%)"></div><p style="position:absolute;left:112px;top:88px;width:1300px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:22px;letter-spacing:4px;text-transform:uppercase;color:#5FD4FF"><span style="display:inline-block;width:12px;height:12px;background:#FF7A2E;margin:0 16px 2px 0"></span>V · Solution · Live demo</p><h2 style="width:900px;font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;font-size:96px;font-weight:800;line-height:0.95;letter-spacing:1px;text-transform:uppercase;color:#F4F7FB;">Watch one trip:<br><span style="color:#FF7A2E">10 pickups, 16 months.</span></h2><div style="display:flex;gap:22px"><div style="background:rgba(10,16,28,0.62);border:1px solid rgba(120,190,255,0.22);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);padding:22px 28px"><p style="font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;font-size:66px;font-weight:700;line-height:0.9;color:#F4F7FB">10</p><p style="font-size:22px;line-height:1.38;color:#C3CCD8;">old stages removed</p></div><div style="background:rgba(10,16,28,0.62);border:1px solid rgba(120,190,255,0.22);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);padding:22px 28px"><p style="font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;font-size:66px;font-weight:700;line-height:0.9;color:#F4F7FB">490</p><p style="font-size:22px;line-height:1.38;color:#C3CCD8;">days, launch to last stop</p></div><div style="background:rgba(10,16,28,0.62);border:1px solid rgba(120,190,255,0.22);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);padding:22px 28px"><p style="font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;font-size:66px;font-weight:700;line-height:0.9;color:#F4F7FB">198 kg</p><p style="font-size:22px;line-height:1.38;color:#C3CCD8;">of xenon fuel</p></div></div><p style="width:820px;font-size:25px;line-height:1.38;color:#C3CCD8;">Real orbits from the 16 Oct 2026 catalogue. Runs offline in a browser.</p><p style="position:absolute;left:112px;bottom:64px;width:1400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:20px;letter-spacing:1px;color:#8E9AAD;text-shadow:0 1px 8px #000,0 0 3px #000">Simulation: our route planner + SGP4 (satellite.js) · 3D truck: concept model</p><p style="position:absolute;right:112px;bottom:58px;width:200px;text-align:right;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;font-weight:600;color:#F4F7FB">15</p>
-<div style="position:absolute;width:36px;height:36px;left:40px;top:40px;border-left:2px solid rgba(95,212,255,0.45);border-top:2px solid rgba(95,212,255,0.45)"></div><div style="position:absolute;width:36px;height:36px;right:40px;top:40px;border-right:2px solid rgba(95,212,255,0.45);border-top:2px solid rgba(95,212,255,0.45)"></div><div style="position:absolute;width:36px;height:36px;left:40px;bottom:40px;border-left:2px solid rgba(95,212,255,0.45);border-bottom:2px solid rgba(95,212,255,0.45)"></div><div style="position:absolute;width:36px;height:36px;right:40px;bottom:40px;border-right:2px solid rgba(95,212,255,0.45);border-bottom:2px solid rgba(95,212,255,0.45)"></div>
-<aside>[LIVE DEMO CUE: on the laptop, open Start Demo.bat (offline). It opens on our first route. Click Scene 3 "The garbage truck" and press play. Then click "See the truck in 3D", choose "The journey" and tap "Tag it". If anything fails, stay on this slide; the image is the same scene.]
+<section id="demo">
+<img class="bleed" src="assets/journey_grip.jpg" alt="Concept render: the truck's robot arm holding an old rocket stage above Earth" data-poster="1">
+<video class="bleed" data-video="1" muted playsinline preload="auto" style="display:none"></video>
+<div class="scrim-l" style="background:linear-gradient(90deg,#0A0A0A 0%,rgba(10,10,10,.92) 30%,rgba(10,10,10,0) 52%)"></div>
+<p class="kicker"><b>V</b>Solution · watch one pickup</p>
+<h2 style="max-width:700px">Grab it. Tag it. <em>Send it down.</em></h2>
+<div style="width:620px;margin-top:56px">
+  <div class="rule-t" style="padding:20px 0"><p class="mid" style="font-size:64px">10</p><p class="lab">old stages removed per trip</p></div>
+  <div class="rule-t" style="padding:20px 0"><p class="mid" style="font-size:64px">490 days</p><p class="lab">launch to last stop (16 months)</p></div>
+  <div class="rule-t" style="padding:20px 0;border-bottom:1px solid var(--rule)"><p class="mid" style="font-size:64px">198 kg</p><p class="lab">of xenon fuel for the whole trip</p></div>
+</div>
+<p class="src" style="width:640px">3D concept model, sized from our mass budget · route: our planner + SGP4. Not a flight design.</p>
+<p class="num">15</p>
+<aside>[VIDEO CUE: the presenter deck plays the 29-second clip on this slide automatically, muted. Talk over it. Press → to move on. Optional live demo instead: open Start Demo.bat (offline), Scene 3, then "See the truck in 3D" → "The journey". If anything fails, stay on the video.]
 
-"Let me show you one trip. These are the real orbits of these rocket stages as of October sixteenth. The orange line is our truck. Watch: it doesn't chase each stage. It parks, lets the orbits swing into line, then hops over.
+"Here's one pickup, from our 3D model, sized from our own numbers.
 
-And here's a pickup up close: the arm holds the old stage, a kit latches on, the truck backs away, and the kit sends the stage down to burn up.
+The truck pulls up to an old rocket stage that's been tumbling for decades. The arm grabs the ring where it once held its satellite. Small thruster puffs stop the spin. A kit latches on, the light turns green, and the truck backs away.
 
-Ten stages. Sixteen months. About two hundred kilograms of fuel for the whole trip."
+Then the kit fires, and the stage drops into the atmosphere and burns up. The truck drives on to the next stop.
 
-[Demo: 60 seconds max. Then return to slides.]
+Ten of these per trip. Sixteen months. About two hundred kilograms of fuel for the whole trip."
 
-Q&A backup: The route comes from our Python planner; the browser propagates every object with SGP4. The truck is a concept sized from our mass budget, not a flight design.</aside>
+[Clip: 29 seconds. Then advance.]
+
+Q&A backup: The route comes from our Python planner; the online demo propagates every object with SGP4. The truck is a concept sized from our mass budget, not a flight design.</aside>
 </section>

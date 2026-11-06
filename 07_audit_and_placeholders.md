@@ -7,9 +7,23 @@ Audited 16 Oct 2026 against the official **DECA Guide 2026–27, Innovation Plan
 
 Source PDF: https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c727b824720be717aa59f_HS_EIP_Guidelines.pdf
 
-> **Not audited:** the **Penalty Point Checklist** (DECA Guide p. 60) was not in that PDF. Get it from your advisor and check the deck against it before submitting.
+Re-checked 6 Nov 2026 after the redesign, including the **Penalty Point Checklist** (DECA Guide 2026–27 p. 60: https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6ee3d2b16972cb29b095_HS_PenaltyPointChecklist.pdf).
 
-Deck: Slides artifact https://claude.ai/artifact/6f8NpoMRLD1zp9vsZ6h4Kf. It is private until you share it from the Share menu. A copy of the source is in `deck/` in the repo.
+Deck source is now `deck/slides/*.html` (rebuild with `node deck/build_deck.js`). The old Slides artifact (https://claude.ai/artifact/6f8NpoMRLD1zp9vsZ6h4Kf) is the previous design and is out of date.
+
+### Penalty Point Checklist: pitch deck
+| Item (points) | Status |
+|---|---|
+| Statement of Assurances signed by participant **and** advisor, turned in with the deck; typed names not accepted (15) | ❌ **you must hand-sign it** |
+| Limited to 20 slides (5 per extra slide) | ✅ 20, cover included |
+| Slides numbered in sequence from the title slide to the last appendix slide (5) | ✅ cover unnumbered, title = 2 … appendix = 20 |
+| Follows the Pitch Deck Guidelines outline (5) | ✅ I–VIII in order |
+| Typed, 16:9; no handwritten corrections (5) | ✅ PDF is 1920×1080 (16:9), fonts embedded |
+
+### Video, animation and the laptop
+- The 2026–27 Presentation Guidelines allow your own equipment and sound: "Participants must furnish their own materials and equipment. No electrical power or internet connection will be supplied… Sound may be used, as long as the volume is kept at a conversational level." Set-up counts toward the 15 minutes. No penalty item mentions video.
+- The deck is **uploaded as a PDF** (DECA Direct, Nov 2025: "videos may be embedded" but "will be converted to a PDF"), so slide 15 shows a still in the PDF. In the room, present from `deck/OrbitalCurbside_deck.html`, which plays `assets/demo_pickup.mp4` with no internet. You may present a different file from the one you uploaded ("Members may use any of the visual aids that meet the criteria").
+- Laptop on **battery**: charge it fully. The clip is muted; you talk over it.
 
 ---
 
@@ -39,15 +53,15 @@ These are my estimates of where the **materials** sit today, not a prediction of
 
 | # | Criterion (pts) | Evidence in deck | Likely band now | Biggest gap → fix |
 |---|---|---|---|---|
-| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4 (problem, fix, who pays, price: $12.2M vs $40–93M); hook on slide 1 written for a non-expert | Proficient–Exemplary | Say the closing "why worth pursuing" line with conviction |
-| 2 | **Business Opportunity** (15): root causes, scope, urgency, relevance | 5 (47k objects, 2 in 3 junk, real-catalogue image), 6 (not all junk is equal: 47,000 → ~500 big derelicts → worst 50 ≈ half the risk; NASA ≈ 5 a year vs one truck ≈ 8 a year), 7 (contract prices, FCC 5-year and 0.9 rules, market range) | Proficient–Exemplary | Slide 6 answers "why not remove everything?"; know Q&A Q2b and Q2c cold |
+| 1 | **Overview** (15): idea, segments, problem, why it's worth pursuing, with evidence | Slide 4: the non-obvious question ("Everyone asks how to grab junk; we asked why every piece needs its own rocket"), problem, fix, who pays, price ($12.2M vs $40–93M) | Proficient–Exemplary | Say the closing "why worth pursuing" line with conviction |
+| 2 | **Business Opportunity** (15): root causes, scope, urgency, relevance | 5 (47k objects, 31k junk bar, why it matters to you: maps/weather/internet, ISS dodged 41×), 6 (47,000 → ~500 big derelicts → worst 50 ≈ half the risk; ~5 removals a year needed vs **0 so far**), 7 (**root cause named: the one-rocket-per-piece business model**; contract prices; **why now**: FCC 5-year and 1-in-10 rules, market range) | Proficient–Exemplary | Slide 6 answers "why not remove everything?"; know Q&A Q2b and Q2c cold |
 | 3 | **Customer Segments** (15): needs, behaviours, challenges, why chosen | 8 (3 segments: why they care, how they buy; Iridium CEO quote), 9 (first route: US/India/France stages, consent; SL-8 later) | **Developing–Proficient** | **No interview evidence yet.** This is the weakest criterion. Run the validation kit and add 1–2 real findings to slide 8 (and the appendix: questionnaire/letters, which DECA explicitly suggests) |
 | 4 | **Unique Value Proposition** (15): single, clear, differentiated, with comparisons | 10 (one trip, ten pickups vs one mission per piece; the promise), 11 ("We let Earth bring it to us"; 1,094 kg vs 19 kg) | Proficient–Exemplary | Be ready for "hasn't this been done?" (Q&A Q1); honesty here helps |
 | 5 | **Solution** (15): key features → problem/UVP, feasibility | 12 (four steps with renders), 13 (the truck and its mass), 14 (JPL & SGP4 checks), 15 (live demo), 16 (the money), 17 (risks + roadmap) | Exemplary on technical feasibility; business feasibility depends on unvalidated costs | Get even one expert reaction on truck or kit cost |
 | 6 | **Organization** (5) | Official I–VIII order, TOC with page numbers, section eyebrows | 4–5 | – |
 | 7 | **Persuasion** (5) | Plain-language story: problem → why it matters → price gap → our idea → proof → money → ask | 4 | A real customer signal would make it 5 |
 | 8 | **Delivery** (5): interactive techniques (e.g. visual storytelling) | Live 3D demo, story arc "garbage truck", QR to try it | 4–5 if rehearsed | Rehearse the demo hand-off; keep it ≤ 60 s |
-| 9 | **Presentation Design** (5) | Dark orbital theme: Earth backgrounds rendered from NASA imagery, glass panels, big type, one idea per slide | 4–5 | Fill title-slide placeholders and headshot |
+| 9 | **Presentation Design** (5) | Redesigned 6 Nov 2026: black/white with one alarm red that only marks danger, Schibsted Grotesk, full-sentence headlines, hairline rules instead of boxes, charts drawn with real numbers, real catalogue and 3D-model imagery, a video on slide 15 | 4–5 | Fill title-slide placeholders and headshot |
 | 10 | **Overall Impression** (5): professionalism, poise | – | depends on you | Business attire, eye contact, timed practice ×3 |
 
 **Single highest-value action:** customer and expert interviews (Step 7 kit). They strengthen criteria 3, 5 and 7, and give you true answers for Q&A Q4.
@@ -56,7 +70,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 
 ## C. Placeholder checklist (fill all before competition)
 
-### Deck (Slides artifact; source in `deck/project/slides/`)
+### Deck (source: `deck/slides/`; rebuild with `node deck/build_deck.js`)
 | Placeholder | Slide | Notes |
 |---|---|---|
 | `[School name]` | 2 Title | |
@@ -64,7 +78,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 | `[City, State ZIP]` | 2 Title | |
 | `[Presentation date]` | 2 Title | competition date (TBD) |
 | `[headshot]` | 2 Title | upload a photo, or delete the circle |
-| `[$__]` pre-seed ask | 18 Conclusion (slide text **and** script) | decide with your advisor; see Q&A Q20 |
+| `[$__]` pre-seed ask | 18 Conclusion, `deck/slides/conclusion.html` (slide text **and** script) | decide with your advisor; see Q&A Q20 |
 | QR code on slide 18 | 18 | points to the sim artifact, already shared as “anyone with the link”. Re-check it opens on a phone |
 
 ### Paper and one-pager
@@ -126,8 +140,8 @@ These were correct on 16 Oct 2026 but can change:
 
 - [ ] Fill every placeholder in section C. Run `grep -rn "\[__\|\[\$__" .` to find leftovers.
 - [ ] Sign the Statement of Assurances and Academic Integrity (separate document).
-- [ ] Check the deck against the Penalty Point Checklist (DECA Guide p. 60; get it from your advisor).
-- [ ] Export the deck to PDF and keep a copy on a USB stick (download from the Slides artifact).
+- [ ] After filling placeholders, rebuild (`node deck/build_deck.js --png /tmp/oc_png && python3 deck/make_pptx.py /tmp/oc_png`) and copy the whole `deck/` folder to a USB stick.
+- [ ] Test `deck/OrbitalCurbside_deck.html` on the competition laptop with Wi-Fi **off**: open it, press F, step to slide 15 and check the video plays.
 - [ ] Test `offline/OrbitalCurbside-Demo/Start Demo.bat` on the competition laptop with Wi-Fi **off**.
 - [ ] Scan the slide-18 QR with a phone to confirm the demo link opens (it is shared as “anyone with the link”).
 - [ ] Rehearse three times with a timer: hook ≤ 35 s, pitch ≈ 11 min.

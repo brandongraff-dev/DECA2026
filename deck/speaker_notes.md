@@ -30,6 +30,8 @@ Fill before competition: school name, street address, city/state/ZIP, presentati
 
 "Here's the whole idea on one slide.
 
+Everyone working on space junk is asking: how do we grab it? That's a real engineering problem, and companies are solving it. We asked a different question: why does every piece of junk need its own rocket? That question is where the money is.
+
 The problem: dead satellites and old rocket parts are piling up around Earth, and every crash makes more junk.
 
 Our fix: one spacecraft that picks up ten pieces per trip, like a garbage truck on a route.
@@ -44,7 +46,9 @@ Q&A backup: Why "our model"? Nobody has flown this yet. Every number comes from 
 
 "This is every object in low orbit from this October's real catalogue. About forty-seven thousand objects are big enough to track. Only about sixteen thousand still work. The rest is junk: dead satellites, used rocket stages and broken pieces.
 
-And they all move at about twenty-seven thousand kilometres an hour. Picture a highway where two of every three cars are abandoned wrecks, still moving at full speed."
+And they all move at about twenty-seven thousand kilometres an hour. Picture a highway where two of every three cars are abandoned wrecks, still moving at full speed.
+
+And this isn't just a space problem. Your phone's maps, tomorrow's weather forecast and a lot of the internet run on satellites that fly through this. The International Space Station has had to swerve out of the way of junk forty-one times."
 
 Q&A backup: The speed is basic orbital physics: 7.4 to 7.7 km/s between 400 and 1,000 km. Object counts: ESA Space Environment Statistics (DISCOSweb). Why not let them fall? Above about 800 km, dead objects can stay up for a century or more.
 
@@ -58,17 +62,17 @@ The real danger is about five hundred big dead rocket stages and satellites, mos
 
 Experts have ranked the fifty worst. Removing just those would cut the risk of junk-making crashes about in half.
 
-And NASA's models say removing about five big objects a year could keep low orbit from getting worse. One of our reusable trucks does about eight a year."
+NASA's models say we need to remove about five big objects a year just to keep low orbit from getting worse. And how many big dead objects has any cleanup spacecraft removed so far? Zero. The first attempt to even grab one is planned for 2027."
 
-Q&A backup: Sources: ESA (more than half of tracked objects are fragments from 500+ breakups); McKnight, IAA memo (about 480 massive derelicts in LEO, about 810 tonnes); McKnight, Top 50 update presented at IAC 2025 (removing all 50 roughly halves debris-generating potential; the top 10 about 30%; reported by Ars Technica); Liou & Johnson, NASA (2009) and Liou (2011) (about 5 a year; NASA calls it a notional planning benchmark). About 8 a year = about 50 removals over about 6 years for one reused truck, our model. Also: the ISS has moved out of the way of junk 41 times since 1999 (NASA ODQN 29(3)). Honest limit: 34 of the 2025 top 50 are Russian/Soviet and 10 Chinese; about 30 are SL-16 and SL-8 stages. Our truck fits the 1.4-tonne SL-8s (a later route, with Russia's consent). The 9-tonne SL-16s need about 870 kg kits each, too heavy for a 10-stop truck, so they need a bigger tug or a partner.
+Q&A backup: One of our reusable trucks would do about 8 a year (our model), more than NASA's ~5 benchmark. "Zero so far" means no spacecraft has captured and removed a large derelict; ADRAS-J (2024) only inspected one, and ADRAS-J2 plans capture around 2027–28. Sources: ESA (more than half of tracked objects are fragments from 500+ breakups); McKnight, IAA memo (about 480 massive derelicts in LEO, about 810 tonnes); McKnight, Top 50 update presented at IAC 2025 (removing all 50 roughly halves debris-generating potential; the top 10 about 30%; reported by Ars Technica); Liou & Johnson, NASA (2009) and Liou (2011) (about 5 a year; NASA calls it a notional planning benchmark). About 8 a year = about 50 removals over about 6 years for one reused truck, our model. Also: the ISS has moved out of the way of junk 41 times since 1999 (NASA ODQN 29(3)). Honest limit: 34 of the 2025 top 50 are Russian/Soviet and 10 Chinese; about 30 are SL-16 and SL-8 stages. Our truck fits the 1.4-tonne SL-8s (a later route, with Russia's consent). The 9-tonne SL-16s need about 870 kg kits each, too heavy for a 10-stop truck, so they need a bigger tug or a partner.
 
 ## Slide 7: cost-today
 
 "So why hasn't anyone cleaned it up? Because it's expensive.
 
-Governments have started paying: Europe, Japan, the UK and the US. But each one is a custom mission for one or two objects, at forty to ninety-three million dollars per piece. That's like hiring a whole garbage truck for every trash bag. At those prices, nobody can clean up thousands.
+Governments have started paying: Europe, Japan, the UK and the US. But each one is a custom mission for one or two objects, at forty to ninety-three million dollars per piece. That's like hiring a whole garbage truck for every trash bag. At those prices, nobody can clean up thousands. So the real problem isn't the robot arm. It's that every pickup pays for its own rocket.
 
-Meanwhile the rules just got stricter. In the US, dead satellites must now come down within five years, and up to one in ten satellites is allowed to fail at that. So there will always be some that need a pickup. Analysts put this market at over a billion dollars already."
+And why now? Because the rules just got stricter. In the US, dead satellites must now come down within five years, and up to one in ten satellites is allowed to fail at that. So there will always be some that need a pickup. Analysts put this market at over a billion dollars already."
 
 Q&A backup: Contract values: ClearSpace-1 (ESA, 2020) €86M; ADRAS-J2 (JAXA, 2024) ≈¥13.2B; UK ADR (15 Oct 2026) "more than £60m" for two satellites; US SDA disposal service (Starfish, Jan 2026) $52.5M including options. Market reports are paid analyst estimates that disagree, so we don't build on them; we build bottom-up from contract prices.
 
@@ -98,7 +102,7 @@ Q&A backup: The stages: 4 Indian PSLV, 4 French Ariane and 2 US (Agena, Delta) u
 
 ## Slide 10: one-trip
 
-"Here's what makes us different. Today, every piece of junk gets its own custom mission, at forty to ninety-three million dollars each.
+"Remember the question we asked: why does every piece need its own rocket? It doesn't. Today, every piece of junk gets its own custom mission, at forty to ninety-three million dollars each.
 
 We run a route instead. One truck, one launch, ten stops. Because the expensive parts, the spacecraft and the launch, are shared by ten pickups, our model comes out at about twelve million dollars per piece.
 
@@ -154,17 +158,19 @@ Q&A backup: 0.06° median on the SL-8 route; 0.30° on our first route. Our mode
 
 ## Slide 15: demo
 
-[LIVE DEMO CUE: on the laptop, open Start Demo.bat (offline). It opens on our first route. Click Scene 3 "The garbage truck" and press play. Then click "See the truck in 3D", choose "The journey" and tap "Tag it". If anything fails, stay on this slide; the image is the same scene.]
+[VIDEO CUE: the presenter deck plays the 29-second clip on this slide automatically, muted. Talk over it. Press → to move on. Optional live demo instead: open Start Demo.bat (offline), Scene 3, then "See the truck in 3D" → "The journey". If anything fails, stay on the video.]
 
-"Let me show you one trip. These are the real orbits of these rocket stages as of October sixteenth. The orange line is our truck. Watch: it doesn't chase each stage. It parks, lets the orbits swing into line, then hops over.
+"Here's one pickup, from our 3D model, sized from our own numbers.
 
-And here's a pickup up close: the arm holds the old stage, a kit latches on, the truck backs away, and the kit sends the stage down to burn up.
+The truck pulls up to an old rocket stage that's been tumbling for decades. The arm grabs the ring where it once held its satellite. Small thruster puffs stop the spin. A kit latches on, the light turns green, and the truck backs away.
 
-Ten stages. Sixteen months. About two hundred kilograms of fuel for the whole trip."
+Then the kit fires, and the stage drops into the atmosphere and burns up. The truck drives on to the next stop.
 
-[Demo: 60 seconds max. Then return to slides.]
+Ten of these per trip. Sixteen months. About two hundred kilograms of fuel for the whole trip."
 
-Q&A backup: The route comes from our Python planner; the browser propagates every object with SGP4. The truck is a concept sized from our mass budget, not a flight design.
+[Clip: 29 seconds. Then advance.]
+
+Q&A backup: The route comes from our Python planner; the online demo propagates every object with SGP4. The truck is a concept sized from our mass budget, not a flight design.
 
 ## Slide 16: economics
 
@@ -196,7 +202,7 @@ Q&A backup: Why not build the arm ourselves? It's the hardest, least-proven part
 
 ## Slide 18: conclusion
 
-"Three things to remember. One: we don't need to remove all the junk; taking out the worst fifty would cut the danger about in half. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
+"Every crash makes more junk, so waiting makes this problem bigger and more expensive. Three things to remember. One: we don't need to remove all the junk; taking out the worst fifty would cut the danger about in half. Two: cleaning up costs forty to ninety-three million dollars per piece today; our route brings it to about twelve, including the launch. Three: Earth does the steering, and the math is checked against NASA.
 
 Our ask: [$__] in pre-seed funding for twelve months, to finish customer interviews, design the rocket kit, and sign a partner for a test trip.
 
