@@ -1,0 +1,36 @@
+/* Orbital Curbside deck, v2 "hazard" theme: black, white, one alarm colour. */
+@import url(../fonts/fonts.css);
+:root { --bg:#0A0A0A; --ink:#F2F0EB; --mid:#A3A09A; --dim:#6B6964; --rule:#2B2A28; --red:#FF3D1F; --ok:#F2F0EB; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:#000; }
+section { position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--bg); color:var(--ink);
+  font-family:'Schibsted Grotesk', Arial, sans-serif; padding:120px 120px 140px; }
+section aside { display:none; }
+section > * { position:relative; z-index:1; }
+.bleed, .scrim-l { z-index:0; }
+.bleed { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.scrim-l { position:absolute; inset:0; background:linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 38%, rgba(10,10,10,.75) 55%, rgba(10,10,10,0) 75%); }
+.kicker { position:absolute; left:120px; top:56px; font-size:22px; font-weight:500; color:var(--mid); }
+.kicker b { color:var(--ink); font-weight:700; margin-right:14px; }
+.num { position:absolute; right:120px; bottom:56px; font-size:22px; font-weight:600; color:var(--mid); }
+.src { position:absolute; left:120px; bottom:56px; width:1400px; font-size:17px; line-height:1.4; color:var(--dim); }
+h1 { font-weight:850; font-size:150px; line-height:.88; letter-spacing:-5px; }
+h2 { font-weight:800; font-size:70px; line-height:1.02; letter-spacing:-2px; max-width:1640px; }
+h2 em, h1 em { font-style:normal; color:var(--red); }
+.lede { font-size:32px; line-height:1.35; color:var(--mid); max-width:1200px; }
+.lede b { color:var(--ink); font-weight:600; }
+.big { font-weight:800; font-size:120px; line-height:.9; letter-spacing:-4px; }
+.mid { font-weight:800; font-size:72px; line-height:.9; letter-spacing:-2px; }
+.lab { font-size:24px; line-height:1.35; color:var(--mid); margin-top:12px; }
+.lab b { color:var(--ink); font-weight:600; }
+.red { color:var(--red); }
+.rule-t { border-top:1px solid var(--rule); }
+.cols { display:grid; gap:0; }
+.cols > * { padding:28px 36px 0 0; }
+.cols > * + * { padding-left:36px; border-left:1px solid var(--rule); }
+.tag { font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--mid); }
+.tag.red { color:var(--red); }
+table { border-collapse:collapse; width:100%; font-size:28px; }
+th { text-align:left; font-size:20px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid); padding:0 0 14px; border-bottom:1px solid var(--ink); }
+td { padding:18px 0; border-bottom:1px solid var(--rule); vertical-align:middle; }
+.r { text-align:right; }
