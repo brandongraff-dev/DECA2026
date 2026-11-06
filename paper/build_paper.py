@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "results"
 J = lambda name: json.loads((RES / name).read_text())
 
-AUTHOR, SCHOOL, DATE = "Brandon Graff", "[__School__]", "October 2026"
+AUTHOR, SCHOOL, DATE = "Brandon Graff", "Winter Park High School", "October 2026"
 
 bench = J("benchmark_jpl_legs.json")
 m10 = J("benchmark_mission10.json")

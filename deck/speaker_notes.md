@@ -18,7 +18,7 @@ Today, cleaning up just one piece of junk costs forty to ninety million dollars.
 
 [About 10 seconds. Don't read the address aloud.]
 
-Fill before competition: school name, street address, city/state/ZIP, presentation date, headshot.
+Fill before competition: ZIP code and presentation date.
 
 ## Slide 3: contents
 

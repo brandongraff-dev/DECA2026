@@ -73,19 +73,19 @@ These are my estimates of where the **materials** sit today, not a prediction of
 ### Deck (source: `deck/slides/`; rebuild with `node deck/build_deck.js`)
 | Placeholder | Slide | Notes |
 |---|---|---|
-| `[School name]` | 2 Title | |
-| `[Street address]` | 2 Title | school address |
-| `[City, State ZIP]` | 2 Title | |
+| ~~`[School name]`~~ | 2 Title | ✅ Winter Park High School |
+| ~~`[Street address]`~~ | 2 Title | ✅ 1331 College Point (confirm with your advisor) |
+| `[ZIP]` | 2 Title | city and state filled (Winter Park, FL); **add the ZIP** |
 | `[Presentation date]` | 2 Title | competition date (TBD) |
-| `[headshot]` | 2 Title | upload a photo, or delete the circle |
+| ~~`[headshot]`~~ | 2 Title | ✅ `deck/assets/headshot.png` |
 | ~~`[$__]` pre-seed ask~~ | 18 Conclusion | ✅ filled: **$250K** (slide, script, Q&A Q20/Q20b) |
 | QR code on slide 18 | 18 | points to the sim artifact, already shared as “anyone with the link”. Re-check it opens on a phone |
 
 ### Paper and one-pager
 | Placeholder | File |
 |---|---|
-| `[__School__]` (×2) | `paper/paper_numbers.json` → `SCHOOL`; rebuild with `.venv/bin/python paper/build_paper.py` |
-| `[__School__]`, `[__school email__]` | `onepager/onepager.html`; re-export PDF |
+| ~~`[__School__]` (×2)~~ | ✅ paper: Winter Park High School (PDF rebuilt) |
+| `[__school email__]` | `onepager/onepager.html` (school name ✅ filled); add your school email and re-export the PDF |
 
 ### Validation kit (`04_validation_kit.md`)
 | Placeholder | Meaning |
