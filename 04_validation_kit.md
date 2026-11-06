@@ -59,12 +59,12 @@ Keep emails **short** (under 150 words), specific to *their* work, with one clea
 >
 > Dear Professor [__Last name__],
 >
-> I'm a high-school [__grade__] at [__School__] building a DECA business plan around multi-target debris removal. Your paper [__title, year__] was central to my work: I built a Python model of J2-drift transfers, checked it against JPL's GTOC9 legs (within ~2% overall), and applied it to today's SL-8 rocket-body cluster.
+> I'm a high-school [__grade__] at Winter Park High School building a DECA business plan around multi-target debris removal. Your paper [__title, year__] was central to my work: I built a Python model of J2-drift transfers, checked it against JPL's GTOC9 legs (within ~2% overall), and applied it to today's SL-8 rocket-body cluster.
 >
 > Would you be willing to answer three short questions by email, or join a 15-minute video call in the next few weeks? I've attached a one-page summary of the project.
 >
 > Thank you for your time,
-> [__Your full name__] · [__School__], [__City, State__]
+> Brandon Graff · Winter Park High School, Winter Park, Florida
 > DECA advisor: [__Name, email__] (cc'd)
 
 ### B. To an ADR company or industry engineer
@@ -72,10 +72,10 @@ Keep emails **short** (under 150 words), specific to *their* work, with one clea
 >
 > Hello [__Name or "Business Development team"__],
 >
-> I'm a high-school student at [__School__] preparing a DECA Innovation Plan about pricing debris removal per object when one servicer visits ~10 targets. My cost model has two big unknowns: servicer hardware cost and deorbit-kit cost. I'd be grateful for a 15-minute call, or a reply to two questions, to check whether my ranges are realistic. Ballpark answers are fine, and I won't quote you without permission.
+> I'm a high-school student at Winter Park High School preparing a DECA Innovation Plan about pricing debris removal per object when one servicer visits ~10 targets. My cost model has two big unknowns: servicer hardware cost and deorbit-kit cost. I'd be grateful for a 15-minute call, or a reply to two questions, to check whether my ranges are realistic. Ballpark answers are fine, and I won't quote you without permission.
 >
 > One-page summary attached. Thank you!
-> [__Name__] · [__School__] · advisor [__Name, email__] (cc)
+> [__Name__] · Winter Park High School · advisor [__Name, email__] (cc)
 
 ### C. To a satellite operator (customer discovery)
 > **Subject:** How do you plan for satellites that can't deorbit themselves?
@@ -87,7 +87,7 @@ Keep emails **short** (under 150 words), specific to *their* work, with one clea
 > Could I ask you 4–5 questions in a 15-minute call or by email? Your answers would stay anonymous unless you say otherwise.
 >
 > Thank you,
-> [__Name__] · [__School__] · advisor [__Name, email__] (cc)
+> [__Name__] · Winter Park High School · advisor [__Name, email__] (cc)
 
 ### D. Follow-up (send once, 7–10 days later)
 > Hi [__Name__], just following up on my note below in case it got buried. Even a two-line reply to question 1 would help a lot. Thank you! [__Name__]

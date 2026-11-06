@@ -75,7 +75,7 @@ These are my estimates of where the **materials** sit today, not a prediction of
 |---|---|---|
 | ~~`[School name]`~~ | 2 Title | ✅ Winter Park High School |
 | ~~`[Street address]`~~ | 2 Title | ✅ 1331 College Point (confirm with your advisor) |
-| `[ZIP]` | 2 Title | city and state filled (Winter Park, FL); **add the ZIP** |
+| ~~`[ZIP]`~~ | 2 Title | ✅ Winter Park, FL 32789 |
 | `[Presentation date]` | 2 Title | competition date (TBD) |
 | ~~`[headshot]`~~ | 2 Title | ✅ `deck/assets/headshot.png` |
 | ~~`[$__]` pre-seed ask~~ | 18 Conclusion | ✅ filled: **$250K** (slide, script, Q&A Q20/Q20b) |
@@ -85,12 +85,12 @@ These are my estimates of where the **materials** sit today, not a prediction of
 | Placeholder | File |
 |---|---|
 | ~~`[__School__]` (×2)~~ | ✅ paper: Winter Park High School (PDF rebuilt) |
-| `[__school email__]` | `onepager/onepager.html` (school name ✅ filled); add your school email and re-export the PDF |
+| ~~`[__school email__]`~~ | ✅ one-pager filled and PDF rebuilt |
 
 ### Validation kit (`04_validation_kit.md`)
 | Placeholder | Meaning |
 |---|---|
-| `[__Your full name__]`, `[__School__]`, `[__City, State__]`, `[__grade__]`, `[__school email__]` | your details in email templates |
+| `[__grade__]` | your grade in the email templates (name, school, city and email ✅ filled) |
 | `[__Name, email__]` | DECA advisor (cc on every email) |
 | `[__Last name__]`, `[__Name__]`, `[__Name or "Business Development team"__]`, `[__Name/team__]` | recipient, per email |
 | `[__paper short title__]`, `[__title, year__]` | the expert's paper you cite, per email |
