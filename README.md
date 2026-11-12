@@ -29,6 +29,7 @@ Credits and licenses: `ATTRIBUTION.md`.
 | `deck/` | Snapshot of the Slides-artifact deck: slide HTML, images, PDF, speaker notes (`build_deck.py` rebuilds). The editable deck is the Slides artifact; re-export if you edit it there |
 | `research/` | Sourced inputs, verified expert and industry contacts, outreach tracker |
 | `model/` | 3D concept truck + journey (three.js, offline). Sized from `model/data/truck.json` (`engine/scripts/export_model.py`). Earth from NASA imagery (`model/earth.js`) |
+| `video/` | `OrbitalCurbside_demo.mp4`, the 2½-minute backup video of the demo, and `record_video.py`, which renders it frame by frame from the offline demo (about 80 min) |
 | `model/backgrounds.html` | Renders the deck's Earth background plates (horizon, night, globe, debris swarm, orbit rings); `python model/capture_backgrounds.py` writes them to `figures/backgrounds/`. `python model/capture_clean.py` writes clean model renders to `figures/model_clean/` |
 
 ## Re-run everything

@@ -129,6 +129,7 @@ These were correct on 16 Oct 2026 but can change:
 - [ ] Check the deck against the Penalty Point Checklist (DECA Guide p. 60; get it from your advisor).
 - [ ] Export the deck to PDF and keep a copy on a USB stick (download from the Slides artifact).
 - [ ] Test `offline/OrbitalCurbside-Demo/Start Demo.bat` on the competition laptop with Wi-Fi **off**.
+- [ ] Copy the backup video `OrbitalCurbside_demo.mp4` (in the demo folder) to the desktop and a USB stick, and play it once on that laptop.
 - [ ] Scan the slide-18 QR with a phone to confirm the demo link opens (it is shared as “anyone with the link”).
 - [ ] Rehearse three times with a timer: hook ≤ 35 s, pitch ≈ 11 min.
 - [ ] Print 2–3 copies of the one-page summary to leave with judges.

@@ -433,6 +433,9 @@
     if (["1", "2", "3", "4"].includes(ev.key)) setScene(+ev.key);
   });
 
+  // frame-by-frame control for recording the demo video (sim/record_video.py)
+  window.__sim = { state, viewer, setScene, setCam, setPlaying };
+
   // ------------------------------------------------------------------ boot
   const get = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
   Promise.all([get("data/background.json"), get("data/mission_B1.json"), get("data/mission_A1.json"),

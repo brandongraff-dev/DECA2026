@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Video card</title>
+<link rel="stylesheet" href="../model/fonts/fonts.css">
+<style>
+  html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#04060a;color:#f4f7fb;font-family:'Instrument Sans',Arial,sans-serif}
+  img{position:absolute;inset:0;width:1280px;height:720px;object-fit:cover}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,10,.55),rgba(4,6,10,.1) 55%,rgba(4,6,10,.35))}
+  .box{position:absolute;left:80px;top:150px;width:1120px}
+  .eye{font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:#5fd4ff}
+  .eye b{display:inline-block;width:10px;height:10px;background:#ff7a2e;margin-right:14px}
+  h1{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:110px;line-height:.9;text-transform:uppercase;margin:18px 0 0}
+  h1 span{color:#ff7a2e}
+  p{font-size:28px;line-height:1.35;color:#c3ccd8;margin:22px 0 0;max-width:1050px}
+  .foot{position:absolute;left:80px;bottom:44px;width:1120px;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#8e9aad}
+</style></head>
+<body>
+<img src="../figures/backgrounds/bg_horizon.jpg" alt="">
+<div class="shade"></div>
+<div class="box"><div class="eye" id="eye"></div><h1 id="title"></h1><p id="sub"></p></div>
+<div class="foot" id="foot"></div>
+<script>
+  // usage: card.html#{"eye":"...","title":"... <span>...</span>","sub":"...","foot":"..."}  (URL-encoded JSON)
+  const c = JSON.parse(decodeURIComponent(location.hash.slice(1) || '{}'));
+  document.getElementById('eye').innerHTML = c.eye ? '<b></b>' + c.eye : '';
+  document.getElementById('title').innerHTML = c.title || '';
+  document.getElementById('sub').textContent = c.sub || '';
+  document.getElementById('foot').textContent = c.foot || '';
+  document.fonts.ready.then(() => { window.__ready = true; });
+</script>
+</body></html>

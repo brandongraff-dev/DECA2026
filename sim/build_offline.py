@@ -8,6 +8,8 @@ Creates offline/OrbitalCurbside-Demo/ with:
   serve.ps1             PowerShell local web server (the 3D engine needs http://, not file://)
   serve.py / Start Demo (Mac).command   fallbacks for computers that have Python
   lib/fonts/            bundled fonts (the hosted artifact loads them from Google Fonts instead)
+  truck/                the 3D truck model (model/)
+  OrbitalCurbside_demo.mp4   the backup video, if video/record_video.py has been run
   README.txt
 """
 import shutil
@@ -90,9 +92,15 @@ COMPETITION-DAY CHECKLIST
 - Set Windows power mode to "Best performance" while plugged in at home to check smoothness,
   then test on battery; close other apps. If it stutters, use the 1 day/s speed instead of 6 days/s.
 - Start the demo BEFORE you walk in (setup time counts toward your 15 minutes), leave it paused on scene 1.
-- Backup: the screen recording (see recording plan) on the desktop.
+- Backup: OrbitalCurbside_demo.mp4 in this folder, a 2.5-minute silent video of the whole demo
+  (the orbit simulation, then the 3D truck making one pickup). It plays in any video player with no
+  internet. Copy it to the desktop and a USB stick too. If the live demo won't start in 20 seconds, play it.
 
 Data: CelesTrak catalogue snapshot of 16 Oct 2026. 3D engine: CesiumJS (Apache-2.0).
 Orbit propagation: satellite.js (MIT). Earth imagery: Natural Earth II (public domain).
+3D truck: three.js (MIT); Earth imagery from NASA Visible Earth (public domain).
 """)
+video = SIM.parent / "video" / "OrbitalCurbside_demo.mp4"
+if video.exists():
+    shutil.copy2(video, OUT / video.name)
 print("built", OUT, sum(1 for _ in OUT.rglob('*') if _.is_file()), "files")

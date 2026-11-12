@@ -19,7 +19,10 @@ COMPETITION-DAY CHECKLIST
 - Set Windows power mode to "Best performance" while plugged in at home to check smoothness,
   then test on battery; close other apps. If it stutters, use the 1 day/s speed instead of 6 days/s.
 - Start the demo BEFORE you walk in (setup time counts toward your 15 minutes), leave it paused on scene 1.
-- Backup: the screen recording (see recording plan) on the desktop.
+- Backup: OrbitalCurbside_demo.mp4 in this folder, a 2.5-minute silent video of the whole demo
+  (the orbit simulation, then the 3D truck making one pickup). It plays in any video player with no
+  internet. Copy it to the desktop and a USB stick too. If the live demo won't start in 20 seconds, play it.
 
 Data: CelesTrak catalogue snapshot of 16 Oct 2026. 3D engine: CesiumJS (Apache-2.0).
 Orbit propagation: satellite.js (MIT). Earth imagery: Natural Earth II (public domain).
+3D truck: three.js (MIT); Earth imagery from NASA Visible Earth (public domain).
